@@ -1,0 +1,126 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Strath PhD Thesis Template
+%	by Jethro Browell [jethro.browell@strath.ac.uk]
+%
+%	Guidelines for thesis format, submission and content are found in
+%	General and Course Regulations for Graduate and Postgraduate
+%	Awards and Degrees, section 20.6.
+%
+%	Using .eps or .pdf is recomended to prduce high quality figures etc.
+%
+%	The Strathclyde logo can be found in other formats at www.strath.ac.uk.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,oneside,11pt]{book}
+
+\input{util/commands}
+
+\usepackage{amsbsy}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{mathrsfs}
+\usepackage{color}
+\usepackage[hidelinks]{hyperref}
+\usepackage{cite}
+\usepackage{enumitem}
+\usepackage{epsfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{physics}
+\usepackage[strict]{changepage}
+
+%own macros
+
+% Page Margins - Strath Requirement
+\usepackage[left=4cm,right=2.5cm,top=2cm,bottom=4cm,includehead,includefoot,headheight=15pt]{geometry}
+
+% Page Headers
+\usepackage{fancyhdr}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % optional
+%\fancyhead[L]{\nouppercase{\leftmark} \hfill Section \nouppercase{\rightmark}}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\cfoot{\thepage}
+\pagestyle{fancy}
+
+% Draft Watermark
+\usepackage[draft=true,allpages=true,fontfamily=cmr,angle=90,scale=0.1,mark={\fboxsep=35pt\fboxrule=0pt\relax\fbox{-- DRAFT -- \today~--}},xcoord=-80,ycoord=-20]{util/draftmark}
+
+
+% Line Spacing
+%\def\baselinestretch{1.5} 
+\usepackage{setspace}
+\setstretch{1.5}
+
+% Place UoS Logo on Title Page (this package modifies the "\maketitel" command.)
+\usepackage{titling}
+\pretitle{%
+  \begin{flushright}
+  \vspace{-9.5cm}
+%  \includegraphics[width=5cm,natwidth=472,natheight=531]{logo} \\[7cm]
+  \includegraphics[width=5cm]{images/logo} \\[6cm]
+  \end{flushright}
+  \begin{center}
+  \LARGE
+  \posttitle{\end{center}}}
+
+\title{Counterdiabatic, Better, Faster, Stronger: \\
+\normalsize{Overcoming Losses in Quantum Processes} \\ PhD Thesis}
+\author{Ieva \v{C}epait\.{e}
+\\ \small Quantum Optics and Quantum Many-Body Physics\\[-0.8ex]
+\small Department of Physics\\[-0.8ex]
+\small University of Strathclyde, Glasgow\\
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/declaration.tex}
+\input{chapters/abstract.tex}
+
+\tableofcontents
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\input{chapters/lay_summary}
+\input{chapters/publications}
+\input{chapters/acknowledgements}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{chapters/introduction}
+\input{chapters/preliminaries}
+\input{chapters/COLD}
+\input{chapters/conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{chapters/appendix}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{util/ieeetran.bst}
+\bibliography{references}
+
+\end{document}
