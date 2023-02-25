@@ -32,11 +32,14 @@
 \usepackage{subcaption}
 \usepackage{physics}
 \usepackage[strict]{changepage}
+\usepackage{epigraph}
 
 %own macros
 
 % Page Margins - Strath Requirement
 \usepackage[left=4cm,right=2.5cm,top=2cm,bottom=4cm,includehead,includefoot,headheight=15pt]{geometry}
+
+\renewcommand\labelenumi{(\theenumi)}
 
 % Page Headers
 \usepackage{fancyhdr}
@@ -56,34 +59,26 @@
 \usepackage{setspace}
 \setstretch{1.5}
 
-% Place UoS Logo on Title Page (this package modifies the "\maketitel" command.)
 \usepackage{titling}
 \pretitle{%
-  \begin{flushright}
-  \vspace{-9.5cm}
-%  \includegraphics[width=5cm,natwidth=472,natheight=531]{logo} \\[7cm]
-  \includegraphics[width=5cm]{images/logo} \\[6cm]
-  \end{flushright}
   \begin{center}
-  \LARGE
-  \posttitle{\end{center}}}
+  \huge
+  \includegraphics[width=6cm]{images/logo}\\[\bigskipamount]
+}
+\posttitle{\end{center}}
 
 \title{Counterdiabatic, Better, Faster, Stronger: \\
-\normalsize{Overcoming Losses in Quantum Processes} \\ PhD Thesis}
+\Large{Overcoming Losses in Quantum Processes} \\ PhD Thesis}
 \author{Ieva \v{C}epait\.{e}
 \\ \small Quantum Optics and Quantum Many-Body Physics\\[-0.8ex]
 \small Department of Physics\\[-0.8ex]
 \small University of Strathclyde, Glasgow\\
 }
 
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
 \maketitle
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \frontmatter
@@ -111,6 +106,8 @@
 \input{chapters/introduction}
 \input{chapters/preliminaries}
 \input{chapters/COLD}
+\input{chapters/AGPmethods}
+\input{chapters/applications}
 \input{chapters/conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
