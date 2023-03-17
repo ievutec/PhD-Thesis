@@ -1,0 +1,22 @@
+\chapter{Background: Optimal Control}
+
+Here I'll talk about optimal control.
+
+In the context we consider,  we employ quantum optimal control to optimise the function $f(\psi,\betabb)$ in the Schr\"odinger equation
+\begin{equation}
+\dot{\psi} = f(\psi,\betabb),
+\label{eq:control_schroedinger}
+\end{equation}
+
+A commonly used cost function in state preparation is related  to the fidelity of the final, post-evolution state $\ket{\psi_f}$ with respect to the target state:
+\begin{align} \label{eq:lossfunc}
+    \mathcal{C}(\ket{\psi_f}) = 1 - \left|\braket{\psi_T}{\psi_f}\right|^2.
+\end{align}
+
+The full Hamiltonian of the control system is then:
+\begin{align} \label{eq:h_optimal_control}
+    H_{\beta}(t,\betabb)  = H_0(t) + \betabb(t)\mathcal{O}_{\rm opt}.
+\end{align}
+
+    \section{CRAB}
+    \section{GRAPE}
