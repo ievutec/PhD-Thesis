@@ -39,7 +39,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \begin{equation}\label{eq:dynamical_phase}
         \theta_n(\lambda) = -\frac{1}{\hbar} \int_0^{\lambda} E_n(\lambda') d\lambda'.
     \end{equation}
-    The factor of $\tau$ is simply a consequence of the change in variables $t \rightarrow \lambda$, since $\dotlambda = \frac{1}{\tau}$.
+    The factor of $\tau$ is simply a consequence of the change in variables $t \rightarrow \lambda$, since $\frac{d \lambda}{dt} = \dotlambda = \frac{1}{\tau}$.
     
     Thus, the task is now to solve the time-dependent Schr\"{o}dinger equation:
     \begin{equation}\label{eq:td-schroedinger}
@@ -153,8 +153,9 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \begin{equation}\label{eq:AGP_in_terms_of_U}
         \Tilde{\AGP{\lambda}} = i\hbar \adj{U}\dlambda U.
     \end{equation}
+    The name `gauge potential' generally refers to operators that are generators of continuous unitary translations in parameter space \cite{kolodrubetz_geometry_2017} of some unitary transformation $U$ and generally takes the form of a derivative operator. While there are many such gauge potentials out there, we'll restrict ourselves to the specific case of adiabaticity where the transformation $U(\lambda)$ explicitly takes a wavefunction in an arbitrary basis to the adiabatic or instantaneous basis. 
     
-    So what we find is that the wavefunction in the moving-frame basis evolves under a combination of the diagonal component $\Tilde{H}$ and some additional term proportional both to the speed at which the parameter $\lambda$ varies and the \acrref{AGP}. At this point I want to note that while there are $\sim$ symbols all over the place, we can actually apply the inverse unitary operation in order to work back in lab frame basis: $\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}} \xrightarrow{U \{ \cdot \} \adj{U}} H - \dotlambda \AGP{\lambda}$. In fact, this transformation makes it easy to see how we can think of the AGP in the lab frame as nothing more than the derivative operator: $\AGP{\lambda} = i\hbar\dlambda$. 
+    So what we find is that the wavefunction in the moving frame basis evolves under a combination of the diagonal component $\Tilde{H}$ and some additional term proportional both to the speed at which the parameter $\lambda$ varies and the \acrref{AGP}. At this point I want to note that while there are $\sim$ symbols all over the place, we can actually apply the inverse unitary operation in order to work back in lab frame basis: $\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}} \xrightarrow{U \{ \cdot \} \adj{U}} H - \dotlambda \AGP{\lambda}$. In fact, this transformation makes it easy to see how we can think of the AGP in the lab frame as nothing more than the derivative operator: $\AGP{\lambda} = i\hbar\dlambda$. 
 
     To see this, take any quantum state written in some basis, \@~e.g. $\ket{\psi} = \sum_n \psi_n \ket{n}$. Then in the moving frame basis we have:
     \begin{equation}\label{eq:AGP_basis_change}
@@ -169,6 +170,8 @@ The concept of quantum adiabaticity is the central starting point of the work pr
         \end{aligned}
     \end{equation}
     where the last line is simply the statement that in the lab frame $\AGP{\lambda} = i\hbar \dlambda$.
+
+    \subsection{Matrix elements of the \acrref{AGP}}
 
     What I've shown you so far is that when we try to solve the Schr\"{o}dinger equation for a quantum system evolving under a time-dependent Hamiltonian in the basis of the `moving frame', \@~i.e. in the basis where the time-dependent Hamiltonian is diagonalised, we find that the evolution happens under a `decorated' Hamiltonian with an additional operator that I've dubbed the adiabatic gauge potential or \acrref{AGP}. We found that in the lab frame, it is the derivative operator with respect to the time-dependent parameters driving the Hamiltonian. What remains is to link this to our discussion of adiabaticity and the adiabatic condition of Section \ref{sec:2.1_adiabatic_theorem}.
 
@@ -185,20 +188,27 @@ The concept of quantum adiabaticity is the central starting point of the work pr
            E_n \braket{\dlambda m}{n} + E_m \braket{m}{\dlambda n} + \mel{n}{\dlambda H}{n} &= 0 \\
            (E_m - E_n) \braket{m}{\dlambda n} + \mel{n}{\dlambda H}{n} &= 0 \\
            \frac{-i}{\hbar} (E_m - E_n) \mel{m}{\AGP{\lambda}}{n} + \mel{n}{\dlambda H}{n} &= 0 \\
-           \mel{m}{\AGP{\lambda}}{n} &= i\hbar \frac{\mel{m}{\dlambda H}{n}}{(E_m - E_n)}
+           \mel{m}{\AGP{\lambda}}{n} &= i\hbar \frac{\mel{m}{\dlambda H}{n}}{(E_n - E_m)}
        \end{aligned} 
     \end{equation}
-    where I'll stress again that since we're working in the adiabatic basis, all eigenstates, eigenenergies and the operators depend on $\lambda$. The final line is familiar: the off-diagonal elements of the \acrref{AGP} are proportional to the non-adiabatic contribution we derived back in Eq.~\eqref{eq:deriving_adiabatic_condition_final}!
+    where I'll stress again that since we're working in the adiabatic basis, all eigenstates, eigenenergies and the operators depend on $\lambda$. The final line is familiar: the off-diagonal elements of the \acrref{AGP} are proportional to the non-adiabatic contribution we derived back in Eq.~\eqref{eq:deriving_adiabatic_condition_final}. The full operator in the adiabatic basis is:
+    \begin{equation}\label{eq:AGP_adiabatic_basis}
+        \AGP{\lambda} = i\hbar\Big(\sum_n \braket{n}{\dlambda n} \dyad{n} + \sum_{m \neq n} \ket{m} \frac{\mel{m}{\dlambda H}{n}}{(E_n - E_m)} \bra{n} \Big)
+    \end{equation}
 
     The outcome of this section then, is the revelation that this (initially mysterious) operator known as the \acrref{AGP} is deeply linked to the notion of adiabaticity in quantum systems: its diagonal terms are related to the geometry of the parameter space of adiabatic dynamics while its off-diagonals elements describe the non-adiabatic effects experienced by a state when it is driven by a time-dependent Hamiltonian. It is useful to note that in the final line of Eq.~\eqref{eq:moving_frame_schrodinger} we found that the Schr\"{o}dinger equation corresponding to the evolution of the instantaneous eigenstates is:
     \begin{equation}\label{eq:schrodinger_moving_frame_2}
-        i \hbar \frac{d \ket*{\Tilde{\psi}}}{dt} = \Big( \Tilde{H} - \dotlambda \AGP{\lambda} \Big) \ket*{\Tilde{\psi}}.
+        i \hbar \frac{d \ket*{\Tilde{\psi}}}{dt} = \Big( \Tilde{H} - \dotlambda \AGP{\lambda} \Big) \ket*{\Tilde{\psi}},
     \end{equation}
-    Similarly, in deriving the adiabatic condition we found that when a wavefunction starts in the $m^{\rm th}$ instantaneous eigenstate, it will evolve as $\ket{\psi(\lambda)} = e^{i \tau \theta_m(\lambda)}e^{i \gamma_m(\lambda)} \ket{m(\lambda)} + $
+    where now it is not difficult to find how each of these operators contributes to the results of Section \ref{sec:2.1.1_proof_adiabatic_theorem}. The moving frame or instantaneous Hamiltonian generates the dynamical phase factor in Eq.~\eqref{eq:dynamical_phase}, the diagonal elements of the \acrref{AGP} produce the geometric phase factor given by Eq.~\eqref{eq:geometric_phase} and the off-diagonal elements of \acrref{AGP} are responsible for the non-adiabatic transitions out of the eigenstates which we upper bounded in Section \ref{sec:2.1.2_adiabatic_condition}. For a more detailed proof of how to derive the adiabatic theorem starting from Eq.~\eqref{eq:schrodinger_moving_frame_2} I recommend \cite{petiziol_accelerated_2020}. \reminder{Shall I include the proof in the Appendix instead? It's quite long but maybe it's nice to have for a bit of context.}
     
     \section{Counterdiabatic Driving}\label{sec:2.3_CD}
 
-    Give a brief introduction to the simple concept of \acrref{CD}.
+    Having done all this work to characterise and understand the \acrref{AGP} and the adiabatic theorem, we now come to a very important question which defines just about the entirety of this thesis: \emph{why do we care}? What is it about adiabatic dynamics and quantifying non-adiabatic transformations and understanding what generates them important? The answer is simple: adiabatic processes are useful. The ability to drive a time-dependent Hamiltonian while remaining in a some eigenstate of the system is something that can be used to prepare interesting quantum states \cite{dimitrova_many-body_2022}, to solve combinatorics problems encoded in quantum systems \cite{ebadi_quantum_2022, pichler_quantum_2018} or even to synthesise effective ramps and quantum logic gates \cite{pelegri_high-fidelity_2022} among many other applications. 
+    
+    The most natural way of exploiting adiabatic protocols is by adhering to the adiabatic condition. However, as is often the case when it come to the control of quantum systems, nothing is quite that simple. In practice, changing a Hamiltonian slowly enough to satisfy Eq.~\eqref{eq:adiabatic_criterion} leads to a system being overwhelmed by decoherence instead. Furthermore, as system sizes get larger, the energy gaps between the instantaneous eigenstates tend to get smaller \reminder{does this need a citation?} requiring slower and slower driving, making the scaling up of adiabatic protocols a big problem. The result, inevitably, is that we need to find ways to achieve the same results as adiabatic processes but without requiring the prohibitively long driving times that are demanded by Eq.~\eqref{eq:adiabatic_criterion}.
+    
+    
 
     \begin{equation}\label{eq:CD_Hamiltonian}
     H_{CD}(\lambda) = H(\lambda) + \dotlambda \mathcal{A}_\lambda,
@@ -209,11 +219,6 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \subsection{A classic(al) analogy: the waiter and the glass of water}
 
     I will take a brief detour away from all the mathematics involved in 
-
-    \subsection{Shortcuts to adiabaticity}
-    
-    Here I'm going to talk about Shortcuts to Adiabaticity 
-    (\acrref{STA})
     
     \subsection{Transitionless Driving}
     The form of the dynamical Hamiltonian enforcing this is \cite{berry_transitionless_2009}:
@@ -221,6 +226,16 @@ The concept of quantum adiabaticity is the central starting point of the work pr
         H_{\mathrm{CD}}(t) = H_0 (t) + i\hbar \sum_n (\ket{\partial_t n}\bra{n} - \bra{n}\ket{\partial_t n}\ket{n}\bra{n}),
     \end{equation}
     \subsection{Variational counterdiabatic driving}
+
+    \begin{equation}\label{eq:energy_derivative}
+        \begin{aligned}
+            \frac{dE}{dt} &= \frac{d}{dt}\ev*{\Tilde{H}}{\Tilde{\psi}} \\
+            &= \dotlambda \ev*{\dlambda \Tilde{H}}{\Tilde{\psi}} - \frac{i}{\hbar} \dotlambda \ev*{\comm*{\Tilde{\AGP{\lambda}}}{\Tilde{H}}}{\Tilde{\psi}} \\
+            &= -\dotlambda F_{\lambda} - \frac{i}{\hbar} \dotlambda \ev{\comm{\AGP{\lambda}}{H}}{\psi},
+        \end{aligned}
+    \end{equation}
+    where the commutator in the second line appears because $i\hbar d_t \ket*{\Tilde{\psi}} = (\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}}) \ket*{\Tilde{\psi}}$
+    
     Following the methods of Ref.~\cite{sels_minimizing_2017}, the problem of finding the optimal adiabatic gauge potential can be cast as the minimisation of the Hilbert-Schmidt norm of the operators
     \begin{equation}\label{eq:Goperator}
      G_{\lambda}= \dlambda H_\beta + i\comm{\mathcal{A}_\lambda}{H_\beta},
@@ -232,3 +247,8 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     with respect to $\mathcal{A}_{\lambda}$.
     \subsection{Nested commutator expansion}
     \subsection{Krylov methods}
+
+    \subsection{Shortcuts to adiabaticity}
+    
+    Here I'm going to talk about Shortcuts to Adiabaticity 
+    (\acrref{STA})
