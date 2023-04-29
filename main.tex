@@ -24,9 +24,9 @@
 \usepackage{multirow}
 \usepackage{mathrsfs}
 \usepackage{color}
+\usepackage{xurl}
 \usepackage[hidelinks]{hyperref}
-%\usepackage[usenames,dvipsnames]{xcolor}
-%\usepackage[colorlinks=true,citecolor=Cerulean,linkcolor=RubineRed,urlcolor=Cerulean]{hyperref}
+\hypersetup{breaklinks=true}
 \usepackage{cite}
 \usepackage{enumitem}
 \usepackage{epsfig}
@@ -35,6 +35,12 @@
 \usepackage{physics}
 \usepackage[strict]{changepage}
 \usepackage{epigraph}
+\usepackage{lipsum}
+\usepackage{wrapfig}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algcompatible}
+\usepackage{mdframed}
 
 %own macros
 
@@ -90,19 +96,19 @@
 
 \tableofcontents
 
-\addcontentsline{toc}{chapter}{List of Figures}
-\listoffigures
-
-\addcontentsline{toc}{chapter}{List of Tables}
-\listoftables
-
-\input{chapters/abbreviations}
-
 \input{chapters/lay_summary}
 \input{chapters/acknowledgements}
 
+\input{chapters/abbreviations}
+
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\mainmatter
+\makeatletter
+\@mainmattertrue
+\pagenumbering{arabic}
+\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \input{chapters/introduction}

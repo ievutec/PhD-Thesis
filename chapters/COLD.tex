@@ -1,8 +1,25 @@
 \part{Counterdiabatic optimised local driving}
-\chapter{The \acrref{COLD} method}
+
+\chapter{The \acrref{COLD} method}\label{chap:4_COLD}
 
 Having now covered both \acrref{CD} and optimal control, we can proceed to the main result I want to explore in this thesis: that of 
 
 \section{The recipe}
 
-\section{Higher-order \acrref{CD} as a cost function?}
+\begin{equation}\label{eq:expandedH}
+H_{\rm COLD}(\lambda,\betabb) = H_0(\lambda) + {\boldsymbol \alpha}(\lambda,\betabb) \mathcal{O}_{\rm LCD} + \betabb(\lambda) \mathcal{O}_{\rm opt}.
+\end{equation}
+
+\section{Higher-order \acrref{CD} as a cost function}
+
+\begin{equation}\label{eq:AGP_integral_1}
+\mathcal{I}_1 = \int_0^\tau dt^\prime \Big[\bra{\psi_g(t^\prime)} \Gamma^2(t^\prime) \ket{\psi_g(t^\prime)}  - (\bra{\psi_g(t^\prime)} \Gamma(t^\prime) \ket{\psi_g(t^\prime)})^2\Big]^{1/2},
+\end{equation}
+
+\begin{equation}\label{eq:Gamma_def}
+\Gamma(t) = \gamma(t) \left( \sy_1 \sx_2 + \sx_1 \sy_2 \right),
+\end{equation}
+
+\begin{equation}\label{eq:AGP_integral_2}
+\mathcal{I}_2 = \int_0^\tau dt^\prime |\gamma(t^\prime)|,
+\end{equation}

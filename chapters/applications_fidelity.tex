@@ -1,11 +1,61 @@
 \part{Applications}
 
-\chapter{Optimising for state fidelity}
+\chapter{Optimising for state fidelity}\label{chap:5_Applications_fidelity}
 
-\section{Two-spin annealing}
+\section{Two-spin annealing}\label{sec:5.1_2spin_annealing}
 
-\section{Ising chain}
+\begin{equation}\label{eq:two_spin_hamiltonian}
+H_0(\lambda) = -2J \sz_1 \sz_2 - h ( \sz_{1} + \sz_{2}) +  2h \lambda (\sx_{1} + \sx_{2}),
+\end{equation}
+
+\begin{equation}\label{eq:lambda_func1}
+\lambda(t) = \sin^2\left(\frac{\pi}{2} \sin^2 \left( \frac{\pi t}{2 \tau} \right) \right)
+\end{equation}
+
+\begin{equation}\label{eq:two_spin_alpha}
+\alpha = - \frac{h^2}{4(h\lambda)^2 + h^2 + 4J^2}.
+\end{equation}
+
+\begin{equation}\label{eq:H_optimal_control}
+H_\beta(\lambda) = H_0(\lambda) + \sum_{k=1}^{N_k} \beta^k \sin (\pi k \lambda) \sum_i \sz_i,
+\end{equation}
+
+\section{Ising chain}\label{sec:5.2_Ising_chain}
+
+\begin{equation}\label{eq:ising_chain_hamiltonian}
+    H_0(\lambda) = - J \sum_{j}^{N-1} \sz_j \sz_{j+1} + Z_0\sum_j^N \sz_j + \lambda X_f \sum_j^N \sx_j,
+\end{equation}
+
+\begin{equation}
+    \AGP{\lambda}^{(1)} = \alpha \sum_{j}^N\sy_j,
+\end{equation}
+
+\begin{equation}
+    \alpha(\lambda) = \frac{1}{2} \frac{Z_0 X_f}{Z_0^2 + \lambda^2 X_f^2 + 2J^2}.
+\end{equation}
+
+\begin{equation}
+    \AGP{\lambda}^{(2)} = \alpha \sum_{j} \sy_j + \gamma  \sum_{j} (\sx_j \sy_{j+1} + \sy_j \sx_{j+1}) +  \zeta \sum_{j} (\sz_j \sy_{j+1} + \sy_j \sz_{j+1}) ,
+\end{equation}
 
 \section{Transport in a synthetic lattice}
+
+\begin{equation}\label{eq:lattice_hamiltonian}
+    H_0(t) = - \sum_n J_n(t)(c_n^{\dag}c_{n+1} + H.c.) + \sum_n V_n(t) c_n^{\dag}c_n,
+\end{equation}
+
+\begin{align} \label{eq:J_lattice}
+    J_n(t) &= J_0(1.1 - \lambda) \\ \label{eq:V_lattice}
+    V_n(t) &= n V_0 2 (\lambda - 1/2),
+\end{align}
+
+\begin{equation}\label{eq:tunneling}
+    J_n(t) \rightarrow J_{n, \mathrm{CD}}(t) e^{-i\phi_{n, \mathrm{CD}}(t)},
+\end{equation}
+where
+\begin{align}\label{eq:J_cd}
+    J_{n, \mathrm{CD}}(t) = \sqrt{J_n(t)^2 + (\alpha_n(t)/\tau)^2}, \\ \label{eq:phi_cd}
+    \phi_{n, \mathrm{CD}}(t)  = \arctan\left(-\frac{J_n(t)\tau}{\alpha_n(t)}\right),
+\end{align}
 
 \section{Preparing GHZ states}
