@@ -38,9 +38,13 @@
 \usepackage{lipsum}
 \usepackage{wrapfig}
 \usepackage{algorithm}
+\usepackage{algorithmicx}
 \usepackage{algpseudocode}
-\usepackage{algcompatible}
+%\usepackage{algcompatible}
 \usepackage{mdframed}
+\usepackage{cleveref}
+
+\setcounter{secnumdepth}{5}
 
 %own macros
 
@@ -65,6 +69,27 @@
 %\def\baselinestretch{1.5} 
 \usepackage{setspace}
 \setstretch{1.5}
+
+\usepackage[most]{tcolorbox}
+% new tcolorbox environment
+% #1: tcolorbox options
+% #2: color
+% #3: box title
+
+\newtcolorbox[auto counter,number within=section,crefname={box}{boxes}]{mycolorbox}[2][]{%
+title=Box 1 $\mid$ Timeline, 
+enhanced,
+colback=PineGreen!10!white,
+colframe=PineGreen!40!black,
+colbacktitle=PineGreen!95!white,
+fonttitle=\bfseries\upshape, 
+code={\singlespacing},
+subtitle style={boxrule=0.4pt},title=Box ~\thetcbcounter $\mid$ #2, label={#1}}
+
+\newtcbtheorem[auto counter,number within=section]{theo}%
+  {Theorem}{fonttitle=\bfseries\upshape, fontupper=\slshape,
+     arc=0mm, colback=Periwinkle!10!white,colframe=Periwinkle!40!black,colbacktitle=Periwinkle!95!white}{theorem}
+
 
 \usepackage{titling}
 \pretitle{%
@@ -115,6 +140,7 @@
 \input{chapters/background_adiabaticity}
 \input{chapters/background_optimal_control}
 \input{chapters/COLD}
+\input{chapters/minimising_higher_order_lcd}
 \input{chapters/applications_fidelity}
 \input{chapters/applications_higher_order}
 \input{chapters/conclusion}

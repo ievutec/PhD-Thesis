@@ -16,11 +16,11 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \begin{equation}
         \sx = \mqty(0 & 1 \\ 1 & 0), \quad \sy = \mqty(0 & -i \\ i & 0), \quad \sz = \mqty(1 & 0 \\ 0 & -1).  
     \end{equation}
-    If the spin starts in the ground state of $H(0)$ (pointing in the $x$ direction, $\ket{\psi(0)} = \ket{+}$), then as the magnetic field is rotated, the spin starts precessing about the new direction of the field. This moves the spin toward the $z$ axis but also produces a component out of the $xz$ plane. As the total time for the rotation gets longer (\@i.e. the rotation gets slower compared to the precession), the state maintains a tighter and tighter orbit around the field direction. In the limit of $\tau \rightarrow \infty$, the state of the spin tracks the magnetic field perfectly, always in the ground state of $H(t)$ for all $t$. This is illustrated in Fig.~\ref{fig:bloch_rotating_spin}, which shows the evolution of the system for increasing $\tau$ (and thus decreasing speed).
+    If the spin starts in the ground state of $H(0)$ (pointing in the $x$ direction, $\ket{\psi(0)} = \ket{+}$), then as the magnetic field is rotated, the spin starts precessing about the new direction of the field. This moves the spin toward the $z$ axis but also produces a component out of the $xz$ plane. As the total time for the rotation gets longer (\@i.e. the rotation gets slower compared to the precession), the state maintains a tighter and tighter orbit around the field direction. In the limit of $\tau \rightarrow \infty$, the state of the spin tracks the magnetic field perfectly, always in the ground state of $H(t)$ for all $t$. This is illustrated in Fig.~\ref{fig:bloch_rotating_spin}, which shows the evolution of the system for increasing $\tau$ (and thus decreasing speed). At very fast times, \@e.g.~ when $\tau = 1$, the state of the spin veers away from the instantaneous ground state completely, while for $\tau = 50$, the evolution tracks the instantaneous ground state quite closely.
     
     \begin{figure}[t]
     \centering
-    \includegraphics[width=0.9\linewidth]{images/magnetic_field_spin.png} \caption{Bloch sphere illustration of the single-spin system driven by the Hamiltonian of Eq.~\eqref{eq:rotating_spin_H} for different total driving times $\tau$.}\label{fig:bloch_rotating_spin}
+    \includegraphics[width=0.9\linewidth]{images/magnetic_field_spin.png} \caption[Rotating spin Bloch sphere illustrations]{Bloch sphere illustration of the single-spin system driven by the Hamiltonian of Eq.~\eqref{eq:rotating_spin_H} for different total driving times $\tau$. The red arrow indicates the ground state of the Hamiltonian at $t = \tau$ while the blue path is that taken by the spin during the evolution.}\label{fig:bloch_rotating_spin}
     \end{figure}
 
     \subsection{Proof of the adiabatic theorem}\label{sec:2.1.1_proof_adiabatic_theorem}
@@ -79,7 +79,10 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \begin{equation}\label{eq:geometric_phase}
         \gamma_m(\lambda) = i \int_0^{\lambda} \braket{m}{\partial_{\lambda'} m} d \lambda' 
     \end{equation}
-    is the geometric (or Berry) phase \cite{pancharatnam_generalized_1956, longuet-higgins_studies_1958, berry_quantal_1984}. It arises from the fact that if the Hamiltonian varies according to $\lambda$ in a closed loop way, \@~i.e. it returns to its starting point at the end of the evolution, the wavefunction might not. Think Foucault's pendulum, which changes its plane of swinging due to the Earth's rotation around its own axis and does not necessarily return to its initial state after a full rotation. Both the appearance of the geometric phase in Eq.~\eqref{eq:c_adiabatic} and the changing plane of Foucault's pendulum are consequences of the geometry or `curvature' of the parameter space in which the dynamics occur and are related to concepts like parallel transport. To illustrate, we can absorb the geometric phase into the adiabatic eigenstates via the transformation
+    is the geometric (or Berry) phase \cite{pancharatnam_generalized_1956, longuet-higgins_studies_1958, berry_quantal_1984}. It arises from the fact that if the Hamiltonian varies according to $\lambda$ in a closed loop way, \@~i.e. it returns to its starting point at the end of the evolution, the wavefunction might not (see \Cref{geometricphase} for more intuition). 
+    
+    \begin{mycolorbox}[geometricphase]{{The Geometric Phase}}
+        Think Foucault's pendulum, which changes its plane of swinging due to the Earth's rotation around its own axis and does not necessarily return to its initial state after a full rotation. Both the appearance of the geometric phase in Eq.~\eqref{eq:c_adiabatic} and the changing plane of Foucault's pendulum are consequences of the geometry or `curvature' of the parameter space in which the dynamics occur and are related to concepts like parallel transport. To illustrate, we can absorb the geometric phase into the adiabatic eigenstates via the transformation
     \begin{equation}\label{eq:parallel_transport_state}
         \ket{m'} = e^{i \gamma_m(\lambda)}\ket{m} = e^{- \int_0^{\lambda} \braket{m}{\partial_{\lambda'} m} d \lambda'}\ket{m},
     \end{equation}
@@ -88,7 +91,8 @@ The concept of quantum adiabaticity is the central starting point of the work pr
         \braket{m'}{\dlambda m'} = 0,
     \end{equation}
     which in other words just means that some change in the parameter $\lambda$ produces an eigenvector that is orthogonal to the unchanged eigenstate. This turns out to be the condition which defines parallel transport along a curve in a curved space \cite{nakahara_geometry_2003}, as analogous to the classical example of Foucault's pendulum. The choice of phases in Eq.~\eqref{eq:parallel_transport_state} is generally referred to as the parallel transport gauge.
-
+    \end{mycolorbox}
+    
     The constraint that the RHS of Eq.~\eqref{eq:coefficient_exact} be negligible is exactly the adiabatic condition, which can be seen by checking that $\abs{c_m(\lambda)}^2 = \abs{c_m(0)}^2$ in Eq.~\eqref{eq:c_adiabatic}. What this means is that a state starting in a particular eigenstate $\ket{m(\lambda)}$ will remain in that state under these circumstances, ~\@e.g. for $c_m(0) = 1$ and $c_{m \neq n}(0) = 0$:
     \begin{equation}\label{eq:adiabatic_states}
         \ket{\psi(\lambda)} = e^{i \dotlambda^{-1} \theta_m(\lambda)}e^{i \gamma_m(\lambda)} \ket{m(\lambda)}
@@ -208,7 +212,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \end{equation}
     where the last line is simply the statement that in the lab frame $\AGP{\lambda} = i\hbar \dlambda$.
 
-    \subsection{Matrix elements of the \acrref{AGP}}
+    \subsection{Matrix elements of the AGP}
 
     What I've shown you so far is that when we try to solve the Schr\"{o}dinger equation for a quantum system evolving under a time-dependent Hamiltonian in the basis of the moving frame, \@~i.e. in the basis where the time-dependent Hamiltonian is diagonalised, we find that the evolution happens under a `decorated' Hamiltonian composed of the diagonalised $\Tilde{H}$ and an additional operator generally known as the adiabatic gauge potential or \acrref{AGP}. We found that in the lab frame, it is the derivative operator with respect to the time-dependent parameters driving the Hamiltonian. What remains is to link this to our discussion of adiabaticity and the adiabatic condition of Section \ref{sec:2.1_adiabatic_theorem}.
 
@@ -241,7 +245,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     
     \section{Counterdiabatic Driving}\label{sec:2.3_CD}
 
-    Having done all this work to characterise and understand the \acrref{AGP} and the adiabatic theorem, we now come to a very important question which defines just about the entirety of this thesis: \emph{why do we care}? What is it about adiabatic dynamics and quantifying non-adiabatic transformations and understanding what generates them important? The answer is simple: adiabatic processes are useful. The ability to drive a time-dependent Hamiltonian while remaining in a particular eigenstate can be used to prepare interesting quantum states \cite{dimitrova_many-body_2022}, to solve combinatorics problems encoded in quantum systems \cite{ebadi_quantum_2022, pichler_quantum_2018} or even to synthesise effective ramps and quantum logic gates \cite{pelegri_high-fidelity_2022} among many other applications. 
+    Having done all this work to characterise and understand the \acrref{AGP} and the adiabatic theorem, we now come to a very important question which defines just about the entirety of this thesis: \emph{why do we care}? What is it about adiabatic dynamics and quantifying non-adiabatic transformations and understanding what generates them important? The answer is simple: adiabatic processes are useful. The ability to drive a time-dependent Hamiltonian while remaining in a particular eigenstate can be used to prepare interesting quantum states \cite{dimitrova_many-body_2023}, to solve combinatorics problems encoded in quantum systems \cite{ebadi_quantum_2022, pichler_quantum_2018} or even to synthesise effective ramps and quantum logic gates \cite{pelegri_high-fidelity_2022} among many other applications. 
     
     The most natural way of exploiting adiabatic protocols is by adhering to the adiabatic condition. However, as is often the case when it come to the control of quantum systems, things aren't quite that simple. In practice, changing a Hamiltonian slowly enough to satisfy Eq.~\eqref{eq:adiabatic_criterion} leads to the system being overwhelmed by decoherence in many cases. Furthermore, as system sizes get larger, the energy gaps between the instantaneous eigenstates tend to get smaller requiring slower and slower driving, making adiabatic protocols unscalable. While the adiabatic condition is not impossible to adhere to, in order to have any hope of pushing quantum technologies beyond their current limits, it is necessary to move beyond the adiabatic limit. The result is that we need to find ways to achieve the same results as adiabatic processes but without requiring the prohibitively long driving times that are demanded by Eq.~\eqref{eq:adiabatic_criterion}.
     
@@ -357,6 +361,11 @@ The concept of quantum adiabaticity is the central starting point of the work pr
         \approxAGP = \alpha(\lambda) \sy.
     \end{equation}
     In fact, as there are no other operators in this basis that could fit the description of being both a single-spin operator \emph{and} imaginary, we expect that this ansatz should, for the correct $\alpha$, be equal to the exact \acrref{CD}.
+
+    \begin{wrapfigure}{R}{0.4\textwidth}
+    \centering
+    \includegraphics[width=0.9\linewidth]{images/rotating_spin_CD.png} \caption[Rotating spin Bloch sphere illustration with counterdiabatic driving]{State of the rotating spin starting in state $\ket{+}$ driven without \acrref{CD} as in the Hamiltonian of Eq.~\eqref{eq:rotating_spin_H_lambda} (blue) and with \acrref{CD} as given by Eq.~\eqref{eq:rotating_spin_HCD} (red) for total driving time $\tau = 1$.}\label{fig:rotating_CD}
+    \end{wrapfigure}
     
     All that remains is to find $G_{\lambda}(\approxAGP)$ and to minimize the corresponding action $\mathcal{S}(\approxAGP)$ with respect to the driving coefficient $\alpha$. Once this process is complete (see Appendix \ref{app:rotating_spin_hamiltonian} for details), we find that
     \begin{equation}\label{eq:rotating_spin_alpha}
@@ -369,7 +378,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
             &= -\cos(\lambda)\sx - \sin(\lambda)\sz - \frac{\pi}{4 \tau} \sy,
         \end{aligned}
     \end{equation}
-    where we have used the fact that $\dotlambda = \pi/2\tau$. In Fig. \reminder{plot figure here} we can see that even at very fast driving times, the rotating spin does not stray from the plane of rotation when the \acrref{CD} is applied. 
+    where we have used the fact that $\dotlambda = \pi/2\tau$. In Fig.\ref{fig:rotating_CD}, we can see that even at very fast driving times, the rotating spin does not stray from the plane of rotation when the \acrref{CD} is applied. We can compare this to Fig.~\ref{fig:bloch_rotating_spin}, where similar dynamics without the application of a \acrref{CD} drive were only achieved at around $500$ times longer driving speeds.
     
     In this case, it turns out that the counterdiabatic term is constant as a result of the choice of basis and $H(\lambda)$. In general, however, this is not the case and the \acrref{CD} term depends on $\lambda$ through the coefficients of the lab frame Hamiltonian. Furthermore, while for this example only one operator was needed to describe the full \acrref{CD}, the number of such possible operators for a many-body system grows exponentially with system size, meaning that restricting to a highly-local and physically realisable basis makes for quite a sizeable reduction in the true number of possible operators in the full \acrref{AGP}.
     
@@ -407,8 +416,3 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     where $\omega_{mn} = (E_m - E_n)$. While this shows that the nested commutator approximation wouldn't work in regimes where the energy gap is exponentially small or exponentially big (\@i.e. where $\omega_{mn} \rightarrow 0$ or $\omega_{mn} \rightarrow \infty$), this turns out to not be an issue in practice. In the limit of very large energy gaps, the term $\mel{m}{\dlambda H}{n}$ decays exponentially meaning that the contribution from these elements to the \acrref{AGP} is negligible anyway. As the energy gaps close, the \acrref{AGP} elements become undefined and generally in speeding up adiabatic processes, one only cares about suppressing transitions across some energy gap $\Delta$. In that case, as long as $\omega_{mn} \geq \Delta$, the approximation does its job in the \acrref{CD} protocol.
 
     In \cite{claeys_floquet-engineering_2019}, it was shown that the approximate \acrref{CD} Hamiltonians constructed using $\AGP{\lambda}^{(\ell)}$ can be implemented using Floquet Hamiltonians \cite{goldman_periodically_2014} by shaking the $H$ and $\dlambda H$ terms at frequencies determined by the coefficients $\alpha_k$. However, for the purposes of this thesis, only the result presented in Eq.~\eqref{eq:nested_commutator_AGP} matters, as far as it allows one to identify operators in the \acrref{AGP} basis without requiring to make an ansatz blindly.
-    
-    \section{Final notes}
-
-    
-

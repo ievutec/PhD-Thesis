@@ -1,25 +1,27 @@
 \part{Counterdiabatic optimised local driving}
 
-\chapter{The \acrref{COLD} method}\label{chap:4_COLD}
+\chapter{The COLD method}\label{chap:4_COLD}
 
-Having now covered both \acrref{CD} and optimal control, we can proceed to the main result I want to explore in this thesis: that of 
+\epigraph{The rising sea refers to a particular approach to mathematical problem-solving, in which many small, apparently trivial steps are taken until the solution of a problem becomes itself trivial.}{Jules Hedges \cite{jules_hedges_rising_2018}}
 
-\section{The recipe}
+In my experience, one of the best ways to find a solution is to first focus on defining the problem you're trying to solve. In fact, the quote at the start of this chapter refers to the concept of the `rising sea' in mathematics, first coined in a longer and more poetic quote by Alexander Grothendieck \cite{mclarty_grothendieck_nodate}. The idea, roughly, is that a series of trivial steps and insights, each of which doesn't seem to be all that interesting or important, combine over time to reveal an emerging non-trivial result. To me, this is exemplified quite nicely by the \acrref{COLD} method, the conception of which follows from rather trivial observations about the \acrref{LCD} approach (discussed in detail in Sec.~\ref{sec:2.4.1_LCD}), its shortcomings, and the practical requirements surrounding the controllability of realistic quantum systems. 
+
+In short: the problem that \acrref{LCD} sets out to solve is the suppression of non-adiabatic losses and deformations in quantum systems that arise from fast changes in a time-dependent driving Hamiltonian. Slow (\@i.e.~ adiabatic) driving is a solution in theory, but in practice slow transformations lead to 
+
+\section{The method}
+
+The \acrref{COLD} approach 
+
+We begin, as does \acrref{LCD}, with the 
 
 \begin{equation}\label{eq:expandedH}
 H_{\rm COLD}(\lambda,\betabb) = H_0(\lambda) + {\boldsymbol \alpha}(\lambda,\betabb) \mathcal{O}_{\rm LCD} + \betabb(\lambda) \mathcal{O}_{\rm opt}.
 \end{equation}
 
-\section{Higher-order \acrref{CD} as a cost function}
+\section{The constraints}
 
-\begin{equation}\label{eq:AGP_integral_1}
-\mathcal{I}_1 = \int_0^\tau dt^\prime \Big[\bra{\psi_g(t^\prime)} \Gamma^2(t^\prime) \ket{\psi_g(t^\prime)}  - (\bra{\psi_g(t^\prime)} \Gamma(t^\prime) \ket{\psi_g(t^\prime)})^2\Big]^{1/2},
-\end{equation}
+\section{Optimal control toolbox}
 
-\begin{equation}\label{eq:Gamma_def}
-\Gamma(t) = \gamma(t) \left( \sy_1 \sx_2 + \sx_1 \sy_2 \right),
-\end{equation}
+\subsection{COLD-CRAB}
 
-\begin{equation}\label{eq:AGP_integral_2}
-\mathcal{I}_2 = \int_0^\tau dt^\prime |\gamma(t^\prime)|,
-\end{equation}
+\subsection{COLD-GRAPE}
