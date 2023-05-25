@@ -1,5 +1,5 @@
 \chapter{Quantum Optimal Control}\label{chap:3_Quantum_Optimal_control}
-
+\epigraph{``Neo, sooner or later you’re going to realize, just as I did, that there’s a difference between knowing the path and walking the path."}{Morpheus, \emph{The Matrix (1999)}}
 
 
 Natural and foremost questions for engineering quantum technological devices are ‘what can one do with them?’, in particular ‘which states can be prepared?’ or ‘which quantum gates can be implemented?’ Answering these questions connects engineering with the core of mathematical control theory.
@@ -65,14 +65,11 @@ Apart from identifying the basic anatomy of control problems in terms of $X$, $U
 \end{equation}
 which is then considered the necessary condition for optimality. The most basic of these optimality conditions is the Pontryagin maximum principle or \acrref{PMP} \cite{boltyanski_nonclassical_1999} (see \Cref{box:pontryagin}), which states that for an optimal control problem, the optimal control and state trajectories should maximize a specific function which combines the system dynamics, the control inputs, and the Lagrange multipliers which encode the constraints of the control problem.
 
-\subsection{Analytic optimisation}
+\subsection{Analytic optimisation}\label{sec:3.1.2_analytic_optimisation}
 
 While the first part of optimal control is the construction of the problem, the second part is the search for a solution. The methods used to do this can generally be classified either as analytic or numerical approaches. While both are widely used in optimal control theory, this thesis will largely only focus on the latter, so I will be brief in introducing the former. 
 
-Analytic optimal control techniques are those that leverage mathematical rigor and formalism to derive solutions or insights, as opposed to relying primarily on numerical simulations, heuristics, or experimentation. They provide a theoretical foundation for understanding the properties and solutions of optimal control problems and are closely related to the discussion in Sec.~\ref{sec:3.1.1_mathematical_structure}. They can allow for a complete geometric understanding of the control problem leading to, for example, knowledge of the structure of a solution or even some proof about a global optimum. For a given set of constraints they might even be used to derive time limits of state transformations, \@i.e.~ the concept of reachability that I discuss in a little more detail in \Cref{box:reachability} in the case of quantum systems. An example of analytic methods is the aforementioned \acrref{PMP}, which provides a means to solve optimal control problems by reducing them to a set of differential equations.
-
 \begin{mycolorbox}[box:pontryagin]{Pontryagin maximum principle}
-    For Mayer-type problems of Eq.~\eqref{eq:mayer_costfunc}, the \acrref{PMP} is defined as:
     \begin{theo}{{\acrref{PMP} for Mayer problems}}
         FFor fixed final time $\tau$ and free final state assume $u$ is the optimal control and $x$ the corresponding trajectory solution of Eq.~\eqref{eq:control_ODE}. Then, there exists a nonzero vector $\lambda$ solution of the adjoint equations
       \begin{equation}
@@ -103,20 +100,21 @@ Analytic optimal control techniques are those that leverage mathematical rigor a
             h(\lambda, x, u) &\geq h(\lambda, x, v),
         \end{aligned}
     \end{equation}
-    where the second equation is essentially maximising $h$ over $u \in U$ for each $\lambda$ and $x$. The solution will thus be of the form $u := u(x, \lambda)$ and it can be solved with the system of equations
+    The solution will be of the form $u := u(x, \lambda)$ and it can be solved with the system of equations
     \begin{equation}
         \begin{aligned}
             \dot{x} &= f(x, u(x, \lambda)), \\
             \dotlambda^T &= -\lambda^T f(x, u(x, \lambda))
         \end{aligned}
     \end{equation}
-    with the boundary conditions $x(0) = x_0$ and $\lambda^T(\tau) = -\phi(x(\tau))$. The kicker is that every control which is obtained with this procedure satisfies the necessary conditions of optimality and it is a candidate to be the optimal control.
-    
+    with the boundary conditions $x(0) = x_0$ and $\lambda^T(\tau) = -\phi(x(\tau))$. Every control which is obtained with this procedure satisfies the necessary conditions of optimality and it is a candidate to be the optimal control.
 \end{mycolorbox}
+
+Analytic optimal control techniques are those that leverage mathematical rigor and formalism to derive solutions or insights, as opposed to relying primarily on numerical simulations, heuristics, or experimentation. They provide a theoretical foundation for understanding the properties and solutions of optimal control problems and are closely related to the discussion in Sec.~\ref{sec:3.1.1_mathematical_structure}. They can allow for a complete geometric understanding of the control problem leading to, for example, knowledge of the structure of a solution or even some proof about a global optimum. For a given set of constraints they might even be used to derive time limits of state transformations, \@i.e.~ the concept of reachability. An example of analytic methods is the aforementioned \acrref{PMP}, which provides information about the optimal solution by via a set of differential equations. A different analytic control theory tool, the Hamilton-Jacobi-Bellman equation \cite{yong_dynamic_1999}, provides a way to find the optimal protocol via dynamic programming\cite{sniedovich_dynamic_2010}.
 
 The trouble with analytic approaches, despite the commonplace rigorous guarantees of optimality and the scope of information they provide about the system, trajectory and structure of the control problems and their solutions, is that they are very difficult to scale up and quite inflexible to complex problem constraints. As such, analytic approaches are generally reserved for special cases, when problems have low dimensionality and simple structures where the cost function is generally linear in the arguments. Many real-world control systems require more complexity and flexibility than can be afforded by analytic methods.
 
-\subsection{Numerical optimisation} 
+\subsection{Numerical optimisation}\label{sec:3.1.3_numerical_optimisation}
 
 To overcome the drawbacks of analytic approaches, many optimal control problems are instead solved using numerical optimisation methods. These are generally algorithmic, iterative  techniques which explore the cost function landscape step-by-step in order to converge to a minimum value. Numerical methods generally do not offer the same analysis or guarantees of optimality that analytic methods do. Their iterative nature may lead to a dependence of the outcome on the initial conditions of the algorithm, such as an initial guess for an optimal solution from which the iterations proceed or the bounds on the search space. Despite these drawbacks, however, 
 
@@ -138,14 +136,19 @@ where $t$ denotes the current iteration of the algorithm, $\grad_{\ubb} C(\ubb)$
 Gradient-free methods, on the other hand, do not require gradient information, making them suitable for optimization problems where the cost function is, \@e.g.~ discontinuous, non-differentiable, or its gradient is difficult or expensive to compute. Examples of gradient-free methods include particle swarm optimization\cite{bonyadi_particle_2017}, the Nelder-Mead method, which I will explore in more detail in Sec.~\ref{sec:3.1.3.1_Nelder_Mead} as well as the Powell method of Sec.~\ref{sec:3.1.3.2_Powell}. These methods often rely on trial and error, random sampling, or mimicking natural phenomena like evolutionary mechanisms\cite{vikhar_evolutionary_2016} to explore the solution space. As in the case of gradient-based approaches, there is a veritable zoo of methods under this umbrella. As the rest of this thesis we will deal almost exclusively with gradient-free methods, I will provide examples of how these techniques look in the next couple of sections.
 
 \begin{mycolorbox}[box:openclosedloop]{{Open-loop vs. closed-loop optimisation}}
-    When dealing with real-world control systems, 
+    In optimal control, there is a distinction between \emph{open-loop} and \emph{closed-loop} optimisation.
+    \begin{itemize}
+        \item \emph{Open-loop} approaches calculate the control sequence ahead of time and apply it to the system irrespective of the system's actual behavior during the protocol. 
+        \item \emph{Closed-loop} methods actively adjust the control strategy based on the current and past states of the system.
+    \end{itemize}
+    The closed loop approach is more resilient to uncertainties and disturbances but requires real-time computation or pre-computed feedback laws.
 \end{mycolorbox}
 
 Apart from the gradient-information, another key way to classify optimisation algorithms is either as \emph{local} or \emph{global}. Local optimization methods are designed to find a local minimum, which is a solution that is better than all other feasible solutions in its vicinity in the landscape of the cost function. They are typically efficient at converging to the local minimum, but they provide no guarantee of finding the global minimum if the cost function is non-convex \@i.e. the local minimum is not automatically also the global minimum. Both Nelder-Mead and Powell are local methods.
 
 Global optimization methods, on the other hand, aim to find a global optimum, which is the best solution among all feasible solutions, not just those in a local neighborhood. These methods typically employ a strategy to explore the entire solution space, either deterministically or stochastically, to avoid getting trapped in a local optimum. As a result of this larger scope, global optimization methods are generally more computationally intensive than local methods. An example of global optimisation that I will explore in more detail in Sec.~\ref{sec:3.1.3.3_dual_annealing} is Dual-Annealing, which combines generalized simulated annealing\cite{tsallis_generalized_1996}, a global search algorithm, with local optimisers in order to find an optimal solution. Global methods are often used when the optimization problem is complex, non-convex, or the global solution is significantly better than any local solution.
 
-There are many
+In the following sections I give examples of some common numerical optimisation methods that were used to obtain the results presented in this thesis.
 
 \subsubsection{Nelder-Mead}\label{sec:3.1.3.1_Nelder_Mead}
 
@@ -174,7 +177,7 @@ for some positive semidefinite matrix $A$, $\boldsymbol{b} \in \R^n$ and $c \in 
 \begin{equation}
     \beta_i = \frac{\ubb_i^T\boldsymbol{b}}{\ubb_i^T A \ubb_i}.
 \end{equation}
-This minimum can be calculated efficiently just through evaluating the function, without needing explicit access to $A$, $\boldsymbol{b}$ or $c$. This property allowed Powell to develop a simple but powerful gradient-free approach, which can be summarised as:
+This minimum can be calculated efficiently just through evaluating the function, without needing explicit access to $A$, $\boldsymbol{b}$ or $c$. This property allowed Powell to develop a simple but powerful gradient-free approach, which can be summarised in the following bit of pseudocode.
 \begin{algorithm}
 \caption{Powell's Method}
 \begin{algorithmic}[1]
@@ -193,59 +196,37 @@ This minimum can be calculated efficiently just through evaluating the function,
 \EndProcedure
 \end{algorithmic}
 \end{algorithm}
-In other words,the algorithm is initialised with a guess and a set of conjugate directions. It then proceeds to find a minimum along each of the given directions, estimates the best potential direction to proceed in 
 
-Disadvantages:
-
-\begin{itemize}
-    \item Computationally expensive: Powell's method can be more computationally expensive than gradient-based methods, especially for high-dimensional problems, as it requires multiple function evaluations for each line search.
-    \item Convergence: The convergence rate of Powell's method is generally slower than that of gradient-based methods, particularly for well-conditioned problems.
-    \item Sensitivity to initial conditions: The performance of Powell's method can be highly sensitive to the choice of initial starting point and the initial set of conjugate directions.
-\end{itemize}
-
-\subsubsection{Dual-annealing}\label{sec:3.1.3.3_dual_annealing}
-
-Dual Annealing is a stochastic global optimization algorithm, effectively an implementation of the generalized simulated annealing algorithm \cite{tsallis_generalized_1996} along with 
-
-It is an implementation of the generalized simulated annealing algorithm, an extension of simulated annealing. In addition, it is paired with a local search algorithm that is automatically performed at the end of the simulated annealing procedure.
-
+In other words,the algorithm is initialised with a guess for a solution and a set of conjugate directions. It then proceeds to find a minimum along each direction and shifts to a new point along a superposition of their minima, adding the vector along in which it shifted to the list of conjugate direction vectors and removing the first vector in the list before starting the next step.
 
 \begin{figure}[t]
 \centering
 \includegraphics[width=\linewidth]{images/optimiser_plots.png} \caption[Visualising optimisers in action]{An illustration of the optmisation strategy of several numerical optimisation methods. (a) Local optimisers: steps of the Nelder-Mead method and Powell's method when instantiated in two different locations of the loss function landscape. The global mimimum is illustrated by a green cross. (b) The local minima (crosses) visited by the Dual-Annealing in the order indicated by the numbered labels. The color of the crosses reflects the value of the cost function evaluated at that point as indicated by the colorbar.}\label{fig:optimisers}
 \end{figure}
 
-Differences from other popular optimizers:
+The Powell method is far more complex than is presented here, in particular due to the fact that several extra steps are usually added in order to guarantee convergence and and additional features to help optimise it. Additionally, the minimisation procedure of steps 4 and 11 in the pseudocode is highly non-trivial and can be achieved via several different algorithms like Brent's method\cite{brent_algorithms_2002}. It has guarantees of being very efficient in convex optimisation problems and excels in high-dimensional spaces, unlike Nelder-Mead. A plot of the search steps of the two methods in Fig.~\ref{fig:optimisers}(a) shows how they compare in terms of number of steps taken and accuracy in finding the optimum of some non-convex loss function. Importantly, given the more complicated nature of the steps in Powell's method, the fact that it requires less steps to converge to a solution does not necessarily make it more efficient.
 
-Global optimization: Unlike local optimization methods such as gradient descent, Newton's method, and conjugate gradient method, dual-annealing aims to find the global minimum of a function. This makes it more effective for non-convex optimization problems with multiple local minima.
+\subsubsection{Dual-annealing}\label{sec:3.1.3.3_dual_annealing}
 
-Stochastic algorithm: Dual-annealing is a stochastic algorithm, meaning it incorporates random elements to explore the search space. This is in contrast to deterministic algorithms like gradient descent, which follow a fixed set of rules to update the search point.
+Unlike both Nelder-Mead and Powell's method, dual-annealing is a \emph{global} optimization algorithm, meaning that its primary goal is to find a global minimum of the function. It is also a stochastic method, since rather than follow a pre-defined set of rules or procedures, it employs probabilistic transitions or decisions during the search. This added randomness can help the algorithm escape local optima and explore the solution space more broadly, however it also adds to the computational complexity of such approaches. As mentioned earlier, global optimisation algorithms tend to be far less efficient than local ones, but this is the price that needs to be paid when solutions obtained in local minima are simply not enough and the cost function landscape is highly non-convex. 
 
-Metaheuristic: Dual-annealing is a metaheuristic algorithm, inspired by the physical process of annealing in metallurgy. It combines simulated annealing and quantum annealing, both of which are also metaheuristics.
+What is particularly interesting about dual-annealing is that it combines Generalized Simulated Annealing (\acrref{GSA}) \cite{tsallis_generalized_1996}, a global search algorithm, with a choice of \emph{local} optimiser that refines the solution once the global search is done. This is important because global algorithms, including \acrref{GSA}, are often good at locating the vicinity of the global minimum (the basin) but not necessarily the minimum itself. 
 
-Advantages:
+The \acrref{GSA} part of dual-annealing function is, unsurprisingly, a generalisation of the simulated annealing algorithm \cite{kirkpatrick_optimization_1983} inspired by the annealing process of metallurgy which causes a molten metal to reach its crystalline state which is the global minimum in terms of thermodynamic energy. In simulated annealing, the cost function is treated as the energy function of a molten metal and one or more artificial temperatures are introduced and gradually cooled. In \acrref{GSA}, this presents itself as a series of probabilistic jumps across the cost function landscape that depend on an artificial temperature parameter which decreases as the search progresses. 
 
-\begin{itemize}
-    \item Global optimization: Dual-annealing is designed to find the global minimum of a function, making it suitable for optimization problems with multiple local minima.
-    \item Robustness: Due to its stochastic nature, dual-annealing is less likely to get stuck in local minima compared to deterministic local optimization algorithms like gradient descent.
-    \item Exploration and exploitation balance: Dual-annealing effectively balances exploration (searching for new promising regions) and exploitation (refining the current best solution) by adjusting its temperature parameters during the optimization process.
-\end{itemize}
+More concretely, at each step of the search, the algorithm generates a trial jump in the cost function space from the current temporary solution to a new point by sampling it from a modified Cauchy-Lorentz distribution. The distribution peaks around the current temporary solution and its scale parameter (a variable that controls its spread) is a function of the artificial temperature $T_{q_v}$. Thus, the higher the temperature, the more likely it is that the trial jump will be larger. The $q_v$ parameter can be set to different values in order to speed up or slow down the cooling process.
 
-Disadvantages:
+Once the trial jump has been generated, it is either accepted or rejected based on the cost function value at the new point as compared to the current point. If the new point is better (\@i.e.~ the jump is `downhill', towards a lower energy), then the jump is accepted. If, on the other hand, the jump is worse or `uphill', it might still be accepted with some probability based on a parameterised Metropolis algorithm \cite{chib_understanding_1995}. This allows for the algorithm to potentially escape local minima. If a jump is accepted, the search then continues in a similar manner from the new point and the temperature parameter is decreased, reducing the probability of the next generated jump being far away from the current point.
 
-\begin{itemize}
-    \item Computationally expensive: Dual-annealing can be computationally expensive, particularly for high-dimensional problems, as it requires a large number of function evaluations to explore the search space effectively.
-    \item Convergence: The convergence rate of dual-annealing can be slower than gradient-based methods for well-conditioned optimization problems.
-    \item Tuning parameters: The performance of dual-annealing can be highly sensitive to the choice of tuning parameters, such as the initial temperature and cooling schedule. It may require trial and error to find the best parameter settings for a particular problem.
-\end{itemize}
+The dual-annealing algorithm proceeds by first using \acrref{GSA} to identify a `basin' in the cost function landscape and then using the best solution so far as an initial guess for a local optimisation algorithm like Nelder-Mead or Powell's method to refine the solution. The local search is generally called when the artificial temperature decreases below some pre-defined value and once the local search is done, the whole process restarts again while keeping track of the current best solution. The entire algorithm terminates when some convergence criterion is satisfied. Usually this is when some number of search iterations or cost function evaluations is reached, or there is no more improvement to the solution below some tolerance. This process is illustrated in Fig.~\ref{fig:optimisers}(b), where the dual-annealing algorithm returns points 1, 2 and 4 as minima detected during the annealing stages with 3 and 5 corresponding to minima detected during the local searches. 
 
-In summary, dual-annealing is a global optimization algorithm that is well-suited for non-convex optimization problems with multiple local minima. It offers robustness and an effective balance between exploration and exploitation. However, it can be computationally expensive, have a slower convergence rate, and be sensitive to tuning parameters compared to other popular optimization techniques.
+The verdict regarding dual-annealing, with respect to the local optimisers that we addressed previously, is that it is far more powerful and can lead to far better solutions, given that it has a far better ability to explore the cost function landscape. However, it is also more computationally expensive, as can be made obvious by the fact that local search is merely a subroutine of the algorithm. Ultimately, the choice of which approach comes down to having knowledge about the cost function landscape as well as trial-and-error. The use of a global optimiser may be overkill when the cost function landscape lends itself well to local methods and each evaluation of the cost function is expensive. If, however, local optimal solutions are not enough, then global methods are by far the best option.
 
 \section{Quantum optimal control}\label{sec:3.2_Quantum_optimal_control}
 
-\reminder{Quantum optimal control theory (QOCT) refers to a set of methods to devise and implement shapes of external electromagnetic fields that manipulate quantum dynamical processes at the atomic or molecular scale in the best way possible}
+We've now established that the broad goal of optimal control theory is the design of protocols and strategies which optimise the behaviour of some abstract control system with respect to some abstract target. Quantum optimal control theory (\acrref{QOCT}), rather predictably, does this in the setting where the abstract system is quantum. Very broadly then, \acrref{QOCT} concerns itself with the design and analysis of electromagnetic fields that manipulate quantum dynamical processes at the atomic or molecular scale in the best way possible, as illustrated in Fig.~\ref{fig:quantum_optimal_control}. In this thesis we will primarily focus on closed systems, where the generator of transformations is primarily modelled as the Hamiltonian, but a similar analysis holds in the case of open systems which are just as interesting, if not quite as relevant to my work.
 
-In the quantum setting, the set of state functions $X$ often takes the form of a set of quantum states, be they complex vectors, density matrices or operators. The set of control functions $U$ is represented by a set of functions of parameterised Hamiltonians. It is common to decompose a control Hamiltonian into two components: the time-dependent `drive' part and the time-independent `drift' part. The time-dependent part can then be further decomposed into a set of $N_k$ operators $\{\mathcal{O}_{\rm opt}^{(k)}\}_{k=1,...,N_k}$, such that the full control Hamiltonian reads:
+Returning to the material covered in Sec.~\ref{sec:3.1.1_mathematical_structure}, we can now add more structure to the abstract notions of system, control function and cost function. In the quantum setting, the set of state functions $X$ often takes the form of a set of quantum states, be they complex vectors, density matrices or operators. The set of control functions $U$ is usually represented by a set of functions of parameterised Hamiltonians. It is common to decompose a control Hamiltonian into two components: the time-dependent `drive' part and the time-independent `drift' part. The time-dependent part can then be further decomposed into a set of $N_k$ operators $\{\mathcal{O}_{\rm opt}^{(k)}\}_{k=1,...,N_k}$, such that the full control Hamiltonian reads:
 \begin{equation}
     H(\ubb(t)) = H_0 + \sum_{k = 1}^{N_k} u_k(t) \mathcal{O}_{\rm opt}^{(k)},
 \end{equation}
@@ -253,14 +234,18 @@ where $H_0$ is the drift Hamiltonian with no external controls and the control f
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.8\linewidth]{images/optimal_control_placeholder.png} \caption[Schematic diagram of quantum optimal control]{An illustration of a general quantum optimal control problem set up. }\label{fig:quantum_optimal_control}
+\includegraphics[width=0.8\linewidth]{images/optimal_control_placeholder.png} \caption[Schematic diagram of open-loop quantum optimal control]{A sketch of a quantum optimal control open-loop set-up. A quantum system is directly controlled by a set of electromagnetic pulses which are shaped according to a set of control functions $\ubb(t)$ that are optimised based on feedback from the information obtained through measurements of the system.}\label{fig:quantum_optimal_control}
 \end{figure}
 
 Given this, we can describe a general quantum optimal control problem in analogy to Eq.~\eqref{eq:control_ODE} as one where the aim is to solve the Schr\"{o}dinger equation:
 \begin{equation}
     i \hbar \partial_t \ket{\psi(t)} = H(\ubb(t))\ket{\psi(t)}
 \end{equation}
-with the constraint of starting in a state from a set of initial states $\ket{\psi_0} \in \boldsymbol \Psi_0$ and while minimising some cost function that targets a set of final states $\ket{\psi_T} \in \boldsymbol \Psi_T$.
+with the constraint of starting in a state from a set of initial states $\ket{\psi_0} \in \boldsymbol \Psi_0$ and while minimising some cost function that targets a set of final states $\ket{\psi_T} \in \boldsymbol \Psi_T$. I should note that while I am using wavefunctions as representations for the states of the control system, it is actually quite common in \acrref{QOCT} to instead work in the operator picture, where the Schr\"{o}dinger equation is
+\begin{equation}\label{eq:operator_schroedinger_eq}
+    \partial_t \mathcal{O}(t) = -i H(\ubb(t))\mathcal{O}(t),
+\end{equation}
+where $\mathcal{O}$ is an operator on some pre-defined Hilbert space. A useful constraint in this setting is to take the initial state of the operator to be the identity $\mathcal{O}(0) = \mathds{1}$. The choice of wave mechanics or matrix mechanics depends on the specific \acrref{QOCT} problem at hand, although questions of \@e.g.~ controllability are usually best-solved with operators rather than state vectors. For example, if we can show that the set of possible matrices that can be obtained for system \eqref{eq:operator_schroedinger_eq} is the set of all the unitary matrices (with the rank of the system Hilbert space), then the system can theoretically be steered to any arbitrary state and thus it is controllable.
 
 The choice of cost function in the quantum setting is generally informed by the desired properties of the target state(s) combined with considerations for what information can be extracted from the system and other constraints. For example, when the aim of the optimisation is to prepare a single, well-defined quantum state $\ket{\psi_T}$ with high accuracy, then the most informative cost function is:
 \begin{equation}\label{eq:costfunc_fidelity}
@@ -278,61 +263,48 @@ where $S[\cdot]$ is some appropriate measure of entanglement. \reminder{add cita
 \begin{equation}\label{eq:costfunc_constraint}
     C(\tau, \ubb) = C_F(\tau, \ubb) + \sum_{k = 1}^{N_k} \int_0^{\tau} \abs{u_k(t)}^2 dt,
 \end{equation}
-which can be read as an optimisation for final state fidelity with the added constraint that the fluences of the driving fields are minimised. 
+which can be read as an optimisation for final state fidelity with the added constraint that the time-integrated flux of the driving fields is minimised. 
 
-\begin{mycolorbox}[box:reachability]{Reachability of state in the quantum setting}
-    
-\end{mycolorbox}
 
-\reminder{Links to STA?}
+\section{Quantum optimal control methods}
 
-\section{Methods}
+\reminder{review this whole intro, not very good :/}
+The \acrref{QOCT} field is vast and has been around for many years, leading to a number of different optimal control techniques and methods specific to the quantum setting. Some of these are purely analytic, relating to ideas  explored in Sec.~\ref{sec:3.1.2_analytic_optimisation} and in particular the \acrref{PMP} (see \Cref{box:pontryagin}) and some rely on constructing algorithms that implement numerical optimisation as a subroutine, as discussed in Sec.~\ref{sec:3.1.3_numerical_optimisation}. Even with the domain restriction of `quantum systems only', there are many degrees of freedom to play around with, whether it be the distinction between open and closed systems \reminder{citations needed?} or open- vs closed-loop optimisation (\Cref{box:openclosedloop}), the latter of which is highly dependent on the sort of feedback that can be obtained mid-protocol through measurement of the system.
 
-Blah blah blah when it comes to quantum systems...
+In this section I will cover two of the more broadly applied numerics-oriented approaches, \acrref{CRAB} and \acrref{GRAPE}. In both approaches, the crux is to define a flexible and effective mathematical structure of the control pulse which depends on a set of parameters that can then be optimised using methods from numerical optimisation algorithms. While both are popular in the in the \acrref{QOCT} community, they each offer advantages and drawbacks that can be weighed against each other in practical scenarios. 
 
 \subsection{Chopped random-basis quantum optimization (CRAB)}\label{sec:3.3.1_CRAB}
 
-The ``Chopped random-basis quantum optimization" or \acrref{CRAB} method is a quantum optimal control method first introduced in \cite{doria_optimal_2011, caneva_chopped_2011} which revolves around the construction of a truncated randomized basis of functions for the control fields of a quantum system. It was devised as a means to overcome some of the complications and restrictions present in its contemporary approaches, which tended to be neither 
+The ``Chopped random-basis quantum optimization" or \acrref{CRAB} method is a quantum optimal control method first introduced in \cite{doria_optimal_2011, caneva_chopped_2011} which revolves around the construction of a truncated randomized basis of functions for the control fields of a quantum system. It was originally developed for quantum many-body systems whose time evolution can be efficiently simulated by time-dependent density matrix renormalization group (tDMRG)\cite{white_density_1992, schollwock_density-matrix_2005, schollwock_density-matrix_2011}. It was believed that such systems were mostly intractable for control optimization using gradient-based algorithms \cite{brif_control_2010}, although such potential limitations have been overcome in more recent work\cite{jensen_approximate_2021}. \acrref{CRAB} provides a way to reduce the space of search parameters, making the optimisation process more efficient, while retaining access to a large solution space through the added randomisation component.
 
-The key idea is to expand the control pulse $u(t)$ in some truncated basis of dimension $N_k$: 
-\begin{equation}
+The key idea is to expand the control pulse $\ubb(t)$ in some truncated basis of dimension $N_k$: 
+\begin{equation}\label{eq:basic_CRAB}
     u(t) = \sum_{i = 1}^{N_k} c_i u_i(t),
 \end{equation}
-where the optimisation is then performed only on the coefficients $c_i$. 
+where the cost function landscape is spanned by the coefficients $c_i$, that need to be optimised over using numerical optimisation methods like those described in Sec.~\ref{sec:3.1.3_numerical_optimisation}. Generally this basis is made up of trigonometric functions although it could be any basis that spans the space of admissible controls \@e.g.~ generalized Chebyshev polynomials. A choice of basis can further be enhanced or modified by a shape function $g(t)$ that fixes the pulse to some initial and/or final value:
+\begin{equation}\label{eq:trigonometric_CRAB}
+    u(g(t),t) = \sum_{i = 1}^{N_k/2} c_i \frac{\cos{\omega_i t}}{g(t)} + \sum_{i = N_k/2 + 1}^{N_k} c_i \frac{\sin{\omega_i} t}{g(t)}.
+\end{equation}
 
-The method in short:
-\begin{enumerate}
-    \item Initialization: Start by choosing an initial guess for the control fields, typically set to a constant value or initialized randomly.
-    \item Random basis generation: Generate a random basis for each control field by selecting a set of random orthogonal vectors. The paper recommends using a Fourier basis and randomizing it through a linear transformation.
-    \item Chopping: Divide the time interval of the control fields into several shorter subintervals (or chops). In each subinterval, the control fields are represented by a linear combination of the randomized basis functions.
-    \item Optimization: Use a standard optimization algorithm to minimize the cost function. The cost function quantifies the deviation from the desired evolution of the quantum system. The optimization is performed with respect to the coefficients of the linear combinations, which represent the control fields in each subinterval.
-    \item Iterative process: Iterate steps 2-4 until a satisfactory level of optimization is achieved.
-\end{enumerate}
+Importantly, the key to expanding the solution space in order to find better pulses using the \acrref{CRAB} approach lies in the randomisation of the frequencies $\omega_i$. During each optimisation process, the $\omega_i$ are chosen randomly around the principal harmonics within some interval $[0, \omega_{\rm max}]$, allowing the pulse shapes to be more diverse and more complex than by simply keeping them fixed at a certain value. The optimisation process can then be parallelised, with several optimisation instances running simultaneously exploring several different sets of random frequencies and the optimal solution can be picked from the final outcomes of all optimisations. 
 
-Advantages:
+The \acrref{CRAB} approach lends itself very easily to the incorporation of additional features and constraints like the shape function. For example, it is quite easy to start with a trial pulse, say $f(t)$, which cannot be expanded efficiently or exactly in the chosen basis and to dress it according to
+\begin{equation}\label{eq:trial_pulse_CRAB}
+    u(t) = f(t)\Bigg(1 + \sum_{i = 1}^{N_k} c_i u_i(t)\Bigg).
+\end{equation}
+Another particularly useful alteration to the basic \acrref{CRAB} procedure is what is known as `dressed' \acrref{CRAB} or dCRAB \cite{rach_dressing_2015}, which in a similar vein aims to iteratively re-dress solutions obtained from previous optimisations with new sets of basis functions added onto the existing solution. These \emph{super-iterations} $j$ can be modelled as
+\begin{equation}\label{eq:dCRAB}
+    u^j(t) = c_0^j u^{j-1}(t) + \sum_{i = 1}^{N_k} c_i^j u^j_i(t)
+\end{equation}
+where $u^j_i(t)$ are new basis functions and $u^{j-1}(t)$ is the pulse obtained from a previous, $(j-1)^{\rm st}$ optimisation. The coefficient $c_0^j$ can be seen as shifting the solution in the direction of the previous solution pulse while $\{ c_i^j\}_{i = 1, ..., N_k}$ move it in new search directions $u^j_i(t)$. This is, in fact, very similar to Powell's optimisation method which I covered in Sec.~\ref{sec:3.1.3.2_Powell}, wherein a finite set of search directions in cost function space is continuously updated with linear combinations of their optima. dCRAB can be seen as doing the same but with updates sampled from an infinite-dimensional search space. This iterative approach is useful in  avoiding local minima and in exploring a far larger search space, avoiding the hard constraint of a finite set of basis functions for each optimisation. 
 
-\begin{itemize}
-    \item Enhanced exploration: The randomization of the control field basis allows for a more comprehensive exploration of the control landscape, which can lead to the discovery of better solutions.
-    \item Improved convergence: The piecewise constant control fields enable the method to exploit local minima effectively, leading to faster convergence compared to other methods.
-    \item Flexibility: The CRAB method can be applied to a wide range of quantum control problems, including those with constraints on the control fields or system parameters.
-\end{itemize}
-
-Disadvantages:
-
-\begin{itemize}
-    \item Additional complexity: The introduction of randomization and chopping adds complexity to the optimization process compared to traditional methods.
-    \item Dependency on the optimizer: The efficiency and success of CRAB heavily depend on the choice of the optimization algorithm used in step 4.
-    \item Convergence criteria: Determining an appropriate convergence criterion for terminating the iterative process can be challenging, as it may vary depending on the problem at hand.
-\end{itemize}
-
-Add in citations \cite{caneva_chopped_2011, muller_one_2022}
+There are several key advantages in the \acrref{CRAB} approach that have led to its widespread use in the \acrref{QOCT} community. For one, the randomization of the control field basis allows for a more comprehensive exploration of the control landscape, which can lead to the discovery of better solutions. It also offers relatively quick convergence as the number of optimisable parameters is usually small when compared to other approaches (such as \acrref{GRAPE}, which we will explore in the next section). Finally, it is very flexible: the basis functions can be altered and constraints can be incorporated quite easily, whether they concern the physical implementation (\@e.g.~ the shaping function) or some efficiency concerns (à la dCRAB).
 
 \subsection{Gradient Ascent Pulse Engineering (GRAPE)}\label{sec:3.3.2_GRAPE}
 
-The ``Gradient Ascent Pulse Engineering" (GRAPE) algorithm is a widely used method for optimizing quantum control pulses in quantum computing and quantum information processing. The main goal of GRAPE is to determine control pulses that steer the quantum system from an initial state to a desired target state while minimizing a cost function. The algorithm iteratively refines the control pulses using gradient ascent optimization.
+The ``Gradient Ascent Pulse Engineering" (GRAPE) algorithm is yet another widely used \acrref{QOCT} numerical method. It was first developed in order to design pulse sequences in NMR spectroscopy \cite{khaneja_optimal_2005} and has since been adopted in a number of 
 
-\reminder{can add some pseudocode across pages here}
-
+The key idea behind \acrref{GRAPE} is to replace continuous control functions, like \@e.g. those used in the basis functions of \acrref{CRAB}, with piecewise constant control amplitudes $u_i(t_k)$, each applied to the control system at time $t_k \in [0, \tau]$ for a time interval $\Delta t$, where $\tau$ is the total evolution time. You can view this as discretizing the time-evolution of the system into $N_m$ slices of time $\Delta t = t_{k + 1} - t_k$. These slices need not all be of equal size, but for simplicity let us work in the setting where they are, meaning that $\tau = N_m \Delta t$. Then the Hamiltonian 
 
 \begin{enumerate}
     \item Initialization: Begin with an initial guess for the control pulses, which can be set to a constant value or initialized randomly.
