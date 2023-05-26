@@ -227,7 +227,7 @@ The verdict regarding dual-annealing, with respect to the local optimisers that 
 We've now established that the broad goal of optimal control theory is the design of protocols and strategies which optimise the behaviour of some abstract control system with respect to some abstract target. Quantum optimal control theory (\acrref{QOCT}), rather predictably, does this in the setting where the abstract system is quantum. Very broadly then, \acrref{QOCT} concerns itself with the design and analysis of electromagnetic fields that manipulate quantum dynamical processes at the atomic or molecular scale in the best way possible, as illustrated in Fig.~\ref{fig:quantum_optimal_control}. In this thesis we will primarily focus on closed systems, where the generator of transformations is primarily modelled as the Hamiltonian, but a similar analysis holds in the case of open systems which are just as interesting, if not quite as relevant to my work.
 
 Returning to the material covered in Sec.~\ref{sec:3.1.1_mathematical_structure}, we can now add more structure to the abstract notions of system, control function and cost function. In the quantum setting, the set of state functions $X$ often takes the form of a set of quantum states, be they complex vectors, density matrices or operators. The set of control functions $U$ is usually represented by a set of functions of parameterised Hamiltonians. It is common to decompose a control Hamiltonian into two components: the time-dependent `drive' part and the time-independent `drift' part. The time-dependent part can then be further decomposed into a set of $N_k$ operators $\{\mathcal{O}_{\rm opt}^{(k)}\}_{k=1,...,N_k}$, such that the full control Hamiltonian reads:
-\begin{equation}
+\begin{equation}\label{eq:optimal_control_H}
     H(\ubb(t)) = H_0 + \sum_{k = 1}^{N_k} u_k(t) \mathcal{O}_{\rm opt}^{(k)},
 \end{equation}
 where $H_0$ is the drift Hamiltonian with no external controls and the control functions $u_k(t) \in \ubb(t)$ drive the corresponding operators $\mathcal{O}_{\rm opt}^{(k)}$.
@@ -238,7 +238,7 @@ where $H_0$ is the drift Hamiltonian with no external controls and the control f
 \end{figure}
 
 Given this, we can describe a general quantum optimal control problem in analogy to Eq.~\eqref{eq:control_ODE} as one where the aim is to solve the Schr\"{o}dinger equation:
-\begin{equation}
+\begin{equation}\label{eq:optimal_control_schroedinger}
     i \hbar \partial_t \ket{\psi(t)} = H(\ubb(t))\ket{\psi(t)}
 \end{equation}
 with the constraint of starting in a state from a set of initial states $\ket{\psi_0} \in \boldsymbol \Psi_0$ and while minimising some cost function that targets a set of final states $\ket{\psi_T} \in \boldsymbol \Psi_T$. I should note that while I am using wavefunctions as representations for the states of the control system, it is actually quite common in \acrref{QOCT} to instead work in the operator picture, where the Schr\"{o}dinger equation is
@@ -302,18 +302,19 @@ There are several key advantages in the \acrref{CRAB} approach that have led to 
 
 \subsection{Gradient Ascent Pulse Engineering (GRAPE)}\label{sec:3.3.2_GRAPE}
 
-The ``Gradient Ascent Pulse Engineering" (GRAPE) algorithm is yet another widely used \acrref{QOCT} numerical method. It was first developed in order to design pulse sequences in NMR spectroscopy \cite{khaneja_optimal_2005} and has since been adopted in a number of 
+The ``Gradient Ascent Pulse Engineering" (GRAPE) algorithm is yet another widely used \acrref{QOCT} numerical method. It was first developed in order to design pulse sequences in NMR spectroscopy \cite{khaneja_optimal_2005} and has since been iterated upon and improved a number of times as well as being integrated into several optimal control packages \cite{de_fouquieres_second_2011, chen_iterative_2022, machnes_comparing_2011, johansson_qutip_2013}. As the name suggests, it is a gradient-based optimisation method and it is used primarily for the preparation of specific target states \@i.e. the cost function in is the state fidelity given by Eq.~\eqref{eq:costfunc_fidelity}.
 
-The key idea behind \acrref{GRAPE} is to replace continuous control functions, like \@e.g. those used in the basis functions of \acrref{CRAB}, with piecewise constant control amplitudes $u_i(t_k)$, each applied to the control system at time $t_k \in [0, \tau]$ for a time interval $\Delta t$, where $\tau$ is the total evolution time. You can view this as discretizing the time-evolution of the system into $N_m$ slices of time $\Delta t = t_{k + 1} - t_k$. These slices need not all be of equal size, but for simplicity let us work in the setting where they are, meaning that $\tau = N_m \Delta t$. Then the Hamiltonian 
+The key idea behind \acrref{GRAPE} is to replace continuous control functions, like \@e.g. those used in the basis functions of \acrref{CRAB}, with piecewise constant control amplitudes $u_j(t_k)$, each applied to the control system at time $t_k \in [0, \tau]$ for a time interval $\Delta t$, where $\tau$ is the total evolution time. You can view this as discretizing the time-evolution of the system into $N_m$ slices of time $\Delta t = t_{k + 1} - t_k$. These slices need not all be of equal size, but for simplicity let us work in the setting where they are, meaning that $\tau = N_m \Delta t$ \reminder{add a figure to illustrate? it's much easier to understand with a figure}. 
 
-\begin{enumerate}
-    \item Initialization: Begin with an initial guess for the control pulses, which can be set to a constant value or initialized randomly.
-    \item Propagation: Simulate the time evolution of the quantum system under the given control pulses to calculate the final state of the system.
-    \item Cost function evaluation: Compute the cost function, which quantifies the deviation between the target state and the final state obtained in step 2. Common choices for the cost function are the fidelity or the infidelity between the two states.
-    \item Gradient calculation: Compute the gradient of the cost function with respect to the control pulses. This is done by numerically evaluating the partial derivatives of the cost function with respect to each control pulse.
-    \item Pulse update: Update the control pulses by following the gradient direction. This is typically done using a step size parameter that controls the magnitude of the pulse updates.
-    \item Iterative process: Repeat steps 2-5 until the cost function reaches a satisfactory minimum value or a maximum number of iterations is reached.
-\end{enumerate}
+At this point we can pause and notice that since the control amplitudes $u_j$ are piecewise constant for all time intervals, they can be treated as a set of parameters that can be optimised using a numerical optimisation algorithm. Recalling the form of the quantum control Hamiltonian from Eq.~\eqref{eq:optimal_control_H}, the propagator for the time-evolution of the quantum system using \acrref{GRAPE} during a single time step $\Delta t$ at time $t_k$ is
+\begin{equation}
+    U_k = \exp{- i \Delta t \Big( H_0 + \sum_{j=1}^{N_j} u_j(t_k) \mathcal{O}_{\rm opt}^{(j)} \Big)}
+\end{equation}
+for some drift component of the Hamiltonian $H_0$ and some basis of control operators $\{\mathcal{O}_{\rm opt}^{(j)}\}_{j = 1,...,N_j}$. The full evolution of the system can thus be captured by the product of operators
+\begin{equation}
+    U(\tau) = U_{N_m} U_{N_m - 1} ... U_{2} U_{1}.
+\end{equation}
+
 
 Advantages:
 
@@ -330,5 +331,3 @@ Disadvantages:
     \item Convergence speed: The convergence rate of the GRAPE algorithm can be slow, especially if the initial guess for the control pulses is far from optimal.
     \item Dependency on the step size: The choice of the step size parameter can significantly affect the performance of the algorithm, with inadequate choices leading to slow convergence or oscillatory behavior.
 \end{itemize}
-
-Add in citations \cite{khaneja_optimal_2005}
