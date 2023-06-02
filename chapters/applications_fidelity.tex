@@ -80,6 +80,16 @@ GHZ states can be prepared via an annealing schedule on a system of frustrated s
 
 When $J$ is positive, the ground state of $H_0(1)$ is the GHZ state of Eq.~\ref{eq:GHZ_state}, whereas when it is negative 
 
-While measuring the entanglement of a multipartite system is not quite as simple as in the bipartite case, there exists a notion of entanglement for a system of three spins: namely, the three-tangle, first introduced in Ref.~\cite{coffman_distributed_2000}, which not only captures 
+While measuring the entanglement of a multipartite system is not quite as simple as in the bipartite case, there exists a notion of entanglement for a system of three spins: namely, the three-tangle, first introduced in Ref.~\cite{coffman_distributed_2000}, which
+
+\begin{equation}\label{eq:3-tangle}
+	\begin{aligned}
+		T_3(\ket{\psi}) &= 4 \left| d_1 - 2 d_2 + 4 d_3 \right|, \\
+		d1 &= c^2_{000}c^2_{111} + c^2_{001}c^2_{110} + c^2_{010}c^2_{101} + c^2_{011}c^2_{100}, \\
+		d_2 &= c_{000}c_{001}c_{110}c_{111} + c_{000}c_{010}c_{101}c_{111} + c_{000}c_{011}c_{100}c_{111} \\
+		 &+ c_{001}c_{010}c_{101}c_{110} + c_{001}c_{011}c_{100}c_{110} + c_{010}c_{011}c_{100}c_{101} \\
+		d_3 &= c_{000}c_{110}c_{101}c_{011} + c_{100}c_{010}c_{001}c_{111}
+	\end{aligned}
+\end{equation}
 
 Not the first time this is attempted with \acrref{CD}. \cite{sun_optimizing_2022}

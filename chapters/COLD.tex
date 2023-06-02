@@ -1,10 +1,10 @@
-\part{Counterdiabatic optimised local driving}
+\part{Optimising approximate counterdiabatic driving}
 
-\chapter{COLD}\label{chap:4_COLD}
+\chapter{Counterdiabatic optimised local driving}\label{chap:4_COLD}
 
 \epigraph{A good idea has a way of becoming simpler and solving problems other than that for which it was intended.}{Robert Tarjan}
 
-In Ch.~\ref{chap:2_adiabaticity} we established that adiabatic evolution of a quantum system requires very long timescales without which it experiences non-adiabatic excitations out of its instantaneous eigenstate(s). With the dual motivation of preserving adiabaticity, \@i.e.~ enforcing that the system stay in its instantaneous eigenstates, and speeding up its evolution
+In Ch.~\ref{chap:2_adiabaticity} we established that adiabatic evolution of a quantum system requires very long timescales, without which it experiences non-adiabatic excitations out of its instantaneous eigenstate(s). With the dual motivation of preserving adiabaticity, \@i.e.~ enforcing that the system stay in its instantaneous eigenstates, and decreasing the total evolution time in order to avoid decoherence, Sections \ref{sec:} and \ref{sec:}
 
 \iffalse
 In Ch.~\ref{chap:2_adiabaticity} I discussed the concept of quantum adiabaticity: roughly, the idea that a system evolving under a slowly changing time-dependent Hamiltonian will remain in its instantaneous eigenstate(s) throughout the evolution, given no degeneracies are present throughout the process. Such adiabatic protocols are incredibly useful for developing quantum technologies, finding applications in everything from state preparation \cite{dimitrova_many-body_2023} and quantum gate synthesis \cite{pelegri_high-fidelity_2022} to quantum thermodynamics\cite{campo_more_2014} and solving combinatorics problems via quantum annealing \cite{ebadi_quantum_2022}. However, the condition of `slow' evolution quantified by the bound given in Eq.~\eqref{eq:adiabatic_criterion}, is often difficult to satisfy as quantum systems are volatile and decohere quickly due to interactions with the environment and in settings like quantum computing, time-efficiency tends to be quite important. Unfortunately, as the driving speed of the Hamiltonian is increased, the probability of a system getting excited out of its instantaneous eigenstate increases along with it, leading to unwanted non-adiabatic losses which render the protocol ineffective. 
