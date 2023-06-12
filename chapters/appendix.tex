@@ -2,12 +2,55 @@
 
 \chapter{Rotating spin Hamiltonian}\label{app:rotating_spin_hamiltonian}
 
-In Chap.~\ref{chap:2_adiabaticity} I often use the simple example of a spin in a magnetic field, which starts in the $\ket{+}$ state and is rotated from the $x$ direction to the $z$ direction during some total time $\tau$ according to the Hamiltonian in Eq.~\eqref{eq:rotating_spin_H}, which I will reproduce here for convenience:
+In Chap.~\ref{chap:2_adiabaticity} we used the example of a spin rotating in a magnetic field to illustrate adiabatic processes in quantum systems. We considered a spin starting in the $\ket{+}$ state and being rotated from the $x$ direction to the $z$ direction during some total time $\tau$ according to the Hamiltonian in Eq.~\eqref{eq:rotating_spin_H}, which I will reproduce here for convenience:
 \begin{equation}\label{eq:rotating_spin_H_lambda}
     H(\lambda) = -\cos(\lambda)\sx - \sin(\lambda)\sz,
 \end{equation}
 with $\lambda(t) = \frac{\pi t}{2 \tau}$.
 
+\chapter{Pontryagin maximum principle}\label{app:PMP}
+
+\newtheorem{theorem}{Theorem}
+
+\begin{theorem}[\acrref{PMP} for Mayer problems]\label{thm:pmp}
+    For fixed final time $\tau$ and free final state assume $u$ is the optimal control and $x$ the corresponding trajectory solution of Eq.~\eqref{eq:control_ODE}. Then, there exists a nonzero vector $\lambda$ solution of the adjoint equations
+  \begin{equation}
+      \dotlambda^T = - \lambda^T f(x(t), u(t))
+  \end{equation}
+  with terminal condition
+  \begin{equation}
+      \lambda^T(\tau) = -\phi(x(\tau))
+  \end{equation}
+  such that, for almost every $t \in (0, \tau]$, we have
+  \begin{equation}\label{eq:pmp_maximisation}
+      \lambda^T(t) f(x(t), u(t)) \geq \lambda^T(t) f(x(t), v)
+  \end{equation}
+  for every $v$ in the set of the admissible values for the control $U$. Furthermore, for every $t \in [0, \tau]$
+  \begin{equation}\label{eq:pmp_constant}
+      \lambda^T(t) f(x(t), u(t)) = c,
+  \end{equation}
+  for a constant $c$
+\end{theorem}
+
+Using this, one can then define the \emph{optimal control Hamiltonian}:
+\begin{equation}
+    h(\lambda, x, u) := \lambda^T(t) f(x, u).
+\end{equation}
+Now we can recast Eqs.~\eqref{eq:pmp_maximisation} and \eqref{eq:pmp_constant}:
+\begin{equation}
+    \begin{aligned}
+        h(\lambda(t), x(t), u(t)) &= c \\
+        h(\lambda, x, u) &\geq h(\lambda, x, v),
+    \end{aligned}
+\end{equation}
+The solution will be of the form $u := u(x, \lambda)$ and it can be solved with the system of equations
+\begin{equation}
+    \begin{aligned}
+        \dot{x} &= f(x, u(x, \lambda)), \\
+        \dotlambda^T &= -\lambda^T f(x, u(x, \lambda))
+    \end{aligned}
+\end{equation}
+with the boundary conditions $x(0) = x_0$ and $\lambda^T(\tau) = -\phi(x(\tau))$. Every control which is obtained with this procedure satisfies the necessary conditions of optimality and it is a candidate to be the optimal control.
 
 \chapter{Derivation of the CD coefficients for an arbitrary Ising graph}\label{app:arbitrary_ising_derivation}
 

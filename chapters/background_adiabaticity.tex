@@ -79,10 +79,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \begin{equation}\label{eq:geometric_phase}
         \gamma_m(\lambda) = i \int_0^{\lambda} \braket{m}{\partial_{\lambda'} m} d \lambda' 
     \end{equation}
-    is the geometric (or Berry) phase \cite{pancharatnam_generalized_1956, longuet-higgins_studies_1958, berry_quantal_1984}. It arises from the fact that if the Hamiltonian varies according to $\lambda$ in a closed loop way, \@~i.e. it returns to its starting point at the end of the evolution, the wavefunction might not (see \Cref{geometricphase} for more intuition). 
-    
-    \begin{mycolorbox}[geometricphase]{{The Geometric Phase}}
-        Think Foucault's pendulum, which changes its plane of swinging due to the Earth's rotation around its own axis and does not necessarily return to its initial state after a full rotation. Both the appearance of the geometric phase in Eq.~\eqref{eq:c_adiabatic} and the changing plane of Foucault's pendulum are consequences of the geometry or `curvature' of the parameter space in which the dynamics occur and are related to concepts like parallel transport. To illustrate, we can absorb the geometric phase into the adiabatic eigenstates via the transformation
+    is the geometric (or Berry) phase \cite{pancharatnam_generalized_1956, longuet-higgins_studies_1958, berry_quantal_1984}. It arises from the fact that if the Hamiltonian varies according to $\lambda$ in a closed loop way, \@~i.e. it returns to its starting point at the end of the evolution, the wavefunction might not. Think Foucault's pendulum, which changes its plane of swinging due to the Earth's rotation around its own axis and does not necessarily return to its initial state after a full rotation. Both the appearance of the geometric phase in Eq.~\eqref{eq:c_adiabatic} and the changing plane of Foucault's pendulum are consequences of the geometry or `curvature' of the parameter space in which the dynamics occur and are related to concepts like parallel transport. To illustrate, we can absorb the geometric phase into the adiabatic eigenstates via the transformation
     \begin{equation}\label{eq:parallel_transport_state}
         \ket{m'} = e^{i \gamma_m(\lambda)}\ket{m} = e^{- \int_0^{\lambda} \braket{m}{\partial_{\lambda'} m} d \lambda'}\ket{m},
     \end{equation}
@@ -91,7 +88,6 @@ The concept of quantum adiabaticity is the central starting point of the work pr
         \braket{m'}{\dlambda m'} = 0,
     \end{equation}
     which in other words just means that some change in the parameter $\lambda$ produces an eigenvector that is orthogonal to the unchanged eigenstate. This turns out to be the condition which defines parallel transport along a curve in a curved space \cite{nakahara_geometry_2003}, as analogous to the classical example of Foucault's pendulum. The choice of phases in Eq.~\eqref{eq:parallel_transport_state} is generally referred to as the parallel transport gauge.
-    \end{mycolorbox}
     
     The constraint that the RHS of Eq.~\eqref{eq:coefficient_exact} be negligible is exactly the adiabatic condition, which can be seen by checking that $\abs{c_m(\lambda)}^2 = \abs{c_m(0)}^2$ in Eq.~\eqref{eq:c_adiabatic}. What this means is that a state starting in a particular eigenstate $\ket{m(\lambda)}$ will remain in that state under these circumstances, ~\@e.g. for $c_m(0) = 1$ and $c_{m \neq n}(0) = 0$:
     \begin{equation}\label{eq:adiabatic_states}
@@ -367,7 +363,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \includegraphics[width=0.9\linewidth]{images/rotating_spin_CD.png} \caption[Rotating spin Bloch sphere illustration with counterdiabatic driving]{State of the rotating spin starting in state $\ket{+}$ driven without \acrref{CD} as in the Hamiltonian of Eq.~\eqref{eq:rotating_spin_H_lambda} (blue) and with \acrref{CD} as given by Eq.~\eqref{eq:rotating_spin_HCD} (red) for total driving time $\tau = 1$.}\label{fig:rotating_CD}
     \end{wrapfigure}
     
-    All that remains is to find $G_{\lambda}(\approxAGP)$ and to minimize the corresponding action $\mathcal{S}(\approxAGP)$ with respect to the driving coefficient $\alpha$. Once this process is complete (see Appendix \ref{app:rotating_spin_hamiltonian} for details), we find that
+    All that remains is to find $G_{\lambda}(\approxAGP)$ and to minimize the corresponding action $\mathcal{S}(\approxAGP)$ with respect to the driving coefficient $\alpha$. Once this process is complete (see App.~\ref{app:rotating_spin_hamiltonian} for details), we find that
     \begin{equation}\label{eq:rotating_spin_alpha}
         \alpha(\lambda) = -\frac{\sin^2(\lambda) + \cos^2(\lambda)}{2(\sin^2(\lambda) + \cos^2(\lambda))} = - \frac{1}{2},
     \end{equation}
