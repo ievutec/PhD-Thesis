@@ -1,6 +1,7 @@
 \chapter{Introduction}
 
-The fundamental goal of quantum technologies is the ability to manipulate and interact with quantum systems in a way that generates useful information, whether for the purpose of 
+A fundamental goal of quantum technologies is the ability to manipulate and interact with quantum systems in a way that generates useful information, whether for the purpose of gaining insight into the physics governing such systems or in order to solve complex computational problems, as in the case of quantum information processing \reminder{citations}. Despite the fact that quantum mechanics has been established for around a century, we have only recently begun to harness the unique features found in the quantum domain, spurned by and further proliferating the rapid emergence of highly-controllable quantum technologies. 
+
 
 \iffalse
 In the last few decades, the study of many-particle quantum systems far from equilibrium
@@ -32,9 +33,13 @@ physics (e.g. adiabatic continuity in Landau’s Fermi-liquid theory).
 
 \section{Thesis overview}
 
-The structure of this thesis is as follows: in Chapter \ref{chap:2_adiabaticity}
+The structure of this thesis is as follows: in Ch.~\ref{chap:2_adiabaticity} then in Ch.~\ref{chap:3_Quantum_Optimal_control}. And THEN in Ch.~\ref{chap:4_COLD} followed by Ch.~\ref{chap:5_cd_as_costfunc}. Finally, in Ch.~\ref{chap:6_Applications_fidelity} and Ch.~\ref{chap:7_higher_order_agp}. Then a summary in Ch.~\ref{chap:8_Summary} and future outlook in Ch.~\ref{chap:9_Future_directions}.
 
-\reminder{include a figure to illustrate the structure of the thesis, since this is clearly easy enough to do}
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{images/thesis_overview.png} \caption[Thesis outline.]{Thesis outline. In Part~\ref{part:background}, we will introduce the concept of quantum adiabaticity, the counterdiabatic driving (\acrref{CD}) method and its approximations as well as quantum optimal control theory (\acrref{QOCT}) and several optimisation techniques that we will apply later in the thesis. Then, in Part~\ref{part:COLD}, we will combine ideas from \acrref{CD} and \acrref{QOCT} in order to develop a new method for speeding up adiabatic dynamics and the focal point of this thesis: ``Counterdiabatic Optimised Local Driving" or \acrref{COLD}. We will then extend the method with a new optimisation metric based on information about non-adiabatic effects experienced by the system in fast driving. In Part~\ref{part:applications} we will numerically implement the \acrref{COLD} method and its extensions in several different quantum systems to evaluate their performance and compare it to existing techniques. Then, finally, in Part~\ref{part:conclusion}, we will conclude with a summary of the thesis and a look towards the future and several open questions that arise from the work presented here.}\label{fig:thesis_overview}
+\end{figure}
+
 
 \reminder{Here be the context for quantum adiabaticity, include stuff about \acrref{STA} etc.}
 

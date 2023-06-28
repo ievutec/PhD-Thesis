@@ -6,7 +6,72 @@ In Chap.~\ref{chap:2_adiabaticity} we used the example of a spin rotating in a m
 \begin{equation}\label{eq:rotating_spin_H_lambda}
     H(\lambda) = -\cos(\lambda)\sx - \sin(\lambda)\sz,
 \end{equation}
-with $\lambda(t) = \frac{\pi t}{2 \tau}$.
+with $\lambda(t) = \frac{\pi t}{2 \tau}$. The \acrref{AGP} operator ansatz $\approxAGP$ for this system can be described by the operator $\sy$ scaled by some $\lambda$-dependent coefficient which we will refer to as $\alpha(\lambda)$
+\begin{equation}
+    \approxAGP = \alpha(\lambda) \sy
+\end{equation}
+as discussed in the main text. We will now proceed to show how we can arrive at the resulting form of $\alpha$ given in Eq.~\eqref{eq:rotating_spin_alpha} using the \acrref{LCD} method outlined in Sec.~\ref{sec:2.4.1_LCD}.
+
+The first step is to find the operator $G_{\lambda}$ given in Eq.~\eqref{eq:G_operator}:
+\begin{equation}
+    \begin{aligned}
+        G_{\lambda}(\approxAGP) &= \dlambda H + i\comm{\approxAGP}{H} \\
+        & = \sin(\lambda)\sx - \cos(\lambda)\sz + 2\alpha(\lambda)\sin(\lambda)\sx - 2\alpha(\lambda) \cos(\lambda)\sz \\
+        & = (1 + 2\alpha(\lambda))\sin(\lambda) \sx - (1 + 2\alpha(\lambda))\cos(\lambda)\sz,
+    \end{aligned}
+\end{equation}
+where we have used $\hbar = 1$. This can then be used to define the action
+\begin{equation}
+    \begin{aligned}
+        \mathcal{S}(\approxAGP) &= \Tr\left[G^2_{\lambda}(\approxAGP) \right] \\
+        & = 2 (1 + 2\alpha(\lambda))^2 \sin^2(\lambda) + 2 (1 + 2\alpha(\lambda))^2 \cos^2(\lambda) \\
+        & = 2 (1 + 2\alpha(\lambda))^2.
+    \end{aligned}
+\end{equation}
+In order to find the form of $\alpha$, we need to find the minimum of the action $\mathcal{S}(\approxAGP)$ with respect to $\alpha$, which can be easily done:
+\begin{equation}
+    \begin{aligned}
+        \frac{\delta \mathcal{S}}{\delta \alpha} &= 8(1 + 2\alpha(\lambda)) \\
+        \Rightarrow \alpha(\lambda) &= -\frac{1}{2},
+    \end{aligned}
+\end{equation}
+which is the expected result. 
+
+It can be checked, for this simple example, that $\approxAGP = -\frac{1}{2} \sy$ is the exact \acrref{AGP} operator $\AGP{\lambda}$ by using Eq.~\eqref{eq:AGP_adiabatic_basis} where the matrix elements of the \acrref{AGP} are written out explicitly as:
+\begin{equation}
+    \begin{aligned}
+        \AGP{\lambda} &= i \Big(\sum_n \braket{n}{\dlambda n} \dyad{n} + \sum_{m \neq n} \ket{m} \frac{\mel{m}{\dlambda H}{n}}{(E_n - E_m)} \bra{n} \Big) \\
+        & = i \Big(\sum_n \braket{n}{\dlambda n} \dyad{n} + \sum_{m \neq n} \braket{m}{\dlambda n} \dyad{m}{n}\Big)
+    \end{aligned}
+\end{equation}
+
+In this case, the adiabatic eigenstates of the Hamiltonian $H(\lambda)$ are
+\begin{equation}
+    \begin{aligned}
+        \ket{\psi_1} &= \frac{1}{n_1} \left[(\sec(\lambda) + \tan(\lambda)) \ket{\uparrow} + \ket{\downarrow}\right] \\
+        \ket{\psi_2} &= \frac{1}{n_2} \left[(-\sec(\lambda) + \tan(\lambda)) \ket{\uparrow} + \ket{\downarrow}\right],
+    \end{aligned}
+\end{equation}
+where $n_1 = \sqrt{1 + \abs{\sec(\lambda) + \tan(\lambda)}^2}$ and $n_2 = \sqrt{1 + \abs{-\sec(\lambda) + \tan(\lambda)}^2}$ are the normalisation factors. Their derivatives with respect to $\lambda$ are
+\begin{equation}
+    \begin{aligned}
+        \ket{\dlambda \psi_1} &= \frac{1}{n_1^3} \sec(\lambda) \left[(\sec(\lambda) + \tan(\lambda))\ket{\uparrow}  - (\sec(\lambda) + \tan(\lambda))^2 \ket{\downarrow}\right] \\
+        \ket{\dlambda \psi_2} &= (2 + 2\sin(\lambda))^{-3/2} \left[(\sin(\lambda) + 1)^2 \ket{\uparrow} + \cos(\lambda)(1 + \sin(\lambda))\ket{\downarrow}\right].
+    \end{aligned}
+\end{equation}
+
+Evaluating $\braket{\psi_1}{\dlambda \psi_1}$ and $\braket{\psi_2}{\dlambda \psi_2}$ we find that they are equal to $0$, meaning the diagonal elements of $\AGP{\lambda}$ are $0$. Doing the same for the off-diagonals we find 
+\begin{equation}
+    \begin{aligned}
+        \braket{\psi_1}{\dlambda \psi_2} &= \frac{1}{2} \\
+        \braket{\psi_2}{\dlambda \psi_1} &= -\frac{1}{2},
+    \end{aligned}
+\end{equation}
+meaning that the exact \acrref{AGP} operator, as found from evaluating its matrix elements is just
+\begin{equation}
+    \AGP{\lambda} = \mqty(0 & \frac{i}{2} \\ -\frac{i}{2} & 0) = \alpha(\lambda) \sy,
+\end{equation}
+which is the result obtained previously from the \acrref{LCD} approach. 
 
 \chapter{Pontryagin maximum principle}\label{app:PMP}
 
@@ -58,9 +123,9 @@ An Ising Hamiltonian for $N$ spins and with both a transverse and longitudinal f
 \begin{equation}\label{eq:ising_hamiltonian}
     H(\lambda) = \sum_{i = 1}^{N-1}\sum_{j = i+1}^{N} J_{ij}(\lambda) \sz_i \sz_j + \sum_{i = 1}^{N} \Big( X_i(\lambda) \sx_i + Z_i(\lambda) \sz_i \Big)
 \end{equation}
-where the coefficients $J_{ij}$ correspond to couplings between spins $i$ and $j$. Systems like this can be viewed as undirected graphs, with each spin corresponding to a vertex and each coupling $J_{ij}$ denoting an edge between the corresponding spins. In the case of a weighted graph, the magnitude of each $J_{ij}$ can be viewed as the weight of the correspoding edge. This type of Hamiltonian, for specific values of $J_{ij}$, $X_i$ and $Z_i$ can be used to describe the two-spin annealing example of Sec.~\ref{sec:5.1_2spin_annealing}, the Ising chain from Sec.~\ref{sec:5.2_Ising_chain} and the frustrated spin model of Sec.~\ref{sec:}. 
+where the coefficients $J_{ij}$ correspond to couplings between spins $i$ and $j$. Systems like this can be viewed as undirected graphs, with each spin corresponding to a vertex and each coupling $J_{ij}$ denoting an edge between the corresponding spins. In the case of a weighted graph, the magnitude of each $J_{ij}$ can be viewed as the weight of the corresponding edge. This type of Hamiltonian, for specific values of $J_{ij}$, $X_i$ and $Z_i$ can be used to describe the two-spin annealing example of Sec.~\ref{sec:5.1_2spin_annealing}, the Ising chain from Sec.~\ref{sec:5.2_Ising_chain} and the frustrated spin model of Sec.~\ref{sec:6.4_ghz_states}. 
 
-The first order \acrref{LCD} ansatz is just single-spin operators:
+The first order \acrref{LCD} ansatz, as stated in the main text, is just single-spin operators:
 \begin{equation}\label{eq:spin_agp_1storder}
     \AGP{\lambda}^{(1)} = \sum_{i = 1}^N \alpha_i(\lambda) \sy_i
 \end{equation}
@@ -69,7 +134,7 @@ and the second order can be split up into 4 separate symmetries of operators:
         \AGP{\lambda}^{(2)} = \sum_{i = 1}^{N-1}\sum_{j = i+1}^{N} \Big( \gamma_{ij}(\lambda) \sx_i \sy_j + \Bar{\gamma}_{ij}(\lambda) \sy_i \sx_j + \zeta_{ij}(\lambda) \sz_i \sy_j + \Bar{\zeta}_{ij}(\lambda) \sy_i \sz_j \Big).
 \end{equation}
 
-What follows is a derivation that one might call `messy' on a good day. The first order commutators are computed as follows:
+The first order commutators are computed as follows:
 \begin{equation}\label{eq:first_order_AGP_commutator}
         i\comm{\alpha_i \sy_i}{H} = 2\alpha_i \Big[ \sum_{j = i+1}^{N} - J_{ij} \Big( \sx_i \sz_j + \sz_i \sx_j \Big) + X_i \sz_i - Z_i \sx_i \Big],
 \end{equation}
@@ -151,25 +216,35 @@ and with respect to $\zetabar_{ij}$:
 
 Armed with this knowledge, we can now explore the non-adiabatic effects generated by one- and two-spin operators on any random time-dependent Ising graph Hamiltonian. 
 
-\chapter{More details for the Ising spin chain}\label{app:ising}
+\chapter{Additional plots for the Ising spin chain example}\label{app:ising}
+
+This appendix contains additional information and plots concerning the Ising spin chain example from Sec.~\ref{sec:5.2_Ising_chain}, where we investigate implementations of \acrref{COLD}, \acrref{LCD} and \acrref{BPO} for this particular system. In the plots presented here, all parameters are the same as those discussed in Sec.~\ref{sec:5.2_Ising_chain} unless stated otherwise.
+
+As well as the five spin chain which is analysed in detail in the, in Fig.~\ref{fig:ising_scalingN} we also present a plot of how \acrref{FO} \acrref{COLD} and \acrref{BPO} scale with (a) increasing chain lengths and (b) increasing number of control parameters $N_k$ when the bare optimisation pulse from Eq.~\eqref{eq:ising_control_nocrab} is used on $N=5$ spins. 
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/ScalingN.png} \caption[Plots of how final state fidelities scale using COLD and BPO for different system sizes and optimisable parameters.]{Reproduced from \cite{cepaite_cold_2023}.}\label{fig:ising_maxamp}
+    \includegraphics[width=\linewidth]{images/ScalingN.png} \caption[Plots of how final state fidelities scale using COLD and BPO for different system sizes and optimisable parameters.]{Scaling of fidelities in the annealing protocol for the Ising model with (a) system size $N$ and (b) optimisation parameters $N_k$ at driving time $\tau=10^{-2}J_0^{-1}$. Plots show a comparison between \acrref{BPO} (blue diamonds) and \acrref{COLD} (red circles).  In (a) we see that the \acrref{COLD} fidelity decreases as a function of $N$ but remains quite high when compared to \acrref{BPO} while (b) shows the non-existent improvement for both \acrref{BPO} and \acrref{COLD} with an increasing number of parameters in the $N=5$ spin case. Plotted best fidelities are obtained across 500 optimisations. Figure reproduced from \cite{cepaite_cold_2023}.}\label{fig:ising_scalingN}
 \end{figure}
 
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{images/MaxAmp.png} \caption[Plots of maximum amplitudes of LCD drives for the Ising spin chain.]{Reproduced from \cite{cepaite_cold_2023}.}\label{fig:ising_maxamp}
+    \includegraphics[width=0.8\linewidth]{images/MaxAmp.png} \caption[Plots of maximum amplitudes of LCD drives for the Ising spin chain.]{Figure reproduced from \cite{cepaite_cold_2023}.}\label{fig:ising_maxamp}
 \end{figure}
 
 \chapter{More details and plots for the higher order AGP chapter}\label{app:higher_order_AGP}
 
-I have so much stuff to add here, might just leave some here for now. 
-
-
 \begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{images/two_spin_contours_maxes.png} \caption{Placeholder: max amplitude scaled by Hamiltonian norm}\label{fig:}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/ghz_contour_maximums.png} \caption[Contour plots of cost function landscapes for GHZ state preparation in frustrated spin systems (maximum amplitude cost function).]{Contour plots at $\tau = 0.1 J_0^{-1}$ of different cost function values for GHZ state preparation for parameters $c_1, c_2 \in [-10,10]$ and a \acrref{GRAPE} control pulse. In (a) and (b) we plot $C_{\rm F}$ in the cases where \acrref{FO} and \acrref{SO} \acrref{COLD} is applied respectively. Then, in (c-d) we do the same for $C_{T_3}$, with \acrref{FO} \acrref{COLD} plotted in (c) and \acrref{SO} \acrref{COLD} plotted in (d). (e-h) are then plots of the integral cost function $C_{\rm I}$ values for the same range of parameters. In (e) we plot $C_{\rm I, \alpha^{(1)}}$ when only \acrref{FO} \acrref{LCD} is considered, while in (f) we plot $C_{\rm I, \alpha^{(2)}}$ as described in the text. Then in (g) we plot $C_{\rm I, \gamma}$ and in (h) we plot $C_{\rm I, \zeta}$, corresponding to the \acrref{SO} terms. Note that each plot has its own color bar, as the color encodings and the value scaling in each plot is quite different.}\label{fig:ghz_contours_max_appendix}
 \end{figure}
 
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/final_plot_max_nogrape.png} \caption[Contour plots of cost function landscapes for GHZ state preparation in frustrated spin systems (maximum amplitude cost function) using a bare optimisation pulse.]{Contour plots at $\tau = 0.1 J_0^{-1}$ of different cost function values for GHZ state preparation for parameters $c_1, c_2 \in [-10,10]$ and a \acrref{GRAPE} control pulse. In (a) and (b) we plot $C_{\rm F}$ in the cases where \acrref{FO} and \acrref{SO} \acrref{COLD} is applied respectively. Then, in (c-d) we do the same for $C_{T_3}$, with \acrref{FO} \acrref{COLD} plotted in (c) and \acrref{SO} \acrref{COLD} plotted in (d). (e-h) are then plots of the integral cost function $C_{\rm I}$ values for the same range of parameters. In (e) we plot $C_{\rm I, \alpha^{(1)}}$ when only \acrref{FO} \acrref{LCD} is considered, while in (f) we plot $C_{\rm I, \alpha^{(2)}}$ as described in the text. Then in (g) we plot $C_{\rm I, \gamma}$ and in (h) we plot $C_{\rm I, \zeta}$, corresponding to the \acrref{SO} terms. Note that each plot has its own color bar, as the color encodings and the value scaling in each plot is quite different.}\label{fig:ghz_contours_max_noGRAPE}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/final_plot_int_nogrape.png} \caption[Contour plots of cost function landscapes for GHZ state preparation in frustrated spin systems (maximum amplitude cost function) using a bare optimisation pulse.]{Contour plots at $\tau = 0.1 J_0^{-1}$ of different cost function values for GHZ state preparation for parameters $c_1, c_2 \in [-10,10]$ and a \acrref{GRAPE} control pulse. In (a) and (b) we plot $C_{\rm F}$ in the cases where \acrref{FO} and \acrref{SO} \acrref{COLD} is applied respectively. Then, in (c-d) we do the same for $C_{T_3}$, with \acrref{FO} \acrref{COLD} plotted in (c) and \acrref{SO} \acrref{COLD} plotted in (d). (e-h) are then plots of the integral cost function $C_{\rm I}$ values for the same range of parameters. In (e) we plot $C_{\rm I, \alpha^{(1)}}$ when only \acrref{FO} \acrref{LCD} is considered, while in (f) we plot $C_{\rm I, \alpha^{(2)}}$ as described in the text. Then in (g) we plot $C_{\rm I, \gamma}$ and in (h) we plot $C_{\rm I, \zeta}$, corresponding to the \acrref{SO} terms. Note that each plot has its own color bar, as the color encodings and the value scaling in each plot is quite different.}\label{fig:ghz_contours_int_noGRAPE}
+\end{figure}

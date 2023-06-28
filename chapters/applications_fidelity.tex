@@ -2,7 +2,7 @@
 
 \chapter{Optimising for properties of the state}\label{chap:6_Applications_fidelity}
 
-\epigraph{In theory, theory and practice are the same. In practice, they are not.}{Uknown}
+\epigraph{In theory, theory and practice are the same. In practice, they are not.}{Unknown}
 
 In Ch.~\ref{chap:4_COLD} we introduced \acrref{COLD}, a new method for speeding up adiabatic processes while suppressing non-adiabatic losses. In this chapter, we will investigate how such a method might perform for different adiabatic protocols in different physical systems via results from numerical simulations. 
 
@@ -240,7 +240,7 @@ and the $\alpha_n(\lambda)$ terms correspond to the \acrref{LCD} coefficients. T
 \end{figure}
 
 In order to implement COLD we once again have to include a control component into the Hamiltonian:
-\begin{equation}
+\begin{equation}\label{eq:ising_control_nocrab}
     \begin{aligned}
         H_{\beta}(\hbb, \betabb, \lambda) = H_0(\hbb, \lambda) + \sum_n^N f_{\rm opt}^{N_k}(\betabb, \lambda) (c_n^{\dag}c_{n+1} + H.c.),
     \end{aligned}
@@ -282,7 +282,7 @@ where $\hbb = \{ J(\lambda), h(\lambda) \}$ with $\lambda = \frac{t}{\tau}$, $J(
 The parameters used for the results in this section are $J_0 = 1$ and $h_0 = 10J_0$, meaning the spins start in close to the $\ket{\downarrow^{\otimes N}}$ state. 
 
 In this case, we will apply both \acrref{FO} \acrref{LCD} and \acrref{SO} \acrref{LCD} ans\"{a}tze. The former is the same one as used previously for the Ising chain case, Eq.~\eqref{eq:ising_fo_agp}, while the latter will consist of additional operators between next-nearest-neighbour spins to reflect the geometry of the bare Hamiltonian:
-\begin{equation}
+\begin{equation}\label{eq:ghz_so_lcd}
     \begin{aligned}
         \approxAGP^{(2)}(\hbb, \lambda) &= \gamma(\hbb, \lambda) \Big( \sum_{j}^{N-1} \sx_j \sy_{j+1} + \sum_{j}^{N-2} \sy_j \sx_{j+2} \Big) \\
         &+ \zeta(\hbb, \lambda) \Big( \sum_{j}^{N-1} \sz_j \sy_{j+1} + \sum_{j}^{N-2} \sy_j \sz_{j+2} \Big).

@@ -1,4 +1,4 @@
-\part{Background}
+\part{Background}\label{part:background}
 \chapter{Quantum Adiabaticity}\label{chap:2_adiabaticity}
 
 \epigraph{``I saw this movie about a bus that had to SPEED around a city, keeping its SPEED over fifty, and if its SPEED dropped, it would explode! I think it was called `The Bus That Couldn’t Slow Down'."}{Homer Simpson, \emph{The Simpsons (S7E10)}}
@@ -148,7 +148,7 @@ The concept of quantum adiabaticity is the central starting point of the work pr
     \end{equation}
     where the last line is a consequence of the assumption that the that the system starts in the eigenstate $m$, and thus at $\lambda = 0$, the coefficient $c_{n \neq m} = 0$. As for the disappearing integral on the second line, this is due to the fact that $\dotlambda = \frac{1}{\tau}$ and at long times $\tau \rightarrow \infty$, when the adiabatic condition is supposed to hold, the integrand will oscillate so fast that it will effectively vanish\cite{kahane_generalizations_1980}. 
 
-    The term we're left with can effectively be bounded from above, since both exponential terms $e^{-\frac{i}{\hbar \dotlambda}\int_0^{1}\omega_{m,n}(\lambda')d \lambda'}$ and $e^{-i(\gamma_m(\lambda) - \gamma_n(\lambda))}$ (which has been absorbed into $A_{n,m}(\lambda)$) have a maximimal value of 1. The same goes for $c_n(1)$. This leaves us with a bound on the remaining quantities:
+    The term we're left with can effectively be bounded from above, since both exponential terms $e^{-\frac{i}{\hbar \dotlambda}\int_0^{1}\omega_{m,n}(\lambda')d \lambda'}$ and $e^{-i(\gamma_m(\lambda) - \gamma_n(\lambda))}$ (which has been absorbed into $A_{n,m}(\lambda)$) have a maximal value of 1. The same goes for $c_n(1)$. This leaves us with a bound on the remaining quantities:
     \begin{equation}\label{eq:adiabatic_criterion}
         \max _{n,m}\left[\max_{\lambda} \left| \frac{\hbar \dotlambda \mel{m(\lambda)}{\dlambda H(\lambda)}{n(\lambda)}}{(E_m(\lambda) - E_n(\lambda))^2} \right| \right] \ll 1, \quad m \neq n,
     \end{equation}
