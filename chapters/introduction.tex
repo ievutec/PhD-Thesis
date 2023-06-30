@@ -1,6 +1,11 @@
 \chapter{Introduction}
 
-A fundamental goal of quantum technologies is the ability to manipulate and interact with quantum systems in a way that generates useful information, whether for the purpose of gaining insight into the physics governing such systems or in order to solve complex computational problems, as in the case of quantum information processing \reminder{citations}. Despite the fact that quantum mechanics has been established for around a century, we have only recently begun to harness the unique features found in the quantum domain, spurned by and further proliferating the rapid emergence of highly-controllable quantum technologies. 
+A fundamental goal of quantum technologies is the ability to manipulate and interact with quantum systems in a way that generates useful information, whether for the purpose of gaining insight into the physics governing such systems or in order to solve complex computational problems. Despite the fact that quantum mechanics has been established for around a century, we have only recently begun to harness the unique features found in the quantum domain, spurned by and further proliferating the rapid progress of highly-controllable quantum systems. We are on the cusp of a new age of quantum technologies, driven by the controlled exploitation of phenomena like entanglement or contextuality and enabling high-precision sensing and quantum simulators, which can allow us to probe and predict the behaviour of quantum systems in ways that could never be done before on paper or using classical computational means. \reminder{LOTS OF CITATIONS}. 
+
+With this development in experimental capabilities, the demand for efficient control protocols and theoretical techniques for the manipulation of quantum systems and their dynamics has increased dramatically. On the one hand, we have experienced an explosive rise in gate-based, digital quantum algorithms, which provide standardized recipes for quantum state manipulation given universal control. On the other, we have witnessed a growth of the field of quantum optimal control theory, which allows one to 
+
+
+% bruno is my love and is good and also is the best and also I love him <3 🥰🥰🥰 🐣🐣🐣
 
 
 \iffalse
@@ -31,6 +36,9 @@ physics (e.g. adiabatic continuity in Landau’s Fermi-liquid theory).
 \fi
 
 
+\reminder{Here be the context for quantum adiabaticity, include stuff about \acrref{STA} etc.}
+
+
 \section{Thesis overview}
 
 The structure of this thesis is as follows: in Ch.~\ref{chap:2_adiabaticity} then in Ch.~\ref{chap:3_Quantum_Optimal_control}. And THEN in Ch.~\ref{chap:4_COLD} followed by Ch.~\ref{chap:5_cd_as_costfunc}. Finally, in Ch.~\ref{chap:6_Applications_fidelity} and Ch.~\ref{chap:7_higher_order_agp}. Then a summary in Ch.~\ref{chap:8_Summary} and future outlook in Ch.~\ref{chap:9_Future_directions}.
@@ -39,9 +47,6 @@ The structure of this thesis is as follows: in Ch.~\ref{chap:2_adiabaticity} the
     \centering
     \includegraphics[width=\linewidth]{images/thesis_overview.png} \caption[Thesis outline.]{Thesis outline. In Part~\ref{part:background}, we will introduce the concept of quantum adiabaticity, the counterdiabatic driving (\acrref{CD}) method and its approximations as well as quantum optimal control theory (\acrref{QOCT}) and several optimisation techniques that we will apply later in the thesis. Then, in Part~\ref{part:COLD}, we will combine ideas from \acrref{CD} and \acrref{QOCT} in order to develop a new method for speeding up adiabatic dynamics and the focal point of this thesis: ``Counterdiabatic Optimised Local Driving" or \acrref{COLD}. We will then extend the method with a new optimisation metric based on information about non-adiabatic effects experienced by the system in fast driving. In Part~\ref{part:applications} we will numerically implement the \acrref{COLD} method and its extensions in several different quantum systems to evaluate their performance and compare it to existing techniques. Then, finally, in Part~\ref{part:conclusion}, we will conclude with a summary of the thesis and a look towards the future and several open questions that arise from the work presented here.}\label{fig:thesis_overview}
 \end{figure}
-
-
-\reminder{Here be the context for quantum adiabaticity, include stuff about \acrref{STA} etc.}
 
 \section{Publications and manuscripts}
 
