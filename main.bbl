@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{noauthor_dalle_nodate}
+\BIBentryALTinterwordspacing
+``\BIBforeignlanguage{en-US}{{DALL}·{E} 2}.'' [Online]. Available:
+  \url{https://openai.com/dall-e-2}
+\BIBentrySTDinterwordspacing
+
 \bibitem{cepaite_cold_2023}
 \BIBentryALTinterwordspacing
 I.~Čepaitė, ``\BIBforeignlanguage{en}{{COLD}: {Counterdiabatic} {Optimised}
@@ -28,12 +34,14 @@ I.~Čepaitė, ``\BIBforeignlanguage{en}{{COLD}: {Counterdiabatic} {Optimised}
   \url{https://ievacepaite.com/2023/01/31/cold-counterdiabatic-optimised-local-driving/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{cepaite_counterdiabatic_2023}
+\bibitem{pelegri_high-fidelity_2022}
 \BIBentryALTinterwordspacing
-I.~Čepaitė, A.~Polkovnikov, A.~J. Daley, and C.~W. Duncan, ``Counterdiabatic
-  {Optimized} {Local} {Driving},'' \emph{PRX Quantum}, vol.~4, no.~1, p.
-  010312, Jan. 2023, publisher: American Physical Society. [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PRXQuantum.4.010312}
+G.~Pelegrí, A.~J. Daley, and J.~D. Pritchard,
+  ``\BIBforeignlanguage{en}{High-fidelity multiqubit {Rydberg} gates via
+  two-photon adiabatic rapid passage},'' \emph{\BIBforeignlanguage{en}{Quantum
+  Science and Technology}}, vol.~7, no.~4, p. 045020, Aug. 2022, publisher: IOP
+  Publishing. [Online]. Available:
+  \url{https://dx.doi.org/10.1088/2058-9565/ac823a}
 \BIBentrySTDinterwordspacing
 
 \bibitem{dimitrova_many-body_2023}
@@ -47,20 +55,35 @@ I.~Dimitrova, S.~Flannigan, Y.~K. Lee, H.~Lin, J.~Amato-Grill, N.~Jepsen,
   \url{https://dx.doi.org/10.1088/2058-9565/acd2fb}
 \BIBentrySTDinterwordspacing
 
-\bibitem{kolodrubetz_geometry_2017}
+\bibitem{roffe_quantum_2019}
 \BIBentryALTinterwordspacing
-M.~Kolodrubetz, D.~Sels, P.~Mehta, and A.~Polkovnikov, ``Geometry and
-  non-adiabatic response in quantum and classical systems,'' \emph{Physics
-  Reports}, vol. 697, pp. 1--87, 2017. [Online]. Available:
-  \url{https://www.sciencedirect.com/science/article/pii/S0370157317301989}
+J.~Roffe, ``Quantum error correction: an introductory guide,''
+  \emph{Contemporary Physics}, vol.~60, no.~3, pp. 226--245, Jul. 2019,
+  publisher: Taylor \& Francis \_eprint:
+  https://doi.org/10.1080/00107514.2019.1667078. [Online]. Available:
+  \url{https://doi.org/10.1080/00107514.2019.1667078}
 \BIBentrySTDinterwordspacing
 
-\bibitem{jarzynski_geometric_1995}
+\bibitem{glaser_training_2015}
 \BIBentryALTinterwordspacing
-C.~Jarzynski, ``Geometric {Phases} and {Anholonomy} for a {Class} of {Chaotic}
-  {Classical} {Systems},'' \emph{Physical Review Letters}, vol.~74, no.~10, pp.
-  1732--1735, Mar. 1995, publisher: American Physical Society. [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.74.1732}
+S.~J. Glaser, U.~Boscain, T.~Calarco, C.~P. Koch, W.~Köckenberger, R.~Kosloff,
+  I.~Kuprov, B.~Luy, S.~Schirmer, T.~Schulte-Herbrüggen, D.~Sugny, and F.~K.
+  Wilhelm, ``\BIBforeignlanguage{en}{Training {Schrödinger}’s cat: quantum
+  optimal control},'' \emph{\BIBforeignlanguage{en}{The European Physical
+  Journal D}}, vol.~69, no.~12, p. 279, Dec. 2015. [Online]. Available:
+  \url{https://doi.org/10.1140/epjd/e2015-60464-1}
+\BIBentrySTDinterwordspacing
+
+\bibitem{koch_quantum_2022}
+\BIBentryALTinterwordspacing
+C.~P. Koch, U.~Boscain, T.~Calarco, G.~Dirr, S.~Filipp, S.~J. Glaser,
+  R.~Kosloff, S.~Montangero, T.~Schulte-Herbrüggen, D.~Sugny, and F.~K.
+  Wilhelm, ``\BIBforeignlanguage{en}{Quantum optimal control in quantum
+  technologies. {Strategic} report on current status, visions and goals for
+  research in {Europe}},'' \emph{\BIBforeignlanguage{en}{EPJ Quantum
+  Technology}}, vol.~9, no.~1, pp. 1--60, Dec. 2022, number: 1 Publisher:
+  SpringerOpen. [Online]. Available:
+  \url{https://epjquantumtechnology.springeropen.com/articles/10.1140/epjqt/s40507-022-00138-x}
 \BIBentrySTDinterwordspacing
 
 \bibitem{berry_transitionless_2009}
@@ -71,12 +94,65 @@ M.~V. Berry, ``\BIBforeignlanguage{en}{Transitionless quantum driving},''
   \url{https://iopscience.iop.org/article/10.1088/1751-8113/42/36/365303}
 \BIBentrySTDinterwordspacing
 
-\bibitem{demirplak_adiabatic_2003}
+\bibitem{kolodrubetz_geometry_2017}
 \BIBentryALTinterwordspacing
-M.~Demirplak and S.~A. Rice, ``Adiabatic {Population} {Transfer} with {Control}
-  {Fields},'' \emph{The Journal of Physical Chemistry A}, vol. 107, no.~46, pp.
-  9937--9945, Nov. 2003, publisher: American Chemical Society. [Online].
-  Available: \url{https://doi.org/10.1021/jp030708a}
+M.~Kolodrubetz, D.~Sels, P.~Mehta, and A.~Polkovnikov, ``Geometry and
+  non-adiabatic response in quantum and classical systems,'' \emph{Physics
+  Reports}, vol. 697, pp. 1--87, 2017. [Online]. Available:
+  \url{https://www.sciencedirect.com/science/article/pii/S0370157317301989}
+\BIBentrySTDinterwordspacing
+
+\bibitem{meier_counterdiabatic_2020}
+\BIBentryALTinterwordspacing
+E.~J. Meier, K.~Ngan, D.~Sels, and B.~Gadway, ``Counterdiabatic control of
+  transport in a synthetic tight-binding lattice,'' \emph{Physical Review
+  Research}, vol.~2, no.~4, p. 043201, Nov. 2020, arXiv: 2005.07052. [Online].
+  Available: \url{http://arxiv.org/abs/2005.07052}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pichler_quantum_2018}
+\BIBentryALTinterwordspacing
+H.~Pichler, S.-T. Wang, L.~Zhou, S.~Choi, and M.~D. Lukin, ``Quantum
+  {Optimization} for {Maximum} {Independent} {Set} {Using} {Rydberg} {Atom}
+  {Arrays},'' \emph{arXiv:1808.10816 [cond-mat, physics:physics,
+  physics:quant-ph]}, Aug. 2018, arXiv: 1808.10816. [Online]. Available:
+  \url{http://arxiv.org/abs/1808.10816}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ebadi_quantum_2022}
+\BIBentryALTinterwordspacing
+S.~Ebadi, A.~Keesling, M.~Cain, T.~T. Wang, H.~Levine, D.~Bluvstein,
+  G.~Semeghini, A.~Omran, J.-G. Liu, R.~Samajdar, X.-Z. Luo, B.~Nash, X.~Gao,
+  B.~Barak, E.~Farhi, S.~Sachdev, N.~Gemelke, L.~Zhou, S.~Choi, H.~Pichler,
+  S.-T. Wang, M.~Greiner, V.~Vuletić, and M.~D. Lukin, ``Quantum optimization
+  of maximum independent set using {Rydberg} atom arrays,'' \emph{Science},
+  vol. 376, no. 6598, pp. 1209--1215, Jun. 2022, publisher: American
+  Association for the Advancement of Science. [Online]. Available:
+  \url{https://www.science.org/doi/10.1126/science.abo6587}
+\BIBentrySTDinterwordspacing
+
+\bibitem{born_beweis_1928}
+\BIBentryALTinterwordspacing
+M.~Born and V.~Fock, ``\BIBforeignlanguage{de}{Beweis des {Adiabatensatzes}},''
+  \emph{\BIBforeignlanguage{de}{Zeitschrift für Physik}}, vol.~51, no.~3, pp.
+  165--180, Mar. 1928. [Online]. Available:
+  \url{https://doi.org/10.1007/BF01343193}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kato_adiabatic_1950}
+\BIBentryALTinterwordspacing
+T.~Kato, ``On the {Adiabatic} {Theorem} of {Quantum} {Mechanics},''
+  \emph{Journal of the Physical Society of Japan}, vol.~5, no.~6, pp. 435--439,
+  Nov. 1950, publisher: The Physical Society of Japan. [Online]. Available:
+  \url{https://journals.jps.jp/doi/10.1143/JPSJ.5.435}
+\BIBentrySTDinterwordspacing
+
+\bibitem{jarzynski_geometric_1995}
+\BIBentryALTinterwordspacing
+C.~Jarzynski, ``Geometric {Phases} and {Anholonomy} for a {Class} of {Chaotic}
+  {Classical} {Systems},'' \emph{Physical Review Letters}, vol.~74, no.~10, pp.
+  1732--1735, Mar. 1995, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.74.1732}
 \BIBentrySTDinterwordspacing
 
 \bibitem{guery-odelin_shortcuts_2019}
@@ -87,6 +163,207 @@ D.~Guéry-Odelin, A.~Ruschhaupt, A.~Kiely, E.~Torrontegui, S.~Martínez-Garaot,
   Oct. 2019, publisher: American Physical Society. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/RevModPhys.91.045001}
 \BIBentrySTDinterwordspacing
+
+\bibitem{torrontegui_chapter_2013}
+\BIBentryALTinterwordspacing
+E.~Torrontegui, S.~Ibáñez, S.~Martínez-Garaot, M.~Modugno, A.~del Campo,
+  D.~Guéry-Odelin, A.~Ruschhaupt, X.~Chen, and J.~G. Muga,
+  ``\BIBforeignlanguage{en}{Chapter 2 - {Shortcuts} to {Adiabaticity}},'' in
+  \emph{\BIBforeignlanguage{en}{Advances {In} {Atomic}, {Molecular}, and
+  {Optical} {Physics}}}, ser. Advances in {Atomic}, {Molecular}, and {Optical}
+  {Physics}, E.~Arimondo, P.~R. Berman, and C.~C. Lin, Eds.\hskip 1em plus
+  0.5em minus 0.4em\relax Academic Press, Jan. 2013, vol.~62, pp. 117--169.
+  [Online]. Available:
+  \url{https://www.sciencedirect.com/science/article/pii/B9780124080904000025}
+\BIBentrySTDinterwordspacing
+
+\bibitem{deffner_classical_2014}
+\BIBentryALTinterwordspacing
+S.~Deffner, C.~Jarzynski, and A.~del Campo, ``Classical and {Quantum}
+  {Shortcuts} to {Adiabaticity} for {Scale}-{Invariant} {Driving},''
+  \emph{Physical Review X}, vol.~4, no.~2, p. 021013, Apr. 2014, publisher:
+  American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevX.4.021013}
+\BIBentrySTDinterwordspacing
+
+\bibitem{deng_superadiabatic_2018}
+\BIBentryALTinterwordspacing
+S.~Deng, A.~Chenu, P.~Diao, F.~Li, S.~Yu, I.~Coulamy, A.~del Campo, and H.~Wu,
+  ``Superadiabatic quantum friction suppression in finite-time
+  thermodynamics,'' \emph{Science Advances}, vol.~4, no.~4, p. eaar5909, Apr.
+  2018, publisher: American Association for the Advancement of Science.
+  [Online]. Available: \url{https://www.science.org/doi/10.1126/sciadv.aar5909}
+\BIBentrySTDinterwordspacing
+
+\bibitem{chen_fast_2010}
+\BIBentryALTinterwordspacing
+X.~Chen, A.~Ruschhaupt, S.~Schmidt, A.~del Campo, D.~Guéry-Odelin, and J.~G.
+  Muga, ``Fast {Optimal} {Frictionless} {Atom} {Cooling} in {Harmonic} {Traps}:
+  {Shortcut} to {Adiabaticity},'' \emph{Physical Review Letters}, vol. 104,
+  no.~6, p. 063002, Feb. 2010, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.104.063002}
+\BIBentrySTDinterwordspacing
+
+\bibitem{masuda_fast-forward_2009}
+\BIBentryALTinterwordspacing
+S.~Masuda and K.~Nakamura, ``Fast-forward of adiabatic dynamics in quantum
+  mechanics,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
+  and Engineering Sciences}, vol. 466, no. 2116, pp. 1135--1154, Nov. 2009,
+  publisher: Royal Society. [Online]. Available:
+  \url{https://royalsocietypublishing.org/doi/10.1098/rspa.2009.0446}
+\BIBentrySTDinterwordspacing
+
+\bibitem{masuda_fast-forward_2008}
+\BIBentryALTinterwordspacing
+------, ``Fast-forward problem in quantum mechanics,'' \emph{Physical Review
+  A}, vol.~78, no.~6, p. 062108, Dec. 2008, publisher: American Physical
+  Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevA.78.062108}
+\BIBentrySTDinterwordspacing
+
+\bibitem{demirplak_adiabatic_2003}
+\BIBentryALTinterwordspacing
+M.~Demirplak and S.~A. Rice, ``Adiabatic {Population} {Transfer} with {Control}
+  {Fields},'' \emph{The Journal of Physical Chemistry A}, vol. 107, no.~46, pp.
+  9937--9945, Nov. 2003, publisher: American Chemical Society. [Online].
+  Available: \url{https://doi.org/10.1021/jp030708a}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pandey_adiabatic_2020}
+\BIBentryALTinterwordspacing
+M.~Pandey, P.~W. Claeys, D.~K. Campbell, A.~Polkovnikov, and D.~Sels,
+  ``Adiabatic {Eigenstate} {Deformations} as a {Sensitive} {Probe} for
+  {Quantum} {Chaos},'' \emph{Physical Review X}, vol.~10, no.~4, p. 041017,
+  Oct. 2020, publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevX.10.041017}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sugiura_adiabatic_2020}
+\BIBentryALTinterwordspacing
+S.~Sugiura, P.~W. Claeys, A.~Dymarsky, and A.~Polkovnikov, ``Adiabatic
+  landscape and optimal paths in ergodic systems,'' \emph{arXiv:2004.13735
+  [cond-mat, physics:hep-th, physics:quant-ph]}, Apr. 2020, arXiv: 2004.13735.
+  [Online]. Available: \url{http://arxiv.org/abs/2004.13735}
+\BIBentrySTDinterwordspacing
+
+\bibitem{sels_minimizing_2017}
+\BIBentryALTinterwordspacing
+D.~Sels and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Minimizing irreversible
+  losses in quantum systems by local counterdiabatic driving},''
+  \emph{\BIBforeignlanguage{en}{Proceedings of the National Academy of
+  Sciences}}, vol. 114, no.~20, pp. E3909--E3916, May 2017, publisher: National
+  Academy of Sciences Section: PNAS Plus. [Online]. Available:
+  \url{https://www.pnas.org/content/114/20/E3909}
+\BIBentrySTDinterwordspacing
+
+\bibitem{claeys_floquet-engineering_2019}
+\BIBentryALTinterwordspacing
+P.~W. Claeys, M.~Pandey, D.~Sels, and A.~Polkovnikov, ``Floquet-engineering
+  counterdiabatic protocols in quantum many-body systems,'' \emph{Physical
+  Review Letters}, vol. 123, no.~9, p. 090602, Aug. 2019, arXiv: 1904.03209.
+  [Online]. Available: \url{http://arxiv.org/abs/1904.03209}
+\BIBentrySTDinterwordspacing
+
+\bibitem{hegade_digitized_2022}
+\BIBentryALTinterwordspacing
+N.~N. Hegade, X.~Chen, and E.~Solano, ``Digitized counterdiabatic quantum
+  optimization,'' \emph{Physical Review Research}, vol.~4, no.~4, p. L042030,
+  Nov. 2022, publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.L042030}
+\BIBentrySTDinterwordspacing
+
+\bibitem{wurtz_counterdiabaticity_2022}
+\BIBentryALTinterwordspacing
+J.~Wurtz and P.~J. Love, ``\BIBforeignlanguage{en-GB}{Counterdiabaticity and
+  the quantum approximate optimization algorithm},''
+  \emph{\BIBforeignlanguage{en-GB}{Quantum}}, vol.~6, p. 635, Jan. 2022,
+  publisher: Verein zur Förderung des Open Access Publizierens in den
+  Quantenwissenschaften. [Online]. Available:
+  \url{https://quantum-journal.org/papers/q-2022-01-27-635/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{stefanatos_frictionless_2010}
+\BIBentryALTinterwordspacing
+D.~Stefanatos, J.~Ruths, and J.-S. Li, ``Frictionless atom cooling in harmonic
+  traps: {A} time-optimal approach,'' \emph{Physical Review A}, vol.~82, no.~6,
+  p. 063422, Dec. 2010, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.82.063422}
+\BIBentrySTDinterwordspacing
+
+\bibitem{stefanatos_shortcut_2021}
+\BIBentryALTinterwordspacing
+D.~Stefanatos and E.~Paspalakis, ``\BIBforeignlanguage{en}{A shortcut tour of
+  quantum control methods for modern quantum technologies},''
+  \emph{\BIBforeignlanguage{en}{Europhysics Letters}}, vol. 132, no.~6, p.
+  60001, Mar. 2021, publisher: EDP Sciences, IOP Publishing and Società
+  Italiana di Fisica. [Online]. Available:
+  \url{https://dx.doi.org/10.1209/0295-5075/132/60001}
+\BIBentrySTDinterwordspacing
+
+\bibitem{zhang_connection_2021}
+\BIBentryALTinterwordspacing
+Q.~Zhang, X.~Chen, and D.~Guéry-Odelin, ``\BIBforeignlanguage{en}{Connection
+  between {Inverse} {Engineering} and {Optimal} {Control} in {Shortcuts} to
+  {Adiabaticity}},'' \emph{\BIBforeignlanguage{en}{Entropy}}, vol.~23, no.~1,
+  p.~84, Jan. 2021, number: 1 Publisher: Multidisciplinary Digital Publishing
+  Institute. [Online]. Available: \url{https://www.mdpi.com/1099-4300/23/1/84}
+\BIBentrySTDinterwordspacing
+
+\bibitem{petiziol_accelerated_2020}
+\BIBentryALTinterwordspacing
+F.~Petiziol, ``\BIBforeignlanguage{Inglese}{Accelerated adiabatic quantum
+  control},'' Doctoral thesis, Università di Parma. Dipartimento di Scienze
+  Matematiche, fisiche e informatiche, Mar. 2020, accepted:
+  2020-04-18T07:16:03Z Journal Abbreviation: Controllo adiabatico quantistico
+  accelerato. [Online]. Available:
+  \url{https://www.repository.unipr.it/handle/1889/4010}
+\BIBentrySTDinterwordspacing
+
+\bibitem{petiziol_fast_2018}
+\BIBentryALTinterwordspacing
+F.~Petiziol, B.~Dive, F.~Mintert, and S.~Wimberger, ``Fast adiabatic evolution
+  by oscillating initial {Hamiltonians},'' \emph{Physical Review A}, vol.~98,
+  no.~4, p. 043436, Oct. 2018, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.98.043436}
+\BIBentrySTDinterwordspacing
+
+\bibitem{bukov_reinforcement_2018}
+\BIBentryALTinterwordspacing
+M.~Bukov, A.~G. Day, D.~Sels, P.~Weinberg, A.~Polkovnikov, and P.~Mehta,
+  ``Reinforcement {Learning} in {Different} {Phases} of {Quantum} {Control},''
+  \emph{Physical Review X}, vol.~8, no.~3, p. 031086, Sep. 2018, publisher:
+  American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevX.8.031086}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yao_reinforcement_2021}
+\BIBentryALTinterwordspacing
+J.~Yao, L.~Lin, and M.~Bukov, ``Reinforcement {Learning} for {Many}-{Body}
+  {Ground}-{State} {Preparation} {Inspired} by {Counterdiabatic} {Driving},''
+  \emph{Physical Review X}, vol.~11, no.~3, p. 031070, Sep. 2021, publisher:
+  American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevX.11.031070}
+\BIBentrySTDinterwordspacing
+
+\bibitem{khait_optimal_2022}
+\BIBentryALTinterwordspacing
+I.~Khait, J.~Carrasquilla, and D.~Segal, ``Optimal control of quantum thermal
+  machines using machine learning,'' \emph{Physical Review Research}, vol.~4,
+  no.~1, p. L012029, Mar. 2022, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.L012029}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cepaite_counterdiabatic_2023}
+\BIBentryALTinterwordspacing
+I.~Čepaitė, A.~Polkovnikov, A.~J. Daley, and C.~W. Duncan, ``Counterdiabatic
+  {Optimized} {Local} {Driving},'' \emph{PRX Quantum}, vol.~4, no.~1, p.
+  010312, Jan. 2023, publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PRXQuantum.4.010312}
+\BIBentrySTDinterwordspacing
+
+\bibitem{lawrence_numerical_2023}
+E.~D. Lawrence, S.~Schmid, I.~Čepaitė, P.~Kriton, and C.~W. Duncan,
+  ``Numerical approaches for non-adiabatic terms in quantum annealing,'' 2023.
 
 \bibitem{pancharatnam_generalized_1956}
 \BIBentryALTinterwordspacing
@@ -148,33 +425,6 @@ A.~Childs, ``{LECTURE} 18: {The} quantum adiabatic theorem,'' 2008. [Online].
   Available: \url{http://www.cs.umd.edu/~amchilds/teaching/w08/l18.pdf}
 \BIBentrySTDinterwordspacing
 
-\bibitem{sels_minimizing_2017}
-\BIBentryALTinterwordspacing
-D.~Sels and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Minimizing irreversible
-  losses in quantum systems by local counterdiabatic driving},''
-  \emph{\BIBforeignlanguage{en}{Proceedings of the National Academy of
-  Sciences}}, vol. 114, no.~20, pp. E3909--E3916, May 2017, publisher: National
-  Academy of Sciences Section: PNAS Plus. [Online]. Available:
-  \url{https://www.pnas.org/content/114/20/E3909}
-\BIBentrySTDinterwordspacing
-
-\bibitem{claeys_floquet-engineering_2019}
-\BIBentryALTinterwordspacing
-P.~W. Claeys, M.~Pandey, D.~Sels, and A.~Polkovnikov, ``Floquet-engineering
-  counterdiabatic protocols in quantum many-body systems,'' \emph{Physical
-  Review Letters}, vol. 123, no.~9, p. 090602, Aug. 2019, arXiv: 1904.03209.
-  [Online]. Available: \url{http://arxiv.org/abs/1904.03209}
-\BIBentrySTDinterwordspacing
-
-\bibitem{pandey_adiabatic_2020}
-\BIBentryALTinterwordspacing
-M.~Pandey, P.~W. Claeys, D.~K. Campbell, A.~Polkovnikov, and D.~Sels,
-  ``Adiabatic {Eigenstate} {Deformations} as a {Sensitive} {Probe} for
-  {Quantum} {Chaos},'' \emph{Physical Review X}, vol.~10, no.~4, p. 041017,
-  Oct. 2020, publisher: American Physical Society. [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevX.10.041017}
-\BIBentrySTDinterwordspacing
-
 \bibitem{nandy_delayed_2022}
 \BIBentryALTinterwordspacing
 D.~K. Nandy, T.~Cadez, B.~Dietz, A.~Andreanov, and D.~Rosa, ``Delayed
@@ -182,47 +432,6 @@ D.~K. Nandy, T.~Cadez, B.~Dietz, A.~Andreanov, and D.~Rosa, ``Delayed
   106, no.~24, p. 245147, Dec. 2022, arXiv:2206.08599 [cond-mat,
   physics:hep-th, physics:quant-ph]. [Online]. Available:
   \url{http://arxiv.org/abs/2206.08599}
-\BIBentrySTDinterwordspacing
-
-\bibitem{petiziol_accelerated_2020}
-\BIBentryALTinterwordspacing
-F.~Petiziol, ``\BIBforeignlanguage{Inglese}{Accelerated adiabatic quantum
-  control},'' Doctoral thesis, Università di Parma. Dipartimento di Scienze
-  Matematiche, fisiche e informatiche, Mar. 2020, accepted:
-  2020-04-18T07:16:03Z Journal Abbreviation: Controllo adiabatico quantistico
-  accelerato. [Online]. Available:
-  \url{https://www.repository.unipr.it/handle/1889/4010}
-\BIBentrySTDinterwordspacing
-
-\bibitem{ebadi_quantum_2022}
-\BIBentryALTinterwordspacing
-S.~Ebadi, A.~Keesling, M.~Cain, T.~T. Wang, H.~Levine, D.~Bluvstein,
-  G.~Semeghini, A.~Omran, J.-G. Liu, R.~Samajdar, X.-Z. Luo, B.~Nash, X.~Gao,
-  B.~Barak, E.~Farhi, S.~Sachdev, N.~Gemelke, L.~Zhou, S.~Choi, H.~Pichler,
-  S.-T. Wang, M.~Greiner, V.~Vuletić, and M.~D. Lukin, ``Quantum optimization
-  of maximum independent set using {Rydberg} atom arrays,'' \emph{Science},
-  vol. 376, no. 6598, pp. 1209--1215, Jun. 2022, publisher: American
-  Association for the Advancement of Science. [Online]. Available:
-  \url{https://www.science.org/doi/10.1126/science.abo6587}
-\BIBentrySTDinterwordspacing
-
-\bibitem{pichler_quantum_2018}
-\BIBentryALTinterwordspacing
-H.~Pichler, S.-T. Wang, L.~Zhou, S.~Choi, and M.~D. Lukin, ``Quantum
-  {Optimization} for {Maximum} {Independent} {Set} {Using} {Rydberg} {Atom}
-  {Arrays},'' \emph{arXiv:1808.10816 [cond-mat, physics:physics,
-  physics:quant-ph]}, Aug. 2018, arXiv: 1808.10816. [Online]. Available:
-  \url{http://arxiv.org/abs/1808.10816}
-\BIBentrySTDinterwordspacing
-
-\bibitem{pelegri_high-fidelity_2022}
-\BIBentryALTinterwordspacing
-G.~Pelegrí, A.~J. Daley, and J.~D. Pritchard,
-  ``\BIBforeignlanguage{en}{High-fidelity multiqubit {Rydberg} gates via
-  two-photon adiabatic rapid passage},'' \emph{\BIBforeignlanguage{en}{Quantum
-  Science and Technology}}, vol.~7, no.~4, p. 045020, Aug. 2022, publisher: IOP
-  Publishing. [Online]. Available:
-  \url{https://dx.doi.org/10.1088/2058-9565/ac823a}
 \BIBentrySTDinterwordspacing
 
 \bibitem{dalessio_quantum_2016}
@@ -280,28 +489,6 @@ A.~Omran, H.~Levine, A.~Keesling, G.~Semeghini, T.~T. Wang, S.~Ebadi,
 N.~H. Le, M.~Cykiert, and E.~Ginossar, ``Robust optimal control of interacting
   multi-qubit systems for quantum sensing,'' Oct. 2021, arXiv:2110.12560
   [quant-ph]. [Online]. Available: \url{http://arxiv.org/abs/2110.12560}
-\BIBentrySTDinterwordspacing
-
-\bibitem{koch_quantum_2022}
-\BIBentryALTinterwordspacing
-C.~P. Koch, U.~Boscain, T.~Calarco, G.~Dirr, S.~Filipp, S.~J. Glaser,
-  R.~Kosloff, S.~Montangero, T.~Schulte-Herbrüggen, D.~Sugny, and F.~K.
-  Wilhelm, ``\BIBforeignlanguage{en}{Quantum optimal control in quantum
-  technologies. {Strategic} report on current status, visions and goals for
-  research in {Europe}},'' \emph{\BIBforeignlanguage{en}{EPJ Quantum
-  Technology}}, vol.~9, no.~1, pp. 1--60, Dec. 2022, number: 1 Publisher:
-  SpringerOpen. [Online]. Available:
-  \url{https://epjquantumtechnology.springeropen.com/articles/10.1140/epjqt/s40507-022-00138-x}
-\BIBentrySTDinterwordspacing
-
-\bibitem{glaser_training_2015}
-\BIBentryALTinterwordspacing
-S.~J. Glaser, U.~Boscain, T.~Calarco, C.~P. Koch, W.~Köckenberger, R.~Kosloff,
-  I.~Kuprov, B.~Luy, S.~Schirmer, T.~Schulte-Herbrüggen, D.~Sugny, and F.~K.
-  Wilhelm, ``\BIBforeignlanguage{en}{Training {Schrödinger}’s cat: quantum
-  optimal control},'' \emph{\BIBforeignlanguage{en}{The European Physical
-  Journal D}}, vol.~69, no.~12, p. 279, Dec. 2015. [Online]. Available:
-  \url{https://doi.org/10.1140/epjd/e2015-60464-1}
 \BIBentrySTDinterwordspacing
 
 \bibitem{zhang_when_2019}
@@ -720,6 +907,14 @@ C.~Whitty, A.~Kiely, and A.~Ruschhaupt, ``\BIBforeignlanguage{en}{Quantum
   \url{https://link.aps.org/doi/10.1103/PhysRevResearch.2.023360}
 \BIBentrySTDinterwordspacing
 
+\bibitem{del_campo_shortcuts_2013}
+\BIBentryALTinterwordspacing
+A.~del Campo, ``Shortcuts to {Adiabaticity} by {Counterdiabatic} {Driving},''
+  \emph{Physical Review Letters}, vol. 111, no.~10, p. 100502, Sep. 2013,
+  publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.111.100502}
+\BIBentrySTDinterwordspacing
+
 \bibitem{bukov_geometric_2019}
 \BIBentryALTinterwordspacing
 M.~Bukov, D.~Sels, and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Geometric
@@ -844,12 +1039,35 @@ C.~Trefzger, C.~Menotti, B.~Capogrosso-Sansone, and M.~Lewenstein,
   Available: \url{https://dx.doi.org/10.1088/0953-4075/44/19/193001}
 \BIBentrySTDinterwordspacing
 
-\bibitem{meier_counterdiabatic_2020}
+\bibitem{nielsen_quantum_2010}
+M.~A. Nielsen and I.~L. Chuang, \emph{\BIBforeignlanguage{en}{Quantum
+  computation and quantum information}}, 10th~ed.\hskip 1em plus 0.5em minus
+  0.4em\relax Cambridge ; New York: Cambridge University Press, 2010.
+
+\bibitem{bostrom_deterministic_2002}
 \BIBentryALTinterwordspacing
-E.~J. Meier, K.~Ngan, D.~Sels, and B.~Gadway, ``Counterdiabatic control of
-  transport in a synthetic tight-binding lattice,'' \emph{Physical Review
-  Research}, vol.~2, no.~4, p. 043201, Nov. 2020, arXiv: 2005.07052. [Online].
-  Available: \url{http://arxiv.org/abs/2005.07052}
+K.~Boström and T.~Felbinger, ``Deterministic {Secure} {Direct} {Communication}
+  {Using} {Entanglement},'' \emph{Physical Review Letters}, vol.~89, no.~18, p.
+  187902, Oct. 2002, publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.89.187902}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kim_heisenberg-limited_2022}
+\BIBentryALTinterwordspacing
+Y.~Kim, S.-Y. Yoo, and Y.-H. Kim, ``Heisenberg-{Limited} {Metrology} via
+  {Weak}-{Value} {Amplification} without {Using} {Entangled} {Resources},''
+  \emph{Physical Review Letters}, vol. 128, no.~4, p. 040503, Jan. 2022,
+  publisher: American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.128.040503}
+\BIBentrySTDinterwordspacing
+
+\bibitem{einstein_can_1935}
+\BIBentryALTinterwordspacing
+A.~Einstein, B.~Podolsky, and N.~Rosen, ``Can {Quantum}-{Mechanical}
+  {Description} of {Physical} {Reality} {Be} {Considered} {Complete}?''
+  \emph{Physical Review}, vol.~47, no.~10, pp. 777--780, May 1935, publisher:
+  American Physical Society. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRev.47.777}
 \BIBentrySTDinterwordspacing
 
 \bibitem{greenberger_bells_1990}
@@ -894,10 +1112,6 @@ M.~Fishman, S.~White, and E.~Stoudenmire, ``The {ITensor} {Software} {Library}
   p.~4, Aug. 2022. [Online]. Available:
   \url{https://scipost.org/10.21468/SciPostPhysCodeb.4}
 \BIBentrySTDinterwordspacing
-
-\bibitem{lawrence_numerical_2023}
-E.~D. Lawrence, S.~Schmid, I.~Čepaitė, P.~Kriton, and C.~W. Duncan,
-  ``Numerical approaches for non-adiabatic terms in quantum annealing,'' 2023.
 
 \bibitem{bhattacharjee_lanczos_2023}
 \BIBentryALTinterwordspacing
