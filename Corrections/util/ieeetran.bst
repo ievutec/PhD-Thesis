@@ -125,7 +125,7 @@ FUNCTION {default.ALTinterwordstretchfactor} { "4" }
 % #0 turns off the "dashification" of repeated (i.e., identical to those
 % of the previous entry) names. The IEEE normally does this.
 % #1 enables
-FUNCTION {default.is.dash.repeated.names} { #1 }
+FUNCTION {default.is.dash.repeated.names} { #0 }
 
 
 % The default name format control string.
@@ -199,8 +199,8 @@ FUNCTION {bbl.volume}{ "vol." }
 FUNCTION {bbl.of}{ "of" }
 FUNCTION {bbl.number}{ "no." }
 FUNCTION {bbl.in}{ "in" }
-FUNCTION {bbl.pages}{ "pp." }
-FUNCTION {bbl.page}{ "p." }
+FUNCTION {bbl.pages}{ "" }
+FUNCTION {bbl.page}{ "" }
 FUNCTION {bbl.chapter}{ "ch." }
 FUNCTION {bbl.paper}{ "paper" }
 FUNCTION {bbl.part}{ "pt." }

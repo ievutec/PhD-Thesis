@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL Thesis_v1/main.tex     Wed Dec 27 14:19:22 2023
-%DIF ADD Corrections/main.tex   Thu Jan  4 12:08:57 2024
+%DIF DEL Thesis_v1/main.tex     Wed Dec 27 12:19:22 2023
+%DIF ADD Corrections/main.tex   Wed Feb 28 21:53:24 2024
 %
 % Strath PhD Thesis Template
 %	by Jethro Browell [jethro.browell@strath.ac.uk]
@@ -284,11 +284,11 @@ For more details, I invite you to read my blog post on the topic given by Ref. \
 
 The last few years have been as exciting as they were tough, but they were perpetually made better by the many wonderful people around me. It would be absolutely impossible to include everyone whose company enriched my mind and spirit during this PhD, although I would absolutely love to. Instead, I will strive to mention as many as I possibly can, as without them this journey would definitely not have been possible.
 
-First, there are a multitude of people who supported me directly in my academic endeavours and beyond. I want to thank my supervisor Andrew Daley for giving me all the opportunities to learn, travel and engage with fascinating, cutting-edge scientific endeavours as well as for mentoring me in both how to be a better researcher and a better person. I would also like to extend a lot of gratitude to Callum Duncan, without whose guidance I would not have had the self-confidence to arrive at many of the results in this thesis. I would also like to thank Anatoli Polkovnikov and Pieter Claeys for all the great help, interesting discussions and mentoring, which helped me get through a number of barriers in understanding things.
+First, there are a multitude of people who supported me directly in my academic endeavours and beyond. I want to thank my supervisor Andrew Daley for giving me all the opportunities to learn, travel and engage with fascinating, cutting-edge scientific endeavours as well as for mentoring me in both how to be a better researcher and a better person. I would also like to \DIFdelbegin \DIFdel{extend a lot of gratitude to Callum Duncan, without whose guidance I would not have had the self-confidence to arrive at many of the results in this thesis. I would also like to }\DIFdelend thank Anatoli Polkovnikov and Pieter Claeys for all the great help, interesting discussions and mentoring, which helped me get through a number of barriers in understanding things.
 
 Secondly, in a similar vein, I want to thank all of the wonderful physicists at Strathclyde, former and current, for their friendship and support and for the company in complaining about things. Thank you to Sridevi, Sebastian, Tomas, Ewen, Ryan, Sebastian, Gerard, Johannes, Pablo, Natalie, Emmanuel, Emanuele, Rosaria, Jorge, Stewart, Tom, Grant, Jonathan and many others who will remain unnamed only for the sake of keeping this to less than ten pages. I am grateful to all of you, from the bottom of my heart. 
 
-I would also like to thank my friends at the Mathematically Structured Programming group at Strathclyde and those adjacent, who provided me with shelter, sanity, pints and fantastic advice. In particular, thank you to Jules Hedges for the healthy cynicism and to Conor McBride for making me arguably far more sensible. To everyone else: Alasdair, Joe, Matteo, Giorgi, Sean, Dylan, Ryu, Zanzi, Ezra, Fred, Bob, Clemens, Malin, Toby, André and others - you were the best of friends and I learned as much from you as I did while reading papers.
+I would also like to thank my friends at the Mathematically Structured Programming group at Strathclyde and those adjacent, who provided me with shelter, sanity, pints and fantastic advice. In particular, thank you to Jules Hedges for the healthy cynicism and to Conor McBride for making me arguably far more sensible. To everyone else: Alasdair, Joe, Matteo, Giorgi, Sean, Dylan, \DIFdelbegin \DIFdel{Ryu}\DIFdelend \DIFaddbegin \DIFadd{Riu}\DIFaddend , Zanzi, Ezra, Fred, Bob, Clemens, Malin, Toby, André and others - you were the best of friends and I learned as much from you as I did while reading papers.
 
 Finally, I would like to thank my family: my mother Silvija and my father Darius, for their unconditional love and the knowledge that I am safe and cared for, my brothers Džiugas, Joris and Stepas, for the joy and company they have brought into my life, my uncle Evaldas and his family, for their support and companionship, and my grandparents Vytautas, Milda, Viktoras and Virginija, although only one of you gets to see me complete this PhD. You are all remembered and loved. Most importantly, in the last few years, I have met my best friend and partner, someone whom I love and cherish and who, I daresay, helped me the most to become both a great person and a good one: my deepest gratitude and love goes to you, Bruno Gavranović.
 
@@ -335,45 +335,64 @@ Finally, I would like to thank my family: my mother Silvija and my father Darius
 
 \epigraph{Everything starts somewhere, although many physicists disagree.}{Terry Pratchett, \emph{Hogfather (1996)}}
 
-It is often control that turns scientific knowledge into technology. Thus control, or the precise manipulation of and interaction with quantum systems, is a fundamental goal of quantum technologies. This may be for the purpose of gaining insight into the physics governing quantum systems, in order to build better devices or in order to solve complex computational problems. Despite the fact that quantum mechanics has been established for around a century, only recently have we begun to harness the unique features found in the quantum domain, a development spurred by and further proliferating the rapid progress of experimental advances for quantum systems. We are currently on the cusp of a new age of quantum technologies, driven by the methodical exploitation of phenomena such as coherence and entanglement, allowing us to probe and predict the behaviour of quantum systems in ways that could never be done before. With this development in experimental capabilities, the demand for theoretical techniques for the time-dependent manipulation of quantum systems has increased considerably. Such techniques are imperative for the development of efficient transformations of quantum states, like in the case of quantum gate design \cite{pelegri_high-fidelity_2022} in the case of quantum computing or state preparation \cite{dimitrova_many-body_2023} for the study of condensed matter physics, among many other examples. Simultaneously, there has been a rise in demand for techniques which refine and enhance existing protocols with the aim of reducing or mitigating decoherence and unwanted losses, whether through information-theoretic techniques like quantum error-correction \cite{roffe_quantum_2019}, or via approaches for designing driving pulses like in the case of quantum optimal control methods \cite{glaser_training_2015, koch_quantum_2022}. 
+It is often control that turns scientific knowledge into technology. Thus control, or the precise manipulation of and interaction with quantum systems, is a fundamental goal of quantum technologies. This may be for the purpose of gaining insight into the physics governing quantum systems, in order to build better devices or in order to solve complex computational problems. Despite the fact that quantum mechanics has been established for around a century, only recently have we begun to harness the unique features found in the quantum domain, a development spurred by and further proliferating the rapid progress of experimental advances for quantum systems. We are currently on the cusp of a new age of quantum technologies, driven by the methodical exploitation of phenomena such as coherence and entanglement, allowing us to probe and predict the behaviour of quantum systems in ways that could never be done before. 
+\DIFaddbegin 
+
+\DIFaddend With this development in experimental capabilities, the demand for theoretical techniques for the time-dependent manipulation of quantum systems has increased considerably. Such techniques are imperative for the development of efficient transformations of quantum states, like in the case of quantum gate design \cite{pelegri_high-fidelity_2022}\DIFdelbegin \DIFdel{in the case of quantum computing }\DIFdelend \DIFaddbegin \DIFadd{, quantum computing \mbox{%DIFAUXCMD
+\cite{albash_adiabatic_2018} }\hskip0pt%DIFAUXCMD
+}\DIFaddend or state preparation \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{dimitrova_many-body_2023} }\hskip0pt%DIFAUXCMD
+}\DIFdelend for the study of condensed matter physics \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{dimitrova_many-body_2023}}\hskip0pt%DIFAUXCMD
+}\DIFaddend , among many other examples. Simultaneously, there has been a rise in demand for techniques which refine and enhance existing protocols with the aim of reducing or mitigating decoherence and unwanted losses, whether through information-theoretic techniques like quantum error-correction \cite{roffe_quantum_2019}, or via approaches for designing driving pulses like in the case of quantum optimal control methods \cite{glaser_training_2015, koch_quantum_2022}. 
 
 \paragraph*{Non-adiabatic losses}
 
-An important example of control imperfections experienced by a system driven in a time-dependent manner is that of losses in the form of undesired transitions that can occur between instantaneous eigenstates of a dynamical Hamiltonian \cite{berry_transitionless_2009, kolodrubetz_geometry_2017}. There are many processes where one might want to end up in \@e.g.~the ground state of a given Hamiltonian even as it varies in time. This holds true in the case of state-preparation \cite{dimitrova_many-body_2023}, population transfer \cite{meier_counterdiabatic_2020} or in the case of solutions to combinatorics problems encoded in ground states of Hamiltonians \cite{pichler_quantum_2018, ebadi_quantum_2022}. This is why many quantum driving protocols rely on adiabatic dynamics, where the system follows the instantaneous eigenstates and transitions are naturally suppressed\cite{born_beweis_1928, kato_adiabatic_1950}. Ideal adiabatic processes are reversible, making them, in principle, highly robust \cite{jarzynski_geometric_1995, kolodrubetz_geometry_2017}. Ideal adiabatic processes, however, require very slow system dynamics and one must make compromises on the timescales of competing heating and decoherence processes. This has led to a rise in methods which aim to speed up adiabatic dynamics while minimising the undesired transitions associated with fast driving by entirely removing or suppressing them. These types of methods are collectively referred to as `shortcuts to adiabaticity' or \acrref{STA} \cite{guery-odelin_shortcuts_2019, torrontegui_chapter_2013}. 
+An important example of control imperfections experienced by a system driven in a time-dependent manner is that of losses in the form of undesired transitions that can occur between instantaneous eigenstates of a dynamical Hamiltonian \cite{berry_transitionless_2009, kolodrubetz_geometry_2017}. There are many processes where one might want to end up in \@e.g.~the ground state of a given Hamiltonian \DIFdelbegin \DIFdel{even as it varies in time}\DIFdelend \DIFaddbegin \DIFadd{whose parameters have been modified in a time-dependent manner}\DIFaddend . This holds true in the case of state-preparation \cite{dimitrova_many-body_2023}, population transfer \cite{meier_counterdiabatic_2020} or in the case of solutions to combinatorics problems encoded in ground states of Hamiltonians \cite{pichler_quantum_2018, ebadi_quantum_2022}. This is why many quantum driving protocols rely on adiabatic dynamics, where the system follows the instantaneous eigenstates \DIFaddbegin \DIFadd{of time-dependent Hamiltonians }\DIFaddend and transitions are naturally suppressed\cite{born_beweis_1928, kato_adiabatic_1950}. Ideal adiabatic processes are reversible, making them, in principle, highly robust \cite{jarzynski_geometric_1995, kolodrubetz_geometry_2017}. Ideal adiabatic processes, however, require very slow system dynamics and one must make compromises on the timescales of competing heating and decoherence processes. This has led to a rise in \DIFaddbegin \DIFadd{the development of }\DIFaddend methods which aim to speed up adiabatic dynamics while minimising the undesired transitions associated with fast driving\DIFaddbegin \DIFadd{, either }\DIFaddend by entirely removing or \DIFaddbegin \DIFadd{by }\DIFaddend suppressing them. These types of methods are collectively referred to as `shortcuts to adiabaticity' or \acrref{STA} \cite{guery-odelin_shortcuts_2019, torrontegui_chapter_2013}. 
 
 \paragraph*{Shortcuts to adiabaticity} 
 
 The field of \acrref{STA} concerns itself with fast routes to the final results of slow, adiabatic changes of the time-dependent parameters of a system. Such routes are generally designed via a set of analytical and numerical methods for different systems and conditions. Speeding up adiabatic protocols to enable their completion within the system’s coherence time is important
-for the development of any quantum technologies relying on such protocols. Thus, \acrref{STA} methods have become instrumental in preparing and driving internal and motional states in atomic, molecular, and solid-state physics. Some \acrref{STA} techniques rely on specific formalisms like invariants and scaling \cite{deffner_classical_2014, deng_superadiabatic_2018, chen_fast_2010}, which exploit symmetries in the physical systems in order to simplify models of non-adiabatic effects, or fast-forward \cite{masuda_fast-forward_2009, masuda_fast-forward_2008}, which adds an external phase to the system wavefunction in order to allow for fast transport. These methods, within specific domains, can be related to each other and potentially be made equivalent because of underlying common structures. A universal \acrref{STA} approach like this is counterdiabatic driving or \acrref{CD}, which will be a focal point in this thesis. 
+for the development of any quantum technologies relying on such protocols. Thus, \acrref{STA} methods have become instrumental in preparing and driving internal and motional states in atomic, molecular, and solid-state physics. Some \acrref{STA} techniques rely on specific formalisms like invariants and scaling \cite{deffner_classical_2014, deng_superadiabatic_2018, chen_fast_2010}, which exploit symmetries in the physical systems in order to simplify models of non-adiabatic effects, or fast-forward \cite{masuda_fast-forward_2009, masuda_fast-forward_2008}, which adds an external phase to the system wavefunction in order to allow for fast transport. These methods, within specific domains, can be related to each other and potentially be made equivalent because of underlying common structures. A universal \acrref{STA} approach like this is counterdiabatic driving or \acrref{CD}, which will be a focal point \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{of }\DIFaddend this thesis. 
 
 \paragraph*{Counterdiabatic driving}
 
-The idea of \acrref{CD} was first introduced by Demirplak and Rice in the context of physical chemistry \cite{demirplak_adiabatic_2003} and independently developed by Berry \cite{berry_transitionless_2009}, where it was referred to as `transitionless' driving. The aim of \acrref{CD} is the complete suppression of non-adiabatic effects experienced by a system driven at finite time via the application of an external `counterdiabatic' driving pulse. This is generally not possible, however, due to the fact that the exact counterdiabatic drive is often difficult to compute in the case of complex systems and may be near-impossible to implement in many experimental settings, as well as being undefined for \@e.g.~chaotic systems \cite{kolodrubetz_geometry_2017, pandey_adiabatic_2020, sugiura_adiabatic_2020}. This has led to the development of several approximate \acrref{CD} methods, like the variational approach first introduced by Sels and Polkovnikov in \cite{sels_minimizing_2017} as well as the nested-commutator method of Claeys et al \cite{claeys_floquet-engineering_2019}. Such approaches allow for some suppression of some non-adiabatic effects, but their efficacy is highly variable between different systems and Hamiltonians. Discrete, quantum gate-based versions of \acrref{CD} and its approximations have also been developed, under the moniker of `digitized counterdiabatic quantum optimization' (DCQO) \cite{hegade_digitized_2022}, as well as within the context of the quantum approximate optimisation algorithm or QAOA \cite{wurtz_counterdiabaticity_2022}, although this is a relatively new line of research.
+The idea of \acrref{CD} was first introduced by Demirplak and Rice in the context of physical chemistry \cite{demirplak_adiabatic_2003} and independently developed by Berry \cite{berry_transitionless_2009}, where it was referred to as `transitionless' driving. The aim of \acrref{CD} is the complete suppression of non-adiabatic effects experienced by a system driven at finite time via the application of an external `counterdiabatic' driving pulse. This is generally not possible, however, due to the fact that the exact counterdiabatic drive is often difficult to compute in the case of complex systems and may be near-impossible to implement in \DIFdelbegin \DIFdel{many }\DIFdelend \DIFaddbegin \DIFadd{most }\DIFaddend experimental settings, as well as being undefined for \@e.g.~chaotic systems \DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{kolodrubetz_geometry_2017, pandey_adiabatic_2020, sugiura_adiabatic_2020}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{kolodrubetz_geometry_2017, pandey_adiabatic_2020, sugiura_adiabatic_2021}}\hskip0pt%DIFAUXCMD
+}\DIFaddend . This has led to the development of several approximate \acrref{CD} methods, like the variational approach first introduced by Sels and Polkovnikov in \cite{sels_minimizing_2017} as well as the nested-commutator method of Claeys et al \cite{claeys_floquet-engineering_2019}. Such approaches allow for some suppression of \DIFdelbegin \DIFdel{some }\DIFdelend non-adiabatic effects, but their efficacy is highly variable between different systems and \DIFdelbegin \DIFdel{Hamiltonians}\DIFdelend \DIFaddbegin \DIFadd{the Hamiltonians driving them}\DIFaddend . Discrete, quantum gate-based versions of \acrref{CD} and its approximations have also been developed, under the moniker of `digitized counterdiabatic quantum optimization' (DCQO) \cite{hegade_digitized_2022}, as well as within the context of the quantum approximate optimisation algorithm or QAOA \cite{wurtz_counterdiabaticity_2022}, although this is a relatively new line of research.
 
 \paragraph*{Quantum optimal control}
 
-A different but complementary approach to achieving the target state of adiabatic dynamics more rapidly is that of quantum optimal control theory or \acrref{QOCT} \cite{glaser_training_2015, koch_quantum_2022}. \acrref{QOCT} is primarily concerned with the development of driving schedules for quantum systems which satisfy specific constraints and behave optimally with respect to a given metric. Links between optimal control and \acrref{STA} have existed throughout the development of both approaches \cite{stefanatos_frictionless_2010, stefanatos_shortcut_2021, zhang_connection_2021}. This has included the realisation of \acrref{CD} through fast oscillations of the Hamiltonian \cite{petiziol_accelerated_2020, petiziol_fast_2018} as well as a fusion of machine learning methods and \acrref{STA}, demonstrating significant improvements for optimizing quantum protocols through machine learning with the inclusion of concepts from \acrref{CD} \cite{bukov_reinforcement_2018, yao_reinforcement_2021, khait_optimal_2022}. While \acrref{QOCT} methods certainly play a part in many aspects of \acrref{STA}, however, they are not applied uniquely to the problem of speeding up adiabatic dynamics. \acrref{QOCT} techniques are often applied with the goal of driving a system to some desired target state, as in the case of much of \acrref{STA}, however they can also be implemented in determining protocols which satisfy criteria that are unrelated to some target state, like energy expenditure. Due to the versatility of optimal control techniques, they can often be incorporated into many aspects of quantum technologies in order to improve them. Examples include the design of quantum computing gates \cite{pelegri_high-fidelity_2022} as well as improving measurement techniques \cite{wiseman_quantum_2009}, along with the aforementioned applications to speeding up adiabatic dynamics \cite{guery-odelin_shortcuts_2019}.
+A different but complementary approach to achieving the target state of adiabatic dynamics more rapidly is that of quantum optimal control theory or \acrref{QOCT} \cite{glaser_training_2015, koch_quantum_2022}. \acrref{QOCT} is primarily concerned with the development of driving schedules for quantum systems which satisfy specific constraints and behave optimally with respect to a given metric. Links between optimal control and \acrref{STA} have existed throughout the development of both approaches \cite{stefanatos_frictionless_2010, stefanatos_shortcut_2021, zhang_connection_2021}. This has included the realisation of \acrref{CD} through fast oscillations of the Hamiltonian \cite{petiziol_accelerated_2020, petiziol_fast_2018} as well as a fusion of machine learning methods and \acrref{STA}, demonstrating significant improvements for optimizing quantum protocols through machine learning with the inclusion of concepts from \acrref{CD} \cite{bukov_reinforcement_2018, yao_reinforcement_2021, khait_optimal_2022}. While \acrref{QOCT} methods certainly play a part in many aspects of \acrref{STA}, however, they are not applied uniquely to the problem of speeding up adiabatic dynamics. \acrref{QOCT} techniques are often \DIFdelbegin \DIFdel{applied }\DIFdelend \DIFaddbegin \DIFadd{implemented }\DIFaddend with the goal of driving a system to some desired target state, as in the case of much of \acrref{STA}, however they can also be implemented in determining protocols which satisfy criteria that are unrelated to some target state, like energy expenditure. Due to the versatility of optimal control techniques, they can often be incorporated into many aspects of quantum technologies in order to improve them. Examples include the design of quantum computing gates \cite{pelegri_high-fidelity_2022} as well as improving measurement techniques \cite{wiseman_quantum_2009}, along with the aforementioned applications to speeding up adiabatic dynamics \cite{guery-odelin_shortcuts_2019}.
 
 % Bruno Gavranovic is my love and is good and also is the best and also I love him <3
 
 \paragraph*{Goals and contributions of the thesis}
 
-Speeding up adiabatic processes while suppressing non-adiabatic losses remains an open problem in most practical settings. In the case of \acrref{CD}, issues generally arise at the point of implemention, with the counterdiabatic term requiring operators that are simply not available in an experimental setting, even if the exact counterdiabatic term could be theoretically obtained. The variational approach of Sels and Polkovnikov \cite{sels_minimizing_2017}, which we refer to as `local counterdiabatic driving' or \acrref{LCD}, has attempted to circumvent this by constructing approximations which allow one to choose an ansatz set of operators for the \acrref{LCD}. This makes for a far more accessible method, but one which has no guarantees of performance due to the restrictions placed on the operators. Optimal control methods, on the other hand, while far more flexible, also generally offer very little insight into the way an optimal pulse should be constructed in order to suppress non-adiabatic effects - unlike \acrref{CD}, where the external drive directly targets them. This often makes pure \acrref{QOCT} approaches even more ineffective than approximate \acrref{CD} for this purpose. In this thesis, we present a new combination of \acrref{LCD} and optimal control methods, an approach which we will call `counterdiabatic optimised local driving' or \acrref{COLD} \cite{cepaite_counterdiabatic_2023}, which aims to improve upon both of the existing methods while retaining their advantages. The method is based on the observation that the effectiveness of a given \acrref{LCD} approximation depends on the path of the dynamical Hamiltonian and that this path can be optimised using \acrref{QOCT} methods. Furthermore, we will show that the optimal control component of \acrref{COLD} can be extended by using an optimisation metric constructed using information about the counterdiabatic drive. We will demonstrate the effectiveness and flexibility of \acrref{COLD} and its extensions via numerical analysis, comparing it to both of its components, \acrref{LCD} and quantum optimal control.
+Speeding up adiabatic processes while suppressing non-adiabatic losses remains an open problem in most practical settings. In the case of \acrref{CD}, issues generally arise at the point of implemention, with the counterdiabatic term requiring operators that are simply not available in an experimental setting, even if the exact counterdiabatic term could be theoretically obtained. The variational approach of Sels and Polkovnikov \cite{sels_minimizing_2017}, which we refer to as `local counterdiabatic driving' or \acrref{LCD}, has attempted to circumvent this by constructing approximations which allow one to choose an ansatz set of operators for the \acrref{LCD}. \DIFdelbegin \DIFdel{This }\DIFdelend \DIFaddbegin \DIFadd{Such an approach }\DIFaddend makes for a far more accessible method, \DIFdelbegin \DIFdel{but }\DIFdelend \DIFaddbegin \DIFadd{however it is also }\DIFaddend one which has no guarantees of performance due to the restrictions placed on the operators \DIFaddbegin \DIFadd{by }\acrref{CD} \DIFadd{theory}\DIFaddend . Optimal control methods, on the other hand, while far more flexible, also generally offer very little insight into the way an optimal pulse should be constructed in order to suppress non-adiabatic effects\DIFdelbegin \DIFdel{- unlike }%DIFDELCMD < \acrref{CD}%%%
+\DIFdel{, where the external drive directly targets them. This often makes }\DIFdelend \DIFaddbegin \DIFadd{. Thus }\DIFaddend pure \acrref{QOCT} approaches \DIFaddbegin \DIFadd{are often }\DIFaddend even more ineffective than approximate \acrref{CD} for this purpose. In this thesis, we present a new combination of \acrref{LCD} and optimal control methods \DIFdelbegin \DIFdel{, an approach which we will call `counterdiabatic optimised local driving' or }%DIFDELCMD < \acrref{COLD} %%%
+\DIFdel{\mbox{%DIFAUXCMD
+\cite{cepaite_counterdiabatic_2023}}\hskip0pt%DIFAUXCMD
+, which }\DIFdelend \DIFaddbegin \DIFadd{which }\DIFaddend aims to improve upon both of the existing \DIFdelbegin \DIFdel{methods }\DIFdelend \DIFaddbegin \DIFadd{approaches }\DIFaddend while retaining their advantages. The method\DIFaddbegin \DIFadd{, which we will call `counterdiabatic optimised local driving' or }\acrref{COLD} \DIFadd{\mbox{%DIFAUXCMD
+\cite{cepaite_counterdiabatic_2023}}\hskip0pt%DIFAUXCMD
+, }\DIFaddend is based on the observation that the effectiveness of a given \acrref{LCD} approximation depends on the path of the dynamical Hamiltonian and \DIFaddbegin \DIFadd{furthermore, }\DIFaddend that this path can be optimised using \acrref{QOCT} methods. \DIFdelbegin \DIFdel{Furthermore, we will }\DIFdelend \DIFaddbegin \DIFadd{We will also }\DIFaddend show that the optimal control component of \acrref{COLD} can be extended by using an optimisation metric constructed using information about the counterdiabatic drive. We will demonstrate the effectiveness and flexibility of \acrref{COLD} and its extensions via numerical analysis, comparing it to both of its components, \acrref{LCD} and quantum optimal control.
 
 \section{Thesis overview}
 
-The thesis is divided into four parts, prefaced by this introduction. Part \ref{part:background} introduces key background concepts relevant to the new results discussed later in the thesis: quantum adiabaticity and quantum optimal control or \acrref{QOCT}. In Ch.~\ref{chap:2_adiabaticity}, we discuss the concept of an adiabatic quantum process, with particular focus in Sec.~\ref{sec:2.1.2_adiabatic_condition} on what it means for a change in the Hamiltonian parameters to be `slow enough' to be adiabatic. We cover how non-adiabatic effects are generated by an operator known as the adiabatic gauge potential or \acrref{AGP} in Sec.~\ref{sec:2.2_AGP} and then in Sec.~\ref{sec:2.3_CD} we introduce the concept of a counterdiabatic drive. We then discuss the difficulties of obtaining an exact counterdiabatic drive for a given Hamiltonian and introduce several existing approximations of \acrref{CD} in Sec.~\ref{sec:2.4_approximate_CD}, including \acrref{LCD}, which continues to play a large part in the rest of the thesis. Then, in Ch.~\ref{chap:3_Quantum_Optimal_control}, we introduce \acrref{QOCT}, beginning with the mathematical foundations of optimal control as well as several popular numerical optimisation methods in Sec.~\ref{sec:3.1_structure_quantum_control}. We then discuss how optimal control techniques can be applied specifically to quantum systems in Sec.~\ref{sec:3.2_Quantum_optimal_control} and finish the chapter by describing several \acrref{QOCT} methods that are implemented in order to acquire the results presented later in the thesis.
+The thesis is divided into four parts, prefaced by this introduction. Part \ref{part:background} introduces key background concepts relevant to the new results discussed later in the thesis: quantum adiabaticity and quantum optimal control or \acrref{QOCT}. In Ch.~\ref{chap:2_adiabaticity}, we discuss the concept of an adiabatic quantum process, with particular focus in Sec.~\ref{sec:2.1.2_adiabatic_condition} on what it means for a change in the Hamiltonian parameters to be `slow enough' to be adiabatic. We cover how non-adiabatic effects are generated by an operator known as the adiabatic gauge potential or \acrref{AGP} in Sec.~\ref{sec:2.2_AGP} and then in Sec.~\ref{sec:2.3_CD} we introduce the concept of a counterdiabatic drive. We then discuss the difficulties of obtaining an exact counterdiabatic drive for a given Hamiltonian and introduce several existing approximations of \acrref{CD} in Sec.~\ref{sec:2.4_approximate_CD}\DIFdelbegin \DIFdel{, including }\DIFdelend \DIFaddbegin \DIFadd{. This includes }\DIFaddend \acrref{LCD}, which continues to play a large part in the rest of the thesis. Then, in Ch.~\ref{chap:3_Quantum_Optimal_control}, we introduce \acrref{QOCT}, beginning with the mathematical foundations of optimal control as well as several popular numerical optimisation methods in Sec.~\ref{sec:3.1_structure_quantum_control}. We then discuss how optimal control techniques can be applied specifically to quantum systems in Sec.~\ref{sec:3.2_Quantum_optimal_control} and finish the chapter by describing several \acrref{QOCT} methods that are implemented in order to acquire the results presented later in the thesis.
 
 \begin{figure}[t!]
     \centering
     \includegraphics[width=\linewidth]{images/thesis_overview.png} \caption[Thesis outline.]{Thesis outline. In Part~\ref{part:background}, we will introduce the concept of quantum adiabaticity, the counterdiabatic driving (\acrref{CD}) method and its approximations as well as quantum optimal control theory (\acrref{QOCT}) and several optimisation techniques that we will apply later in the thesis. Then, in Part~\ref{part:COLD}, we will combine ideas from \acrref{CD} and \acrref{QOCT} in order to develop a new method for speeding up adiabatic dynamics and the focal point of this thesis: ``Counterdiabatic Optimised Local Driving" or \acrref{COLD}. We will then extend the method with a new optimisation metric based on information about non-adiabatic effects experienced by the system in fast driving. In Part~\ref{part:applications} we will numerically implement the \acrref{COLD} method and its extensions in several different quantum systems to evaluate their performance and compare it to existing techniques. Then, finally, in Part~\ref{part:conclusion}, we will conclude with a summary of the thesis and a look towards the future and several open questions that arise from the work presented here.}\label{fig:thesis_overview}
 \end{figure}
 
-In Part~\ref{part:COLD}, we introduce the main new material of the thesis: the \acrref{COLD} method in Ch.~\ref{chap:4_COLD} and its extension using different, \acrref{AGP}-inspired cost functions in Ch.~\ref{chap:5_cd_as_costfunc}. In Ch.~\ref{chap:4_COLD} we discuss the ways in which \acrref{LCD} and quantum optimal control methods can be combined to obtain better results than either approach alone, and how that follows from the dependence of the counterdiabatic drive on the path of the Hamiltonian in parameter space. We expand on the optimal control methods used for \acrref{COLD} in Sec.~\ref{sec:4.2_COLD_QOCT}. In Ch.~\ref{chap:5_cd_as_costfunc} we then introduce the idea of using information about the counterdiabatic drive itself, like its maximal amplitude value, as a metric for optimising the control pulse in \acrref{COLD} and for the case where no \acrref{LCD} is applied.
+In Part~\ref{part:COLD}, we introduce the main new material of the thesis: the \acrref{COLD} method \DIFdelbegin \DIFdel{in Ch.~\ref{chap:4_COLD} }\DIFdelend and its extension using \DIFdelbegin \DIFdel{different, }\DIFdelend \DIFaddbegin \DIFadd{several }\DIFaddend \acrref{AGP}-inspired cost functions\DIFdelbegin \DIFdel{in Ch. ~\ref{chap:5_cd_as_costfunc}. }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend In Ch.~\ref{chap:4_COLD} we discuss the ways in which \acrref{LCD} and quantum optimal control methods can be combined to obtain better results than either approach alone, and how that follows from the dependence of the counterdiabatic drive on the path of the Hamiltonian in parameter space. We expand on the optimal control methods used for \acrref{COLD} in Sec.~\ref{sec:4.2_COLD_QOCT}. In Ch.~\ref{chap:5_cd_as_costfunc} we then introduce the idea of using information about the counterdiabatic drive itself, like its \DIFdelbegin \DIFdel{maximal amplitude value}\DIFdelend \DIFaddbegin \DIFadd{total power across the driving time}\DIFaddend , as a metric for optimising the control pulse in \acrref{COLD} and for the case where no \acrref{LCD} is applied.
 
-After a detailed introduction of the methods, we then implement them in numerical simulations of several example quantum systems in Part.~\ref{part:applications}. In Ch.~\ref{chap:6_Applications_fidelity} we present and discuss results obtained when applying \acrref{COLD} to a simple two-spin annealing protocol in Sec.~\ref{sec:5.1_2spin_annealing}, the Ising spin chain of varying lengths in Sec.~\ref{sec:5.2_Ising_chain}, the case of population transfer in a synthetic lattice in Sec.~\ref{sec:5.3_synthetic} and finally for the preparation of maximally entangled GHZ states in the setting of frustrated spin systems in Sec.~\ref{sec:6.4_ghz_states}. We compare the results obtained with \acrref{COLD} to those obtained using un-optimised \acrref{LCD} as well as different optimal control pulses with no counterdiabatic component. In Ch.~\ref{chap:7_higher_order_agp} we do the same but implement \acrref{CD}-inspired cost functions in the optimisation of \acrref{COLD} and plain optimal control instead of using fidelity or (as in the case of GHZ state preparation) entanglement as optimisation metrics. We present results for the two-spin annealing case in Sec.~\ref{sec:7.1_two_spin_ho}, the Ising spin chain in Sec.~\ref{sec:7.2_ising_ho_lcd} and finally for the GHZ state preparation protocol in a system of frustrated spins in Sec.~\ref{sec:7.3_ghz_ho}. We discuss when such optimisation metrics may be better than those used in Ch.~\ref{chap:6_Applications_fidelity} and in which cases they might fail.
+\DIFdelbegin \DIFdel{After a detailed introduction of the methods, we then implement them }\DIFdelend \DIFaddbegin \DIFadd{We then demonstrate implementations of the new methods }\DIFaddend in numerical simulations of several example quantum systems in Part.~\ref{part:applications}. In Ch.~\ref{chap:6_Applications_fidelity} we present and discuss results obtained when applying \acrref{COLD} to a simple two-spin annealing protocol \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\DIFdelbegin \DIFdel{\ref{sec:5.1_2spin_annealing}}\DIFdelend \DIFaddbegin \DIFadd{\ref{sec:5.1_2spin_annealing)}}\DIFaddend , the Ising spin chain of varying lengths \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:5.2_Ising_chain}\DIFaddbegin \DIFadd{)}\DIFaddend , the case of population transfer in a synthetic lattice \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:5.3_synthetic}\DIFaddbegin \DIFadd{) }\DIFaddend and finally for the preparation of maximally entangled GHZ states in the setting of frustrated spin systems \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:6.4_ghz_states}\DIFaddbegin \DIFadd{)}\DIFaddend . We compare the results obtained with \acrref{COLD} to those obtained using un-optimised \acrref{LCD} as well as different optimal control pulses with no counterdiabatic component. In Ch.~\ref{chap:7_higher_order_agp} we do the same but implement \acrref{CD}-inspired cost functions in the optimisation of \acrref{COLD} and plain optimal control instead of using fidelity or (as in the case of GHZ state preparation) entanglement as optimisation metrics. We present results for the two-spin annealing case \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:7.1_two_spin_ho}\DIFaddbegin \DIFadd{)}\DIFaddend , the Ising spin chain \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:7.2_ising_ho_lcd}\DIFaddbegin \DIFadd{) }\DIFaddend and finally for the GHZ state preparation protocol in a system of frustrated spins \DIFdelbegin \DIFdel{in }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend Sec.~\ref{sec:7.3_ghz_ho}\DIFaddbegin \DIFadd{)}\DIFaddend . We discuss when such optimisation metrics may be better than those used in Ch.~\ref{chap:6_Applications_fidelity} and in which cases they might fail.
 
-Finally, in Part~\ref{part:conclusion} we conclude with a summary of the thesis in Ch.~\ref{chap:8_Summary} and an outlook into future research directions that are left to be explored in Ch.~\ref{chap:9_Future_directions}. A diagram of the thesis structure can be found in Fig.~\ref{fig:thesis_overview}, linking the relevant parts together.
+Finally, in Part~\ref{part:conclusion} we conclude with a summary of the thesis in Ch.~\ref{chap:8_Summary} and an outlook into future research directions that are left to be explored\DIFdelbegin \DIFdel{in Ch. ~\ref{chap:9_Future_directions}. }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend A diagram of the thesis structure can be found in Fig.~\ref{fig:thesis_overview}, linking the relevant parts together.
 
 \section{Publications and manuscripts}
 
@@ -383,7 +402,11 @@ The majority of this work is based on the following publications and manuscripts
     \item \textbf{Counterdiabatic Optimised Local Driving}, \textit{Ieva Čepaitė, Anatoli Polkovnikov, Andrew J. Daley, Callum W. Duncan. PRX Quantum \textbf{4}, 010309, 2023.} Eprint arxiv:2203.01948. \cite{cepaite_counterdiabatic_2023}
     \item \textbf{Many-body spin rotation by adiabatic passage in
     spin-1/2 XXZ chains of ultracold atoms}, \textit{Ivana Dimitrova, Stuart Flannigan, Yoo Kyung Lee, Hanzhen Lin,  Jesse Amato-Grill, Niklas Jepsen, Ieva Čepaitė, Andrew J. Daley, Wolfgang Ketterle. Quantum Sci. Technol. \textbf{8} 035018, 2023} Eprint arxiv:2301.00218.\cite{dimitrova_many-body_2023}.
-    \item \textbf{Numerical approaches for non-adiabatic terms in quantum annealing}, \textit{Ewen D. C. Lawrence, Sebastian Schmid, Ieva Čepaitė, Peter Kirton, Callum W. Duncan}, in preparation \cite{lawrence_numerical_2023}.
+    \item \textbf{\DIFdelbegin \DIFdel{Numerical approaches }\DIFdelend \DIFaddbegin \DIFadd{A numerical approach }\DIFaddend for \DIFaddbegin \DIFadd{calculating exact }\DIFaddend non-adiabatic terms in quantum \DIFdelbegin \DIFdel{annealing}\DIFdelend \DIFaddbegin \DIFadd{dynamics}\DIFaddend }, \textit{Ewen D. C. Lawrence, Sebastian Schmid, Ieva Čepaitė, Peter Kirton, Callum W. Duncan}, \DIFdelbegin \DIFdel{in preparation \mbox{%DIFAUXCMD
+\cite{lawrence_numerical_2023}}\hskip0pt%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{Eprint arxiv: 2401.10985 \mbox{%DIFAUXCMD
+\cite{lawrence_numerical_2024}}\hskip0pt%DIFAUXCMD
+}\DIFaddend .
 \end{enumerate}
 
 My contributions to (1) include theoretical work, numerical analysis and writing of the manuscript. In the case of (2) I contributed to some discussions and some numerical analysis relating to the results. In the case of (3), my contribution was confined to theoretical discussions and the writing of the introduction and theoretical component of the manuscript.
@@ -574,13 +597,13 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
 
     \section{The adiabatic gauge potential}\label{sec:2.2_AGP}
 
-    The previous section introduced quantum adiabaticity and presented some intuition for non-adiabatic effects at fast driving times. In this section, we would like to establish the deeply related concept of the adiabatic gauge potential (\acrref{AGP}) \cite{kolodrubetz_geometry_2017}, a key player in the subject matter of this thesis and a fascinating mathematical object in its own right. While the \acrref{AGP} has primarily been studied in the context of suppressing non-adiabatic effects \cite{sels_minimizing_2017, claeys_floquet-engineering_2019}, as will be its central role in this thesis, in recent years it has also been shown to be a potential probe for quantum chaos \cite{pandey_adiabatic_2020} and has been proposed for the study of thermalisation \cite{nandy_delayed_2022}. These results are possible because quantum chaos manifests itself through exponential sensitivity of the eigenstates to infinitesimal perturbations that are generated by the \acrref{AGP}, making the scaling of its norm a very sensitive probe for quantum chaos and thermalisation.
+    The previous section introduced quantum adiabaticity and presented some intuition for non-adiabatic effects at fast driving times. In this section, we would like to establish the deeply related concept of the adiabatic gauge potential (\acrref{AGP}) \cite{kolodrubetz_geometry_2017}, a key player in the subject matter of this thesis and a fascinating mathematical object in its own right. While the \acrref{AGP} has primarily been studied in the context of suppressing non-adiabatic effects \cite{sels_minimizing_2017, claeys_floquet-engineering_2019}, as will be its central role in this thesis, in recent years it has also been shown to be a potential probe for quantum chaos \cite{pandey_adiabatic_2020} and has been proposed for the study of thermalisation \cite{nandy_delayed_2022}. \DIFdelbegin \DIFdel{These results are possible because quantum chaos}\DIFdelend \DIFaddbegin \DIFadd{This is a consequence of the fact that quantum chaos, as often defined in the literature, }\DIFaddend manifests itself through exponential sensitivity of the eigenstates to infinitesimal perturbations that are generated by the \acrref{AGP}\DIFdelbegin \DIFdel{, making the scaling of its norm a very sensitive probe for quantum chaos and thermalisation}\DIFdelend .
 
     \subsection{The moving frame Hamiltonian}
 
-    In Section \ref{sec:2.1.1_proof_adiabatic_theorem} we spent some time working in the instantaneous eigenbasis of the Hamiltonian where it is diagonalised, à la Eq.~\eqref{eq:instantaneous_schroedinger}. For a general Hamiltonian, it is possible to go to this `moving frame' picture by rotating the Hamiltonian via some unitary $U$ so that it becomes diagonal at each point in time. If we start with some arbitrary Hamiltonian $H(\lambda)$ in some sort of `lab frame' that depends on time through the parameter(s) $\lambda(t)$, it can be diagonalised through $\Tilde{H} = U^{\dagger}(\lambda)H(\lambda)U(\lambda)$, where the $\sim$ implies that we are now in the basis of the moving frame. In general, whenever the tilde symbol appears above an operator throughout this section, it means that we are working in this new basis: $\Tilde{\sigma} = \adj{U}\sigma U$.
+    In Section \ref{sec:2.1.1_proof_adiabatic_theorem} we spent some time working in the instantaneous eigenbasis of the Hamiltonian where it is diagonalised, à la Eq.~\eqref{eq:instantaneous_schroedinger}. For a general Hamiltonian, it is possible to go to this `moving frame' picture by rotating the Hamiltonian via some unitary $U$ so that it becomes diagonal at each point in time. If we start with some arbitrary Hamiltonian $H(\lambda)$ in \DIFdelbegin \DIFdel{some sort of }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend `lab frame' \DIFdelbegin \DIFdel{that }\DIFdelend \DIFaddbegin \DIFadd{(i.e.~one that is viewed from an external, fixed frame of reference) that }\DIFaddend depends on time through the parameter(s) $\lambda(t)$, it can be diagonalised through $\Tilde{H} = U^{\dagger}(\lambda)H(\lambda)U(\lambda)$, where \DIFdelbegin \DIFdel{the $\sim$ }\DIFdelend \DIFaddbegin \DIFadd{$\Tilde{\cdot}$ }\DIFaddend implies that we are now in the basis of the moving frame. In general, whenever the tilde symbol appears above an operator throughout this section, it means that we are working in this new\DIFaddbegin \DIFadd{, co-moving }\DIFaddend basis: $\Tilde{\sigma} = \adj{U}\sigma U$.
 
-    We can also view the quantum system evolving under the Hamiltonian in this moving frame picture: $\ket*{\Tilde{\psi}} = U^{\dagger}\ket{\psi}$, which is equivalent to expanding the wave function in the moving frame (or instantaneous) basis exactly as was done in Eq.~\eqref{eq:adiabatic_basis_expansion}. Given this new basis, rewriting the Schr\"{o}dinger equation reveals something interesting:
+    We can also view the quantum system evolving under the Hamiltonian in this moving frame picture: $\ket*{\Tilde{\psi}} = U^{\dagger}\ket{\psi}$, which is equivalent to expanding the wave function in the \DIFdelbegin \DIFdel{moving frame (or instantaneous) basis }\DIFdelend \DIFaddbegin \DIFadd{instantaneous basis (or moving frame) }\DIFaddend exactly as was done in Eq.~\eqref{eq:adiabatic_basis_expansion}. Given this new basis, rewriting the Schr\"{o}dinger equation reveals\DIFdelbegin \DIFdel{something interesting}\DIFdelend :
     \begin{equation}\label{eq:moving_frame_schrodinger}
         \begin{aligned}
             i \hbar \frac{d \ket*{\Tilde{\psi}}}{dt} &= i \hbar \Big( \frac{d \adj{U}}{dt}\ket*{\psi} + \adj{U} \frac{d \ket{\psi}}{dt} \Big) \\
@@ -589,7 +612,7 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
             &= \Big(\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}}\Big) \ket*{\Tilde{\psi}},
         \end{aligned}
     \end{equation}
-    where the operator $\Tilde{\AGP{\lambda}}$ is the \emph{adiabatic gauge potential} with respect to the parameter $\lambda$ in the moving frame of the Hamiltonian $H$ and is expressed as:
+    where the operator $\Tilde{\AGP{\lambda}}$ is the \emph{adiabatic gauge potential} with respect to the parameter $\lambda$ in the moving frame of the Hamiltonian $H$\DIFdelbegin \DIFdel{and is }\DIFdelend \DIFaddbegin \DIFadd{. From the above, we can see that it can be }\DIFaddend expressed as:
     \begin{equation}\label{eq:AGP_in_terms_of_U}
         \Tilde{\AGP{\lambda}} = i\hbar \adj{U}\dlambda U.
     \end{equation}
@@ -605,10 +628,10 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
 \DIFdelend \DIFaddbegin \DIFadd{\partial_x }\DIFaddend e^{-i p x_0/\hbar} = p.
     \end{equation}
 
-    In this thesis we will restrict ourselves to the specific case of adiabaticity where the transformation $U(\lambda)$ explicitly takes a wavefunction in an arbitrary basis to the adiabatic or instantaneous basis. \DIFaddbegin \DIFadd{This is a non-trivial transformation in practice, as it corresponds to a diagonalisation of the system Hamiltonian at each instantaneous moment in time, since the adiabatic basis is one in which . The complexity of $U(\lambda)$ and its consequences will become apparent as the chapter progresses.
+    In this thesis we will restrict ourselves to the specific case of adiabaticity where the transformation $U(\lambda)$ explicitly takes a wavefunction in an arbitrary basis to the adiabatic or instantaneous basis. \DIFaddbegin \DIFadd{This is a non-trivial transformation in practice, as it corresponds to a diagonalisation of the system Hamiltonian at each instantaneous moment in time. This is a consequence of the  The complexity of $U(\lambda)$ and its consequences will become apparent as the chapter progresses.
     }\DIFaddend 
 
-    \DIFdelbegin \DIFdel{So what }\DIFdelend \DIFaddbegin \DIFadd{What }\DIFaddend we find is that the wavefunction in the moving frame basis evolves under a combination of the diagonal component $\Tilde{H}$ and some additional term proportional both to the speed at which the parameter $\lambda$ varies and the \acrref{AGP}. At this point we can simplify things by \DIFdelbegin \DIFdel{largely getting rid of the $\sim$, which we can do by }\DIFdelend applying the inverse unitary operation in order to \DIFdelbegin \DIFdel{work back in }\DIFdelend \DIFaddbegin \DIFadd{return to the }\DIFaddend lab frame basis: $\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}} \xrightarrow{U \{ \cdot \} \adj{U}} H - \dotlambda \AGP{\lambda}$. \DIFdelbegin \DIFdel{In fact, this transformation makes it easy to see how }\DIFdelend \DIFaddbegin \DIFadd{This transformation can be used to demonstrate that }\DIFaddend we can think of the AGP in the lab frame as nothing more than the derivative operator: $\AGP{\lambda} = i\hbar\dlambda$. \DIFdelbegin %DIFDELCMD < 
+    \DIFdelbegin \DIFdel{So what we find is that }\DIFdelend \DIFaddbegin \DIFadd{As we find in Eq.~\eqref{eq:moving_frame_schrodinger}, }\DIFaddend the wavefunction in the moving frame basis evolves under a combination of \DIFdelbegin \DIFdel{the diagonal component }\DIFdelend \DIFaddbegin \DIFadd{a diagonal Hamiltonian }\DIFaddend $\Tilde{H}$ and some additional term proportional both to the speed at which the parameter $\lambda$ varies and the \acrref{AGP}. At this point we can simplify things by \DIFdelbegin \DIFdel{largely getting rid of the $\sim$, which we can do by }\DIFdelend applying the inverse unitary operation in order to \DIFdelbegin \DIFdel{work back in }\DIFdelend \DIFaddbegin \DIFadd{return to the }\DIFaddend lab frame basis: $\Tilde{H} - \dotlambda\Tilde{\AGP{\lambda}} \xrightarrow{U \{ \cdot \} \adj{U}} H - \dotlambda \AGP{\lambda}$. \DIFdelbegin \DIFdel{In fact, this transformation makes it easy to see how }\DIFdelend \DIFaddbegin \DIFadd{This transformation can be used to demonstrate that }\DIFaddend we can think of the AGP in the lab frame as nothing more than the derivative operator: $\AGP{\lambda} = i\hbar\dlambda$. \DIFdelbegin %DIFDELCMD < 
 
 %DIFDELCMD <     %%%
 \DIFdelend To see this, take any quantum state written in some basis, \@e.g.~$\ket{\psi} = \sum_n \psi_n \ket{n}$. Then in the moving frame basis we have:
@@ -658,12 +681,12 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
 
     \section{Counterdiabatic Driving}\label{sec:2.3_CD}
 
-    Having done all this work to characterise and understand the \acrref{AGP} and the adiabatic theorem, we now come to several important questions, starting with \emph{why do we care}? What is it about adiabatic dynamics that makes them important? Why do we want to \DIFdelbegin \DIFdel{quantifying }\DIFdelend \DIFaddbegin \DIFadd{quantify }\DIFaddend non-adiabatic transformations and understand what generates \DIFaddbegin \DIFadd{them}\DIFaddend ? The answer\DIFaddbegin \DIFadd{, at least for the most part, }\DIFaddend is simple: adiabatic processes are useful. The ability to drive a time-dependent Hamiltonian while remaining in a \DIFdelbegin \DIFdel{particular }\DIFdelend \DIFaddbegin \DIFadd{given }\DIFaddend eigenstate can be used to prepare interesting quantum states \cite{dimitrova_many-body_2023}, to solve combinatorics problems encoded in quantum systems \cite{ebadi_quantum_2022, pichler_quantum_2018} or even to synthesise effective ramps and quantum logic gates \cite{pelegri_high-fidelity_2022} among many other applications. \DIFaddbegin \DIFadd{While there are several ways to achieve these goals, adiabaticity is a comparatively well-understood and general approach, which lends itself broadly to implementation and analysis.\reminder{maybe some citations here?}
+    Having done all this work to characterise and understand the \acrref{AGP} and the adiabatic theorem, we now come to several important questions, starting with \emph{why do we care}? What is it about adiabatic dynamics that makes them important? Why do we want to \DIFdelbegin \DIFdel{quantifying }\DIFdelend \DIFaddbegin \DIFadd{quantify }\DIFaddend non-adiabatic transformations \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{or }\DIFaddend understand what generates \DIFaddbegin \DIFadd{them}\DIFaddend ? The answer\DIFaddbegin \DIFadd{, at least for the most part, }\DIFaddend is simple: adiabatic processes are useful. The ability to drive a time-dependent Hamiltonian while remaining in a \DIFdelbegin \DIFdel{particular }\DIFdelend \DIFaddbegin \DIFadd{given }\DIFaddend eigenstate can be used to prepare interesting quantum states \cite{dimitrova_many-body_2023}, to solve combinatorics problems encoded in quantum systems \cite{ebadi_quantum_2022, pichler_quantum_2018} or even to synthesise effective ramps and quantum logic gates \cite{pelegri_high-fidelity_2022} among many other applications. \DIFaddbegin \DIFadd{While there are several ways to achieve these goals, adiabaticity is a comparatively well-understood and general approach, which lends itself broadly to implementation and analysis.\reminder{maybe some citations here?}
     }\DIFaddend 
 
-    The most natural way of exploiting adiabatic protocols is by adhering to the adiabatic condition. However, as is often the case when it \DIFdelbegin \DIFdel{come }\DIFdelend \DIFaddbegin \DIFadd{comes }\DIFaddend to the control of quantum systems, \DIFdelbegin \DIFdel{things aren't }\DIFdelend \DIFaddbegin \DIFadd{nothing is }\DIFaddend quite that simple. In practice, changing a Hamiltonian slowly enough to satisfy Eq.~\eqref{eq:adiabatic_criterion} leads to the system being overwhelmed by decoherence in many cases. Furthermore, as system sizes get larger, the energy gaps between the instantaneous eigenstates tend to get smaller requiring slower and slower driving, making adiabatic protocols unscalable. \DIFaddbegin \DIFadd{\reminder{add citation here} }\DIFaddend While the adiabatic condition is not impossible to adhere to, in order to have any hope of pushing quantum technologies beyond their current limits, it is necessary to move beyond the adiabatic limit. The result is that we need to find ways to achieve the same results as adiabatic processes but without requiring the prohibitively long driving times that are demanded by Eq.~\eqref{eq:adiabatic_criterion}.
+    The most natural way of exploiting adiabatic protocols is by adhering to the adiabatic condition. However, as is often the case when it \DIFdelbegin \DIFdel{come }\DIFdelend \DIFaddbegin \DIFadd{comes }\DIFaddend to the control of quantum systems, \DIFdelbegin \DIFdel{things aren't }\DIFdelend \DIFaddbegin \DIFadd{nothing is }\DIFaddend quite that simple. In practice, changing a Hamiltonian slowly enough to satisfy Eq.~\eqref{eq:adiabatic_criterion} leads to the system being overwhelmed by decoherence\DIFdelbegin \DIFdel{in many cases}\DIFdelend . Furthermore, as system sizes get larger, the energy gaps between the instantaneous eigenstates tend to get smaller\DIFaddbegin \DIFadd{, }\DIFaddend requiring slower and slower driving, making adiabatic protocols unscalable. \DIFaddbegin \DIFadd{\reminder{add citation here} }\DIFaddend While the adiabatic condition is not impossible to adhere to, in order to have any hope of pushing quantum technologies beyond their current limits, it is necessary to move beyond the adiabatic limit. The result is that we need to find ways to achieve the same results as adiabatic processes but without requiring the prohibitively long driving times that are demanded by Eq.~\eqref{eq:adiabatic_criterion}.
 
-    Our analysis of the adiabatic condition has given us a clue as to how we might be able to achieve fast driving without the eigenstate deformations that result from fast driving. Returning to Eq.~\eqref{eq:adiabatic_states}, we may focus our attention on the fact that our goal is simply to have the system follow the eigenstates of the instantaneous Hamiltonian. The approach that aims to do exactly this was first developed independently by Demirplak and Rice \cite{demirplak_adiabatic_2003} and Berry \cite{berry_transitionless_2009} and began as the observation that one can attempt to reverse-engineer a Hamiltonian that drives the instantaneous eigenstates exactly. Recall from Eq.~\eqref{eq:adiabatic_states} that in the case that we have adiabatic evolution, the instantaneous eigenstates evolve as $\ket{\psi(\lambda)} = e^{i \dotlambda^{-1} \theta_m(\lambda)}e^{i \gamma_m(\lambda)} \ket{m(\lambda)}$ with the dynamical phase $\theta_m$ and geometric phase $\gamma_m$ defined in Eq.~\eqref{eq:dynamical_phase} and Eq.~\eqref{eq:geometric_phase} respectively. If we want to find a Hamiltonian $H_{\rm t-less} (\lambda)$ (transitionless) that drives these states exactly, we can pick a unitary $R(\lambda)$ such that:
+    Our analysis of the adiabatic condition has given us a clue as to how we might be able to achieve fast driving without the eigenstate deformations that result from \DIFdelbegin \DIFdel{fast driving}\DIFdelend \DIFaddbegin \DIFadd{it}\DIFaddend . Returning to Eq.~\eqref{eq:adiabatic_states}, we may focus our attention on the fact that our goal is simply to have the system follow the eigenstates of the instantaneous Hamiltonian. The approach that aims to do exactly this was first developed independently by Demirplak and Rice \cite{demirplak_adiabatic_2003} and Berry \cite{berry_transitionless_2009}\DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{. It }\DIFaddend began as the observation that one can attempt to reverse-engineer a Hamiltonian that drives the instantaneous eigenstates exactly. Recall from Eq.~\eqref{eq:adiabatic_states} that in the case that we have adiabatic evolution, the instantaneous eigenstates evolve as $\ket{\psi(\lambda)} = e^{i \dotlambda^{-1} \theta_m(\lambda)}e^{i \gamma_m(\lambda)} \ket{m(\lambda)}$ with the dynamical phase $\theta_m$ and geometric phase $\gamma_m$ defined in Eq.~\eqref{eq:dynamical_phase} and Eq.~\eqref{eq:geometric_phase} respectively. If we want to find a Hamiltonian $H_{\rm t-less} (\lambda)$ (transitionless) that drives these states exactly, we can pick a unitary $R(\lambda)$ such that:
     \begin{equation}
         \begin{aligned}
             i\hbar \dotlambda \partial_{\lambda} R(\lambda) &= H_{\rm t-less} (\lambda) R(\lambda), \\
@@ -684,7 +707,7 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
             \end{aligned}
         \end{aligned}
     \end{equation}
-    where in the last line the dependence on $\lambda$ has once again been removed from the eigenstates $\ket{m}$ and the eigenenergies $E_m$ noting that all terms for $\lambda = 0$ have been cancelled out. In order to analyse the equation more easily, I'll rewrite it in terms of two separate components:
+    where in the last line the dependence on $\lambda$ has once again been removed from the eigenstates $\ket{m}$ and the eigenenergies $E_m$ noting that all terms for $\lambda = 0$ have been cancelled out. In order to analyse the equation more easily, \DIFdelbegin \DIFdel{I'll }\DIFdelend \DIFaddbegin \DIFadd{we }\DIFaddend rewrite it in terms of two separate components:
     \begin{equation}\label{eq:transitionless_h0_h1}
         H_{\rm t-less}(\lambda) = H_0(\lambda) + H_1(\lambda),
     \end{equation}
@@ -719,7 +742,7 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
     }\begin{equation}\DIFadd{\label{eq:AGP_cancelling_out}
     	H_{\rm t-less}(\lambda) = \Big( H_0 - \dotlambda \AGP{\lambda} \Big)  + \dotlambda \AGP{\lambda} = H_0,
     }\end{equation}
-    \DIFadd{as expected. }\DIFaddend In the equation above, the effective Hamiltonian in the moving frame is simply the diagonalized version of the driving Hamiltonian $H(\lambda)$ in the lab frame, which \DIFdelbegin \DIFdel{does nothing more than drive }\DIFdelend \DIFaddbegin \DIFadd{drives }\DIFaddend the instantaneous eigenstates perfectly. This is the idea behind \emph{counterdiabatic driving} or \acrref{CD}. The name, unsurprisingly, stems from the fact that the additional `counterdiabatic' term $+ \dotlambda\AGP{\lambda}$ is added in order to `counter' the non-adiabatic or `diabatic' effects that arise in the effective Hamiltonian throughout the system's evolution. \DIFaddbegin \DIFadd{We will note that the second term in $H_1$ is often neglected in constructing the counterdiabatic drive, as it does not contribute to excitations out of the desired eigenstate(s), although it does contribute to a rescaling of the energies of said states. In many applications of adiabatic processes, such a rescaling is not relevant, thus it may be omitted. 
+    \DIFadd{as expected. }\DIFaddend In the equation above, the effective Hamiltonian in the moving frame is simply the diagonalized version of the driving Hamiltonian $H(\lambda)$ in the lab frame, which \DIFdelbegin \DIFdel{does nothing more than drive }\DIFdelend \DIFaddbegin \DIFadd{drives }\DIFaddend the instantaneous eigenstates perfectly. This is the idea behind \emph{counterdiabatic driving} or \acrref{CD}. The name, unsurprisingly, stems from the fact that the additional `counterdiabatic' term $+ \dotlambda\AGP{\lambda}$ is added in order to `counter' the non-adiabatic or `diabatic' effects that arise in the effective Hamiltonian throughout the system's evolution. \DIFaddbegin \DIFadd{We will note that the second term in $H_1$ is often neglected in constructing the counterdiabatic drive, as it does not contribute to excitations out of the desired eigenstate(s), although it does contribute to a rescaling of their energies. In many applications of adiabatic processes, such a rescaling is not relevant, thus it may be omitted. 
     }\DIFaddend 
 
     \DIFdelbegin \DIFdel{Since all of the operators in the above equation are in the moving frame basis, we can rotate them back to the lab frame and }\DIFdelend \DIFaddbegin \DIFadd{With all this in mind, we can }\DIFaddend explicitly define the counterdiabatic Hamiltonian:
@@ -734,12 +757,16 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
 \DIFdel{This seems simple enough: if }\DIFdelend \DIFaddbegin \DIFadd{If }\DIFaddend $\HCD$ is known and can be engineered, it is possible to drive a quantum system arbitrarily fast with no deformations associated with non-adiabatic effects. However, if this seems too good to be true, that's because in general it is. The first clue is in the form of the \acrref{AGP} in Eq.~\eqref{eq:AGP_adiabatic_basis}, which implies that in order to know this \acrref{CD} Hamiltonian, we'd need to not only know the full eigenspectrum of the lab frame Hamiltonian for each value of $\lambda$ throughout the protocol, but also to be able to engineer such terms to arbitrary precision in the lab. Furthermore, the off-diagonal elements of $\AGP{\lambda}$, as alluded to earlier, are proportional to the inverse of the energy gaps in the system \DIFdelbegin \DIFdel{$(E_n - E_m)$, which }\DIFdelend \DIFaddbegin \DIFadd{$(E_n - E_m)^{-1}$. These can }\DIFaddend become exponentially small as \DIFdelbegin \DIFdel{system sizes increase and can become divergent or }\DIFdelend \DIFaddbegin \DIFadd{the system size increases, making them diverge or become }\DIFaddend undefined in the thermodynamic limit \cite{kolodrubetz_geometry_2017, jarzynski_geometric_1995}. In chaotic systems, the \acrref{AGP} cannot be local because no local operator can distinguish many-body states with arbitrary small energy difference \cite{dalessio_quantum_2016}. What all of this really implies is that it is impossible - or at least impractical - to attempt to implement the exact counterdiabatic Hamiltonian given by Eq.~\eqref{eq:CD_Hamiltonian} in the general case, barring some very simple and small systems \DIFdelbegin \DIFdel{.
 }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
 \cite{bason_high-fidelity_2012}}\hskip0pt%DIFAUXCMD
-. This makes }\acrref{CD} \DIFadd{in its basic form quite impractical in the general case.
+. This makes }\acrref{CD} \DIFadd{in its basic form quite impractical in the general case, although several experiments on small and relatively simple systems have demonstrated its effectiveness \reminder{add citation!!}.
 }\DIFaddend 
 
     \subsection{Brief interlude: the waiter and the glass of water}
 
-    It may seem like our inability to know or implement the exact \acrref{CD} Hamiltonian of Eq.~\eqref{eq:CD_Hamiltonian} in the general case brings us back to square one in trying to speed up adiabatic protocols. We will show in the next section that it turns out this is not the case at all. However, before we dive back into the math, we can take a moment to illustrate the concept of \acrref{CD} with a classical analogy from \cite{sels_minimizing_2017}, which not only elucidates what we have talked about so far, but also gives some intuition for how we might overcome the practical problems associated with the exact \acrref{AGP}, setting the stage nicely for the rest of the chapter.
+    It may seem like our inability to know or implement the exact \acrref{CD} Hamiltonian of Eq.~\eqref{eq:CD_Hamiltonian} in the general case brings us back to square one in trying to speed up adiabatic protocols. We will show in the next section that it turns out this is not the case at all. However, before we dive back into the math, we can take a moment to illustrate the concept of \acrref{CD} with a classical analogy \DIFdelbegin \DIFdel{from \mbox{%DIFAUXCMD
+\cite{sels_minimizing_2017}}\hskip0pt%DIFAUXCMD
+, which }\DIFdelend \DIFaddbegin \DIFadd{which is often used in this circumstance \mbox{%DIFAUXCMD
+\cite{sels_minimizing_2017}}\hskip0pt%DIFAUXCMD
+, and }\DIFaddend not only elucidates what we have talked about so far, but also gives some intuition for how we might overcome the practical problems associated with the exact \acrref{AGP}\DIFdelbegin \DIFdel{, setting }\DIFdelend \DIFaddbegin \DIFadd{. This sets }\DIFaddend the stage nicely for the rest of the chapter.
 
     The story goes something like this: imagine that you are a waiter tasked with carrying a glass of water on a tray from the bar to some table on the other side of a rather large restaurant. As you begin to walk while holding the tray perfectly level with the ground, your acceleration induces a force on the glass which causes it to wobble and the water to splash around. Ideally you would like to stop the water from spilling, so at this point you have two options: either to (a) walk slowly so as to minimize the force that is destabilizing the glass or else (b) to counteract it by tilting the tray. 
 
@@ -777,7 +804,7 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
     \end{equation}
     We can see that when $\approxAGP = \AGP{\lambda}$, \@i.e.~when our guess - or approximation - for the \acrref{AGP} is exactly correct, then $G_{\lambda}(\AGP{\lambda}) = - F_{\lambda}$. This fact essentially allows us to reformulate the problem of trying to determine the \acrref{AGP} into one of minimization of distance between the operators $G_{\lambda}(\approxAGP)$ and $-F_{\lambda}$ with respect to the ansatz $\approxAGP$. 
 
-    There are several options for a distance metric between two operators, but the task can be simplified simply by noticing that in the case where the ansatz is exact, $G_{\lambda}$ has no off-diagonal elements, or $\comm{H}{G_{\lambda}(\AGP{\lambda})} = 0$. Thus a way to minimise the distance between $G_{\lambda}(\approxAGP)$ and $-F_{\lambda}$ is simply to minimise its Hilbert-Schmidt norm. Let us express this norm as an \emph{action}\cite{kolodrubetz_geometry_2017} associated with the \acrref{AGP}:
+    There are several options for a distance metric between two operators, \DIFdelbegin \DIFdel{but }\DIFdelend \DIFaddbegin \DIFadd{each providing different information about their properties . However, for our purpose, }\DIFaddend the task can be simplified simply by noticing that in the case where the ansatz is exact, $G_{\lambda}$ has no off-diagonal elements, or $\comm{H}{G_{\lambda}(\AGP{\lambda})} = 0$. Thus a way to minimise the distance between $G_{\lambda}(\approxAGP)$ and $-F_{\lambda}$ is simply to minimise its Hilbert-Schmidt norm\DIFaddbegin \DIFadd{, as this fully and efficiently captures the desired properties of the operator $G_{\lambda}(\AGP{\lambda})$}\DIFaddend . Let us express this norm as an \emph{action}\cite{kolodrubetz_geometry_2017} associated with the \acrref{AGP}:
     \begin{equation}\label{eq:agp_action}
         \mathcal{S}(\approxAGP) = \Tr[G^2_{\lambda}(\approxAGP)],
     \end{equation}
@@ -797,7 +824,7 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
         H(\lambda) = -\cos(\lambda)\sx - \sin(\lambda)\sz.
     \end{equation}
 
-    Since this is such a simple example, the only operators we could possibly include in the basis for our approximate \acrref{AGP} are single-spin operators. While any of the single-spin Pauli operators $\{ \sx, \sy, \sz\}$ are viable choices here, we note that it is not hard to see from $\Tilde{\AGP{\lambda}} = i\hbar \adj{U} \dlambda U$ that if the Hamiltonian $H(\lambda)$ is real, the counterdiabatic term should be purely imaginary, as follows from the fact that a real Hamiltonian can always be diagonalised by a real orthogonal matrix $U$. This leaves us with a single degree of freedom that could act as the basis of $\approxAGP$, which is $\sy$:
+    Since this is such a simple example, the only operators we could possibly include in the basis for our approximate \acrref{AGP} are single-spin operators. While any of the single-spin Pauli operators $\{ \sx, \sy, \sz\}$ are viable choices here, we note that it is not hard to see from $\Tilde{\AGP{\lambda}} = i\hbar \adj{U} \dlambda U$ that if the Hamiltonian $H(\lambda)$ is real, the counterdiabatic term should be purely imaginary, as follows from the fact that a real Hamiltonian can always be diagonalised by a real orthogonal matrix $U$. \DIFaddbegin \DIFadd{If a real operator is elected as the ansatz in this case, we will find that the coefficients $\alpha_j$ of such operators will be equal to $0$. }\DIFaddend This leaves us with a single degree of freedom that could act as the basis of $\approxAGP$, which is $\sy$:
     \begin{equation}
         \approxAGP = \alpha(\lambda) \sy.
     \end{equation}
@@ -831,9 +858,17 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
     \begin{equation}\label{eq:nested_commutator_AGP}
         \Bar{\AGP{\lambda}}^{(\ell)} = i\hbar \sum_{k=1}^\ell \alpha_k(\lambda) \underbrace{[H(\lambda),[H(\lambda),...[H(\lambda)}_{2k-1},\dlambda H(\lambda)]]],
     \end{equation}
-    where the coefficients $\alpha_k(\lambda)$ are used in a similar manner as \acrref{LCD} and can be found for each set of operators at order $k$ using the minimisation procedure outlined in section \ref{sec:2.4.1_LCD}. In the limit of $\ell \rightarrow \infty$, the expression above should represent the exact \acrref{AGP}, although there is no guarantee of convergence prior to this point as during each iteration of the commutations, the set of operators that are obtained need not be orthogonal to the previous set. This means that even when the set of operators contains all the required degrees of freedom to describe the exact \acrref{AGP}, the minimisation procedure is hampered due to the lack of linearity that is readily available in the \acrref{LCD} approach.
+    where the coefficients $\alpha_k(\lambda)$ are used in a similar manner as \acrref{LCD}\DIFdelbegin \DIFdel{and can be found for each set of operators at order $k$ using the minimisation procedure outlined in section \ref{sec:2.4.1_LCD}}\DIFdelend \DIFaddbegin \DIFadd{. The minimisation procedure outlined in section \ref{sec:2.4.1_LCD} can be implemented determine the coefficients $\alpha_k(\lambda)$ for all orders of the nested commutator expansion. On the other hand, one might choose to instead reparameterise and use a different set of coefficients: one $\alpha$ to each orthogonal operator that is obtained in the nested commutator expansion after a chosen number of commutations. The primary difference between the two approaches is merely the parameterisation of the approximate counterdiabatic drive. A more fine-grained parameterisation, with a larger number of coefficients $\alpha$, is liable to give a better approximation of the drive. In the original work \mbox{%DIFAUXCMD
+\cite{claeys_floquet-engineering_2019}}\hskip0pt%DIFAUXCMD
+, $\alpha_k(\lambda)$ is used rather than a different parameterisation, as it allows one to easily determine how to engineer a Floquet Hamiltonian that implements the given counterdiabatic drive. This is due to a similarity in the structure of the high-frequency expansion of the Floquet Hamiltonian and the nested commutator expansion described above}\DIFaddend .
+    In the limit of $\ell \rightarrow \infty$, the expression \DIFdelbegin \DIFdel{above }\DIFdelend \DIFaddbegin \DIFadd{in Eq.~\eqref{eq:nested_commutator_AGP} }\DIFaddend should represent the exact \acrref{AGP}, although there is no guarantee of convergence prior to this point as during each iteration of the commutations, the set of operators that are obtained need not be orthogonal to the previous set. This\DIFdelbegin \DIFdel{means that even when the set of operators contains all the required degrees of freedom to describe the exact }%DIFDELCMD < \acrref{AGP}%%%
+\DIFdel{, the minimisation procedure is hampered due to the lack of linearity that is readily available in the }%DIFDELCMD < \acrref{LCD} %%%
+\DIFdel{approach.
+    }%DIFDELCMD < 
 
-    As noted in \cite{claeys_floquet-engineering_2019}, there are several ways to motivate this form of the \acrref{AGP}, \@e.g.~by noticing that such commutator terms appear in the Baker-Campbell-Hausdorff (BCH) expansion in the definition of a (properly regularized) \cite{jarzynski_geometric_1995} \acrref{AGP} for a fixed $\lambda$:
+%DIFDELCMD <     %%%
+\DIFdelend \DIFaddbegin \DIFadd{, however, may not be an issue in practice, as due to previously discussed reasons relating to a difficulty in implementation, we generally only wish to obtain a simple approximation of the counterdiabatic terms.
+    }\DIFaddend As noted in \cite{claeys_floquet-engineering_2019}, there are several ways to motivate this form of the \acrref{AGP}, \@e.g.~by noticing that such commutator terms appear in the Baker-Campbell-Hausdorff (BCH) expansion in the definition of a (properly regularized) \cite{jarzynski_geometric_1995} \acrref{AGP} for a fixed $\lambda$:
     \begin{equation}\label{eq:regularised_AGP}
         \AGP{\lambda} = \lim_{\epsilon \rightarrow 0^{+}} \int_0^{\infty} dt e^{-\epsilon t} \left( e^{-iH(\lambda) t}\dlambda H(\lambda)e^{iH(\lambda) t} + F_{\lambda} \right),
     \end{equation}
@@ -856,8 +891,14 @@ and }\DIFaddend an operator known as the adiabatic gauge potential \cite{kolodru
     \end{equation}
     where $\omega_{mn} = (E_m - E_n)$. While this shows that the nested commutator approximation wouldn't work in regimes where the energy gap is exponentially small or exponentially big (\@i.e.~where $\omega_{mn} \rightarrow 0$ or $\omega_{mn} \rightarrow \infty$), this turns out to not be an issue in practice. In the limit of very large energy gaps, the term $\mel{m}{\dlambda H}{n}$ decays exponentially meaning that the contribution from these elements to the \acrref{AGP} is negligible anyway. As the energy gaps close, the \acrref{AGP} elements become undefined and generally in speeding up adiabatic processes, one only cares about suppressing transitions across some energy gap $\Delta$. In that case, as long as $\omega_{mn} \geq \Delta$, the approximation does its job in the \acrref{CD} protocol.
 
-    In \cite{claeys_floquet-engineering_2019}, it was shown that the approximate \acrref{CD} Hamiltonians constructed using $\AGP{\lambda}^{(\ell)}$ can be implemented using Floquet Hamiltonians \cite{goldman_periodically_2014} by driving the $H$ and $\dlambda H$ terms at frequencies determined by the coefficients $\alpha_k$. However, for the purposes of this thesis, only the result presented in Eq.~\eqref{eq:nested_commutator_AGP} matters, as far as it allows one to identify operators in the \acrref{AGP} basis without requiring to make an ansatz with no further insight.
-\chapter{Quantum Optimal Control}\label{chap:3_Quantum_Optimal_control}
+\DIFdelbegin \DIFdel{In \mbox{%DIFAUXCMD
+\cite{claeys_floquet-engineering_2019}}\hskip0pt%DIFAUXCMD
+, it was shown that the approximate }%DIFDELCMD < \acrref{CD} %%%
+\DIFdel{Hamiltonians constructed using $\AGP{\lambda}^{(\ell)}$ can be implemented using Floquet Hamiltonians \mbox{%DIFAUXCMD
+\cite{goldman_periodically_2014} }\hskip0pt%DIFAUXCMD
+by driving the $H$ and $\dlambda H$ terms at frequencies determined by the coefficients $\alpha_k$. However, for the purposes of this thesis, only the result presented in Eq.~\eqref{eq:nested_commutator_AGP} matters, as far as it allows one to identify operators in the }%DIFDELCMD < \acrref{AGP} %%%
+\DIFdel{basis without requiring to make an ansatz with no further insight.
+}\DIFdelend \chapter{Quantum Optimal Control}\label{chap:3_Quantum_Optimal_control}
 \epigraph{``Neo, sooner or later you’re going to realize, just as I did, that there’s a difference between knowing the path and walking the path."}{Morpheus, \emph{The Matrix (1999)}}
 
 The future of quantum technologies depends on our ability to control quantum systems with precision and accuracy. It is a key factor in the realisaton of, for example, quantum computers \cite{ball_software_2021}, communication systems \cite{omran_generation_2019} and quantum sensors \cite{le_robust_2021}, as well as being necessary in the exploration and understanding of fundamental physics. The research field which concerns itself with such control problems is generally known as Quantum Optimal Control Theory (\acrref{QOCT}) \cite{koch_quantum_2022,glaser_training_2015} and its primary objective is the development of techniques which allow for the construction and analysis of strategies, primarily electromagnetic field shapes, that manipulate quantum dynamical processes in the most efficient and effective way possible in order to achieve certain objectives. Common control objectives in the quantum setting can range from state preparation \cite{zhang_when_2019} and quantum gate synthesis \cite{pelegri_high-fidelity_2022}, to protection against decoherence \cite{rooney_decoherence_2012} and entanglement generation \cite{omran_generation_2019}.
@@ -874,11 +915,15 @@ In general, an optimal control problem is composed of a set of state functions $
 \begin{equation}\label{eq:control_ODE}
     \dot{x} = f(x, u),
 \end{equation}
-is satisfied almost everywhere. This is a very abstract description and just about any control problem can be expressed as a special case of this formulation \cite{dalessandro_introduction_2021}. To gain more intuition, we can imagine a more concrete example where, \@e.g.~$U$ and $X$ are sets of continuous functions on the interval $[0, \tau]$ satisfying $x(0) = x_0$. In this scenario, $\tau$ could be a time interval during which we want to drive the system from an initial state $x_0$ to a final state $x_f$ using the control function $u(t)$, $t \in [0, \tau]$. The choice of functional $C$ would have to capture the desired outcome of the protocol: that the state of the system after the driving $x(\tau)$ be equal to the target $x_f$. This can be done by choosing a distance metric that depends on only on the drive $u$ and is minimised when $x(\tau) = x_f$, \@~e.g.
+is satisfied almost everywhere. This is a very abstract description and just about any control problem can be expressed as a special case of this formulation \cite{dalessandro_introduction_2021}. To gain more intuition, we can imagine a more concrete example where, \@e.g.~$U$ and $X$ are sets of continuous functions on the interval $[0, \tau]$ satisfying $x(0) = x_0$. In this scenario, $\tau$ could be a time interval during which we want to drive the system from an initial state $x_0$ to a final state $x_f$ using the control function $u(t)$, $t \in [0, \tau]$. The choice of functional $C$ would have to capture the desired outcome of the protocol: that the state of the system after the driving $x(\tau)$ be equal to the target $x_f$. This can be done by choosing a distance metric that depends \DIFdelbegin \DIFdel{on }\DIFdelend only on the drive $u$ and is minimised when $x(\tau) = x_f$, \@~e.g.
 \begin{equation}\label{eq:example_cost_func}
-    C(u) = \norm{x(\tau)  - x_f}^2.
-\end{equation}
-The functional $C$ is often referred to in literature as the \emph{cost} or \emph{loss} function \cite{wald_statistical_1950} as it encodes the quality of the final protocol with respect to the desired outcome of the protocol. In that sense, we can imagine adding constraints to the problem that may increase the `cost' of the protocol output if they are not satisfied to some degree. For example, Eq.~\eqref{eq:example_cost_func} can be modified to include additional terms:
+    C(u) = \norm{x(\tau)  - x_f}\DIFdelbegin \DIFdel{^2.
+}\DIFdelend \DIFaddbegin \DIFadd{,
+}\DIFaddend \end{equation}
+\DIFaddbegin \DIFadd{where $\norm{\cdot}$ represents some norm on the space $X$.
+}
+
+	\DIFaddend The functional $C$ is often referred to in literature as the \emph{cost} or \emph{loss} function \cite{wald_statistical_1950} as it encodes the quality of the final protocol with respect to the desired outcome of the protocol. In that sense, we can imagine adding constraints to the problem that may increase the `cost' of the protocol output if they are not satisfied to some degree. For example, Eq.~\eqref{eq:example_cost_func} can be modified to include additional terms:
 \begin{equation}\label{eq:example_cost_func2}
     C(u) = \gamma \norm{x(\tau)  - x_f}^2 + \int_0^{\tau} \norm{u(t)}^2 dt,
 \end{equation}
@@ -961,7 +1006,7 @@ A frequently used gradient-free optimisers is the Nelder-Mead (or downhill-simpl
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.6\linewidth]{images/nelder_mead_illustration.png} \caption[Visualising the Nelder-Mead optimisation algorithm.]{Illustration of the Nelder-Mead algorithm for a cost function parameterised by two parameters $\beta_1$ and $\beta_2$. The simplex for a 2-dimensional landscape is a triangle, which then follows the rough algorithm described in the text. The iterations of the algorithm are indicated by constantly switching from solid to dashed edges of the simplex at each step as well as changing in colour. The inset shows a magnification of the final steps of the algorithm.}\label{fig:nelder_mead}
+\includegraphics[width=0.6\linewidth]{images/nelder_mead_illustration.png} \caption[Visualising the Nelder-Mead optimisation algorithm.]{Illustration of the Nelder-Mead algorithm for a cost function parameterised by two parameters $\beta_1$ and $\beta_2$. The simplex for a 2-dimensional landscape is a triangle \DIFdelbeginFL \DIFdelFL{, }\DIFdelendFL which \DIFdelbeginFL \DIFdelFL{then follows }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{transforms continuously seeking out a lower cost function value in }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{rough algorithm }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{landscape as }\DIFaddendFL described in the \DIFaddbeginFL \DIFaddFL{main }\DIFaddendFL text. The \DIFdelbeginFL \DIFdelFL{iterations }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{plot shows every third step }\DIFaddendFL of the algorithm \DIFdelbeginFL \DIFdelFL{are indicated by constantly switching from solid to dashed edges of }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{for clarity, with }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{simplex at each step as well as }\DIFdelendFL changing \DIFdelbeginFL \DIFdelFL{in colour}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{color of the triangle, starting from red and ending with bright purple, indicating the iterations}\DIFaddendFL . The inset shows a magnification of the final steps of the algorithm.}\label{fig:nelder_mead}
 \end{figure}
 
 The way this direct search approach is adapted in Nelder-Mead is by constructing simplices, which are geometric objects that generalise triangles in lower and higher dimensions. For a cost function dependent on $n$ parameters, Nelder-Mead constructs an $n$-dimensional simplex. For $n=0$ this is a point, for $n=1,2,3$ a line segment, triangle and tetrahedron respectively and then higher-dimensional versions as $n$ increases. Thus a simplex has $n+1$ vertices for $n$ parameters. 
@@ -1006,7 +1051,7 @@ In other words, the algorithm is initialised with a guess for a solution and a s
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=\linewidth]{images/optimiser_plots.png} \caption[Visualising optimisers in action]{An illustration of the optmisation strategy of several numerical optimisation methods. (a) Local optimisers: steps of the Nelder-Mead method and Powell's method when instantiated in two different locations of the loss function landscape. The global mimimum is illustrated by a green cross. (b) The local minima (crosses) visited by the Dual-Annealing in the order indicated by the numbered labels. The colour of the crosses reflects the value of the cost function evaluated at that point as indicated by the colourbar.}\label{fig:optimisers}
+\includegraphics[width=\linewidth]{images/optimiser_plots.png} \caption[Visualising optimisers in action]{An illustration of the optmisation strategy of several numerical optimisation methods. (a) Local optimisers: steps of the Nelder-Mead method and Powell's method when instantiated in two different locations of the loss function landscape. The global mimimum is illustrated by a green cross. (b) The local minima (crosses) visited by the Dual-Annealing \DIFaddbeginFL \DIFaddFL{algorithm }\DIFaddendFL in the order indicated by \DIFdelbeginFL \DIFdelFL{the }\DIFdelendFL numbered labels. The colour of the crosses \DIFdelbeginFL \DIFdelFL{reflects the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{ranges from yellow (high cost function }\DIFaddendFL value\DIFdelbeginFL \DIFdelFL{of the }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{) to red (low }\DIFaddendFL cost function \DIFdelbeginFL \DIFdelFL{evaluated at that point as indicated by the colourbar}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{value)}\DIFaddendFL .}\label{fig:optimisers}
 \end{figure}
 
 The Powell method is far more complex than is presented here, in particular due to the fact that several extra steps are usually added in order to guarantee convergence and and additional features to help optimise it. Additionally, the minimisation procedure of steps 4 and 11 in the pseudocode is highly non-trivial and can be achieved via several different algorithms like Brent's method\cite{brent_algorithms_2002}. It has guarantees of being very efficient in convex optimisation problems and excels in high-dimensional spaces, unlike Nelder-Mead. A plot of the search steps of the two methods in Fig.~\ref{fig:optimisers}(a) shows how they compare in terms of number of steps taken and accuracy in finding the optimum of some non-convex loss function. Importantly, given the more complicated nature of the steps in Powell's method, the fact that it requires fewer steps to converge to a solution does not necessarily make it more efficient.
@@ -2069,9 +2114,9 @@ I.~Čepaitė, ``\BIBforeignlanguage{en}{{COLD}: {Counterdiabatic} {Optimised}
 G.~Pelegrí, A.~J. Daley, and J.~D. Pritchard,
   ``\BIBforeignlanguage{en}{High-fidelity multiqubit {Rydberg} gates via
   two-photon adiabatic rapid passage},'' \emph{\BIBforeignlanguage{en}{Quantum
-  Science and Technology}}, vol.~7, no.~4, \DIFdelbegin \DIFdel{p. 045020, Aug. 2022, publisher: IOP
-  Publishing. }\DIFdelend \DIFaddbegin \DIFadd{Aug. 2022. }\DIFaddend [Online]. Available:
-  \url{https://dx.doi.org/10.1088/2058-9565/ac823a}
+  Science and Technology}}, vol.~7, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 045020, Aug. \DIFdelbegin \DIFdel{2022, publisher: IOP
+  Publishing. }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online].
+  Available: \url{https://dx.doi.org/10.1088/2058-9565/ac823a}
 \BIBentrySTDinterwordspacing
 
 \bibitem{dimitrova_many-body_2023}
@@ -2081,17 +2126,17 @@ I.~Dimitrova, S.~Flannigan, Y.~K. Lee, H.~Lin, J.~Amato-Grill, N.~Jepsen,
   ``\BIBforeignlanguage{en}{Many-body spin rotation by adiabatic passage in
   spin-1/2 {XXZ} chains of ultracold atoms},''
   \emph{\BIBforeignlanguage{en}{Quantum Science and Technology}}, vol.~8,
-  no.~3, \DIFdelbegin \DIFdel{p. 035018, May 2023, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{May 2023. }\DIFaddend [Online]. Available:
+  no.~3,  \DIFdelbegin \DIFdel{p. }\DIFdelend 035018, May \DIFdelbegin \DIFdel{2023, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{2023. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1088/2058-9565/acd2fb}
 \BIBentrySTDinterwordspacing
 
 \bibitem{roffe_quantum_2019}
 \BIBentryALTinterwordspacing
 J.~Roffe, ``Quantum error correction: an introductory guide,''
-  \emph{Contemporary Physics}, vol.~60, no.~3, \DIFdelbegin \DIFdel{pp. 226--245, Jul. 2019,
+  \emph{Contemporary Physics}, vol.~60, no.~3,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 226--245, Jul. \DIFdelbegin \DIFdel{2019,
   publisher: Taylor \& Francis \_eprint:
-  https://doi.org/10.1080/00107514.2019.1667078}\DIFdelend \DIFaddbegin \DIFadd{Jul}\DIFaddend . \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online]. Available:
-  \url{https://doi.org/10.1080/00107514.2019.1667078}
+  https://doi.org/10.1080/00107514.2019.1667078. }\DIFdelend \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online].
+  Available: \url{https://doi.org/10.1080/00107514.2019.1667078}
 \BIBentrySTDinterwordspacing
 
 \bibitem{glaser_training_2015}
@@ -2100,7 +2145,7 @@ S.~J. Glaser, U.~Boscain, T.~Calarco, C.~P. Koch, W.~Köckenberger, R.~Kosloff,
   I.~Kuprov, B.~Luy, S.~Schirmer, T.~Schulte-Herbrüggen, D.~Sugny, and F.~K.
   Wilhelm, ``\BIBforeignlanguage{en}{Training {Schrödinger}’s cat: quantum
   optimal control},'' \emph{\BIBforeignlanguage{en}{The European Physical
-  Journal D}}, vol.~69, no.~12, \DIFdelbegin \DIFdel{p. 279, }\DIFdelend Dec. 2015. [Online]. Available:
+  Journal D}}, vol.~69, no.~12,  \DIFdelbegin \DIFdel{p. }\DIFdelend 279, Dec. 2015. [Online]. Available:
   \url{https://doi.org/10.1140/epjd/e2015-60464-1}
 \BIBentrySTDinterwordspacing
 
@@ -2111,8 +2156,8 @@ C.~P. Koch, U.~Boscain, T.~Calarco, G.~Dirr, S.~Filipp, S.~J. Glaser,
   Wilhelm, ``\BIBforeignlanguage{en}{Quantum optimal control in quantum
   technologies. {Strategic} report on current status, visions and goals for
   research in {Europe}},'' \emph{\BIBforeignlanguage{en}{EPJ Quantum
-  Technology}}, vol.~9, no.~1, \DIFdelbegin \DIFdel{pp. 1--60, Dec. 2022, number: 1 Publisher:
-  SpringerOpen. }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2022. }\DIFaddend [Online]. Available:
+  Technology}}, vol.~9, no.~1, \DIFdelbegin \DIFdel{pp. 1--60}\DIFdelend \DIFaddbegin \DIFadd{~19}\DIFaddend , Dec. \DIFdelbegin \DIFdel{2022, number: 1 Publisher:
+  SpringerOpen. }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online]. Available:
   \url{https://epjquantumtechnology.springeropen.com/articles/10.1140/epjqt/s40507-022-00138-x}
 \BIBentrySTDinterwordspacing
 
@@ -2120,7 +2165,7 @@ C.~P. Koch, U.~Boscain, T.~Calarco, G.~Dirr, S.~Filipp, S.~J. Glaser,
 \BIBentryALTinterwordspacing
 M.~V. Berry, ``\BIBforeignlanguage{en}{Transitionless quantum driving},''
   \emph{\BIBforeignlanguage{en}{Journal of Physics A: Mathematical and
-  Theoretical}}, vol.~42, no.~36, \DIFdelbegin \DIFdel{p. 365303, }\DIFdelend Sep. 2009. [Online]. Available:
+  Theoretical}}, vol.~42, no.~36,  \DIFdelbegin \DIFdel{p. }\DIFdelend 365303, Sep. 2009. [Online]. Available:
   \url{https://iopscience.iop.org/article/10.1088/1751-8113/42/36/365303}
 \BIBentrySTDinterwordspacing
 
@@ -2128,7 +2173,7 @@ M.~V. Berry, ``\BIBforeignlanguage{en}{Transitionless quantum driving},''
 \BIBentryALTinterwordspacing
 M.~Kolodrubetz, D.~Sels, P.~Mehta, and A.~Polkovnikov, ``Geometry and
   non-adiabatic response in quantum and classical systems,'' \emph{Physics
-  Reports}, vol. 697, \DIFdelbegin \DIFdel{pp. 1--87, }\DIFdelend 2017. [Online]. Available:
+  Reports}, vol.\DIFdelbegin \DIFdel{697,  pp. }\DIFdelend \DIFaddbegin \DIFadd{~36,  }\DIFaddend 1--87, 2017. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S0370157317301989}
 \BIBentrySTDinterwordspacing
 
@@ -2136,9 +2181,12 @@ M.~Kolodrubetz, D.~Sels, P.~Mehta, and A.~Polkovnikov, ``Geometry and
 \BIBentryALTinterwordspacing
 E.~J. Meier, K.~Ngan, D.~Sels, and B.~Gadway, ``Counterdiabatic control of
   transport in a synthetic tight-binding lattice,'' \emph{Physical Review
-  Research}, vol.~2, no.~4, \DIFdelbegin \DIFdel{p. 043201, }\DIFdelend Nov. 2020, arXiv: 2005.07052. [Online]. Available:
-  \url{http://arxiv.org/abs/2005.07052}
-\BIBentrySTDinterwordspacing
+  Research}, vol.~2, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 043201, Nov. 2020, \DIFdelbegin \DIFdel{arXiv: 2005.07052}\DIFdelend \DIFaddbegin \DIFadd{publisher: American Physical
+  Society}\DIFaddend . [Online]. Available:
+  \DIFdelbegin %DIFDELCMD < \url{http://arxiv.org/abs/2005.07052}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \url{https://link.aps.org/doi/10.1103/PhysRevResearch.2.043201}
+\DIFaddend \BIBentrySTDinterwordspacing
 
 \bibitem{pichler_quantum_2018}
 \BIBentryALTinterwordspacing
@@ -2156,17 +2204,18 @@ S.~Ebadi, A.~Keesling, M.~Cain, T.~T. Wang, H.~Levine, D.~Bluvstein,
   B.~Barak, E.~Farhi, S.~Sachdev, N.~Gemelke, L.~Zhou, S.~Choi, H.~Pichler,
   S.-T. Wang, M.~Greiner, V.~Vuletić, and M.~D. Lukin, ``Quantum optimization
   of maximum independent set using {Rydberg} atom arrays,'' \emph{Science},
-  vol. 376, no. 6598, \DIFdelbegin \DIFdel{pp. 1209--1215, Jun. 2022, publisher: American
-  Association for the Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{Jun. 2022. }\DIFaddend [Online]. Available:
+  vol. 376, no. 6598,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1209--1215, Jun. \DIFdelbegin \DIFdel{2022, publisher: American
+  Association for the Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online]. Available:
   \url{https://www.science.org/doi/10.1126/science.abo6587}
 \BIBentrySTDinterwordspacing
 
 \bibitem{born_beweis_1928}
 \BIBentryALTinterwordspacing
 M.~Born and V.~Fock, ``\BIBforeignlanguage{de}{Beweis des {Adiabatensatzes}},''
-  \emph{\BIBforeignlanguage{de}{Zeitschrift für Physik}}, vol.~51, no.~3, \DIFdelbegin \DIFdel{pp.
-  165--180, }\DIFdelend Mar.
-  1928. [Online]. Available: \url{https://doi.org/10.1007/BF01343193}
+  \emph{\BIBforeignlanguage{de}{Zeitschrift für Physik}}, vol.~51, no.~3,
+  \DIFdelbegin \DIFdel{pp.
+  }\DIFdelend 165--180, Mar. 1928. [Online]. Available:
+  \url{https://doi.org/10.1007/BF01343193}
 \BIBentrySTDinterwordspacing
 
 \bibitem{kato_adiabatic_1950}
@@ -2182,7 +2231,7 @@ T.~Kato, ``On the {Adiabatic} {Theorem} of {Quantum} {Mechanics},''
 C.~Jarzynski, ``Geometric {Phases} and {Anholonomy} for a {Class} of {Chaotic}
   {Classical} {Systems},'' \emph{Physical Review Letters}, vol.~74, no.~10,
   \DIFdelbegin \DIFdel{pp.
-  1732--1735, Mar. 1995, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Mar. 1995. }\DIFaddend [Online]. Available:
+  1732--1735}\DIFdelend \DIFaddbegin \DIFadd{1732}\DIFaddend , Mar. \DIFdelbegin \DIFdel{1995, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{1995. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.74.1732}
 \BIBentrySTDinterwordspacing
 
@@ -2190,9 +2239,8 @@ C.~Jarzynski, ``Geometric {Phases} and {Anholonomy} for a {Class} of {Chaotic}
 \BIBentryALTinterwordspacing
 D.~Guéry-Odelin, A.~Ruschhaupt, A.~Kiely, E.~Torrontegui, S.~Martínez-Garaot,
   and J.~Muga, ``Shortcuts to adiabaticity: {Concepts}, methods, and
-  applications,'' \emph{Reviews of Modern Physics}, vol.~91, no.~4, \DIFdelbegin \DIFdel{p. 045001,
-  Oct. 2019, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2019.
-  }\DIFaddend [Online]. Available:
+  applications,'' \emph{Reviews of Modern Physics}, vol.~91, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 045001,
+  Oct. \DIFdelbegin \DIFdel{2019, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/RevModPhys.91.045001}
 \BIBentrySTDinterwordspacing
 
@@ -2204,7 +2252,7 @@ E.~Torrontegui, S.~Ibáñez, S.~Martínez-Garaot, M.~Modugno, A.~del Campo,
   \emph{\BIBforeignlanguage{en}{Advances {In} {Atomic}, {Molecular}, and
   {Optical} {Physics}}}, ser. Advances in {Atomic}, {Molecular}, and {Optical}
   {Physics}, E.~Arimondo, P.~R. Berman, and C.~C. Lin, Eds.\hskip 1em plus
-  0.5em minus 0.4em\relax Academic Press, Jan. 2013, vol.~62, pp. 117--169.
+  0.5em minus 0.4em\relax Academic Press, Jan. 2013, vol.~62,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 117--169.
   [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/B9780124080904000025}
 \BIBentrySTDinterwordspacing
@@ -2213,18 +2261,18 @@ E.~Torrontegui, S.~Ibáñez, S.~Martínez-Garaot, M.~Modugno, A.~del Campo,
 \BIBentryALTinterwordspacing
 S.~Deffner, C.~Jarzynski, and A.~del Campo, ``Classical and {Quantum}
   {Shortcuts} to {Adiabaticity} for {Scale}-{Invariant} {Driving},''
-  \emph{Physical Review X}, vol.~4, no.~2, \DIFdelbegin \DIFdel{p. 021013, Apr. 2014, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Apr. 2014. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevX.4.021013}
+  \emph{Physical Review X}, vol.~4, no.~2,  \DIFdelbegin \DIFdel{p. }\DIFdelend 021013, Apr. \DIFdelbegin \DIFdel{2014, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2014. }\DIFaddend [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevX.4.021013}
 \BIBentrySTDinterwordspacing
 
 \bibitem{deng_superadiabatic_2018}
 \BIBentryALTinterwordspacing
 S.~Deng, A.~Chenu, P.~Diao, F.~Li, S.~Yu, I.~Coulamy, A.~del Campo, and H.~Wu,
   ``Superadiabatic quantum friction suppression in finite-time
-  thermodynamics,'' \emph{Science Advances}, vol.~4, no.~4, \DIFdelbegin \DIFdel{p. eaar5909, }\DIFdelend Apr. 2018,
-  publisher: American Association for the Advancement of Science. [Online].
-  Available: \url{https://www.science.org/doi/10.1126/sciadv.aar5909}
+  thermodynamics,'' \emph{Science Advances}, vol.~4, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend eaar5909, Apr.
+  2018, publisher: American Association for the Advancement of Science.
+  [Online]. Available: \url{https://www.science.org/doi/10.1126/sciadv.aar5909}
 \BIBentrySTDinterwordspacing
 
 \bibitem{chen_fast_2010}
@@ -2232,7 +2280,7 @@ S.~Deng, A.~Chenu, P.~Diao, F.~Li, S.~Yu, I.~Coulamy, A.~del Campo, and H.~Wu,
 X.~Chen, A.~Ruschhaupt, S.~Schmidt, A.~del Campo, D.~Guéry-Odelin, and J.~G.
   Muga, ``Fast {Optimal} {Frictionless} {Atom} {Cooling} in {Harmonic} {Traps}:
   {Shortcut} to {Adiabaticity},'' \emph{Physical Review Letters}, vol. 104,
-  no.~6, \DIFdelbegin \DIFdel{p. 063002, Feb. 2010, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Feb. 2010. }\DIFaddend [Online]. Available:
+  no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 063002, Feb. \DIFdelbegin \DIFdel{2010, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2010. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.104.063002}
 \BIBentrySTDinterwordspacing
 
@@ -2240,18 +2288,18 @@ X.~Chen, A.~Ruschhaupt, S.~Schmidt, A.~del Campo, D.~Guéry-Odelin, and J.~G.
 \BIBentryALTinterwordspacing
 S.~Masuda and K.~Nakamura, ``Fast-forward of adiabatic dynamics in quantum
   mechanics,'' \emph{Proceedings of the Royal Society A: Mathematical, Physical
-  and Engineering Sciences}, vol. 466, no. 2116, \DIFdelbegin \DIFdel{pp. 1135--1154, Nov. 2009,
-  publisher: Royal Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 2009. }\DIFaddend [Online].
-  Available:
+  and Engineering Sciences}, vol. 466, no. 2116,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1135--1154, Nov. \DIFdelbegin \DIFdel{2009,
+  publisher: Royal Society. }\DIFdelend \DIFaddbegin \DIFadd{2009.
+  }\DIFaddend [Online]. Available:
   \url{https://royalsocietypublishing.org/doi/10.1098/rspa.2009.0446}
 \BIBentrySTDinterwordspacing
 
 \bibitem{masuda_fast-forward_2008}
 \BIBentryALTinterwordspacing
-------, ``Fast-forward problem in quantum mechanics,'' \emph{Physical Review
-  A}, vol.~78, no.~6, \DIFdelbegin \DIFdel{p. 062108, Dec. 2008, publisher: American Physical
-  Society. }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2008. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevA.78.062108}
+\DIFdelbegin \DIFdel{------}\DIFdelend \DIFaddbegin \DIFadd{S.~Masuda and K.~Nakamura}\DIFaddend , ``Fast-forward problem in quantum mechanics,''
+  \emph{Physical Review A}, vol.~78, no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 062108, Dec. \DIFdelbegin \DIFdel{2008, publisher: American Physical
+  Society. }\DIFdelend \DIFaddbegin \DIFadd{2008. }\DIFaddend [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.78.062108}
 \BIBentrySTDinterwordspacing
 
 \bibitem{demirplak_adiabatic_2003}
@@ -2259,34 +2307,42 @@ S.~Masuda and K.~Nakamura, ``Fast-forward of adiabatic dynamics in quantum
 M.~Demirplak and S.~A. Rice, ``Adiabatic {Population} {Transfer} with {Control}
   {Fields},'' \emph{The Journal of Physical Chemistry A}, vol. 107, no.~46,
   \DIFdelbegin \DIFdel{pp.
-  9937--9945, Nov. 2003, publisher: American Chemical Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 2003. }\DIFaddend [Online]. Available: \url{https://doi.org/10.1021/jp030708a}
+  }\DIFdelend 9937--9945, Nov. \DIFdelbegin \DIFdel{2003, publisher: American Chemical Society. }\DIFdelend \DIFaddbegin \DIFadd{2003. }\DIFaddend [Online]. Available:
+  \url{https://doi.org/10.1021/jp030708a}
 \BIBentrySTDinterwordspacing
 
 \bibitem{pandey_adiabatic_2020}
 \BIBentryALTinterwordspacing
 M.~Pandey, P.~W. Claeys, D.~K. Campbell, A.~Polkovnikov, and D.~Sels,
   ``Adiabatic {Eigenstate} {Deformations} as a {Sensitive} {Probe} for
-  {Quantum} {Chaos},'' \emph{Physical Review X}, vol.~10, no.~4, \DIFdelbegin \DIFdel{p. 041017,
-  Oct. 2020, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2020.
-  }\DIFaddend [Online]. Available:
+  {Quantum} {Chaos},'' \emph{Physical Review X}, vol.~10, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 041017, Oct.
+  \DIFdelbegin \DIFdel{2020, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2020. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevX.10.041017}
 \BIBentrySTDinterwordspacing
 
-\bibitem{sugiura_adiabatic_2020}
-\BIBentryALTinterwordspacing
-S.~Sugiura, P.~W. Claeys, A.~Dymarsky, and A.~Polkovnikov, ``Adiabatic
-  landscape and optimal paths in ergodic systems,'' \emph{arXiv:2004.13735
-  [cond-mat, physics:hep-th, physics:quant-ph]}, Apr. 2020, arXiv: 2004.13735.
-  [Online]. Available: \url{http://arxiv.org/abs/2004.13735}
-\BIBentrySTDinterwordspacing
+\DIFdelbegin \bibitem{sugiura_adiabatic_2020}
+%DIFDELCMD < \BIBentryALTinterwordspacing
+%DIFDELCMD < %%%
+\DIFdel{S.~Sugiura, P.~W. Claeys, A.~Dymarsky, and A.~Polkovnikov, ``Adiabatic
+  landscape and optimal paths in ergodic systems,'' }\emph{\DIFdel{arXiv:2004.13735
+  }%DIFDELCMD < [%%%
+\DIFdel{cond-mat, physics:hep-th, physics:quant-ph}%DIFDELCMD < ]%%%
+}%DIFAUXCMD
+\DIFdel{, Apr. 2020, arXiv: 2004.13735.
+  }%DIFDELCMD < [%%%
+\DIFdel{Online}%DIFDELCMD < ]%%%
+\DIFdel{. Available: }%DIFDELCMD < \url{http://arxiv.org/abs/2004.13735}
+%DIFDELCMD < \BIBentrySTDinterwordspacing
+%DIFDELCMD < 
 
-\bibitem{sels_minimizing_2017}
+%DIFDELCMD < %%%
+\DIFdelend \bibitem{sels_minimizing_2017}
 \BIBentryALTinterwordspacing
 D.~Sels and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Minimizing irreversible
   losses in quantum systems by local counterdiabatic driving},''
   \emph{\BIBforeignlanguage{en}{Proceedings of the National Academy of
-  Sciences}}, vol. 114, no.~20, \DIFdelbegin \DIFdel{pp. E3909--E3916, May 2017, publisher: National
-  Academy of Sciences Section: PNAS Plus. }\DIFdelend \DIFaddbegin \DIFadd{May 2017. }\DIFaddend [Online]. Available:
+  Sciences}}, vol. 114, no.~20,  \DIFdelbegin \DIFdel{pp. }\DIFdelend E3909--E3916, May \DIFdelbegin \DIFdel{2017, publisher: National
+  Academy of Sciences Section: PNAS Plus. }\DIFdelend \DIFaddbegin \DIFadd{2017. }\DIFaddend [Online]. Available:
   \url{https://www.pnas.org/content/114/20/E3909}
 \BIBentrySTDinterwordspacing
 
@@ -2294,16 +2350,15 @@ D.~Sels and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Minimizing irreversible
 \BIBentryALTinterwordspacing
 P.~W. Claeys, M.~Pandey, D.~Sels, and A.~Polkovnikov, ``Floquet-engineering
   counterdiabatic protocols in quantum many-body systems,'' \emph{Physical
-  Review Letters}, vol. 123, no.~9, \DIFdelbegin \DIFdel{p. 090602, }\DIFdelend Aug. 2019, arXiv: 1904.03209. [Online].
-  Available: \url{http://arxiv.org/abs/1904.03209}
+  Review Letters}, vol. 123, no.~9,  \DIFdelbegin \DIFdel{p. }\DIFdelend 090602, Aug. 2019, arXiv: 1904.03209.
+  [Online]. Available: \url{http://arxiv.org/abs/1904.03209}
 \BIBentrySTDinterwordspacing
 
 \bibitem{hegade_digitized_2022}
 \BIBentryALTinterwordspacing
 N.~N. Hegade, X.~Chen, and E.~Solano, ``Digitized counterdiabatic quantum
-  optimization,'' \emph{Physical Review Research}, vol.~4, no.~4, \DIFdelbegin \DIFdel{p. L042030,
-  Nov. 2022, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 2022.
-  }\DIFaddend [Online]. Available:
+  optimization,'' \emph{Physical Review Research}, vol.~4, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend L042030,
+  Nov. \DIFdelbegin \DIFdel{2022, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.L042030}
 \BIBentrySTDinterwordspacing
 
@@ -2311,17 +2366,18 @@ N.~N. Hegade, X.~Chen, and E.~Solano, ``Digitized counterdiabatic quantum
 \BIBentryALTinterwordspacing
 J.~Wurtz and P.~J. Love, ``\BIBforeignlanguage{en-GB}{Counterdiabaticity and
   the quantum approximate optimization algorithm},''
-  \emph{\BIBforeignlanguage{en-GB}{Quantum}}, vol.~6, \DIFdelbegin \DIFdel{p. 635, Jan. 2022,
+  \emph{\BIBforeignlanguage{en-GB}{Quantum}}, vol.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 635, Jan. \DIFdelbegin \DIFdel{2022,
   publisher: Verein zur Förderung des Open Access Publizierens in den
-  Quantenwissenschaften. }\DIFdelend \DIFaddbegin \DIFadd{Jan. 2022. }\DIFaddend [Online].
-  Available: \url{https://quantum-journal.org/papers/q-2022-01-27-635/}
+  Quantenwissenschaften. }\DIFdelend \DIFaddbegin \DIFadd{2022.
+  }\DIFaddend [Online]. Available:
+  \url{https://quantum-journal.org/papers/q-2022-01-27-635/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{stefanatos_frictionless_2010}
 \BIBentryALTinterwordspacing
 D.~Stefanatos, J.~Ruths, and J.-S. Li, ``Frictionless atom cooling in harmonic
   traps: {A} time-optimal approach,'' \emph{Physical Review A}, vol.~82, no.~6,
-  \DIFdelbegin \DIFdel{p. 063422, Dec. 2010, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2010. }\DIFaddend [Online]. Available:
+   \DIFdelbegin \DIFdel{p. }\DIFdelend 063422, Dec. \DIFdelbegin \DIFdel{2010, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2010. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.82.063422}
 \BIBentrySTDinterwordspacing
 
@@ -2329,11 +2385,10 @@ D.~Stefanatos, J.~Ruths, and J.-S. Li, ``Frictionless atom cooling in harmonic
 \BIBentryALTinterwordspacing
 D.~Stefanatos and E.~Paspalakis, ``\BIBforeignlanguage{en}{A shortcut tour of
   quantum control methods for modern quantum technologies},''
-  \emph{\BIBforeignlanguage{en}{Europhysics Letters}}, vol. 132, no.~6, \DIFdelbegin \DIFdel{p.
-  60001, Mar.
-  2021, publisher: EDP Sciences, IOP Publishing and Società
-  Italiana di Fisica. }\DIFdelend \DIFaddbegin \DIFadd{Mar.
-  2021. }\DIFaddend [Online]. Available:
+  \emph{\BIBforeignlanguage{en}{Europhysics Letters}}, vol. 132, no.~6,  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 60001,
+  Mar. \DIFdelbegin \DIFdel{2021, publisher: EDP Sciences, IOP Publishing and Società
+  Italiana di Fisica. }\DIFdelend \DIFaddbegin \DIFadd{2021. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1209/0295-5075/132/60001}
 \BIBentrySTDinterwordspacing
 
@@ -2342,8 +2397,9 @@ D.~Stefanatos and E.~Paspalakis, ``\BIBforeignlanguage{en}{A shortcut tour of
 Q.~Zhang, X.~Chen, and D.~Guéry-Odelin, ``\BIBforeignlanguage{en}{Connection
   between {Inverse} {Engineering} and {Optimal} {Control} in {Shortcuts} to
   {Adiabaticity}},'' \emph{\BIBforeignlanguage{en}{Entropy}}, vol.~23, no.~1,
-  \DIFdelbegin \DIFdel{p.~84, Jan. 2021, number: 1 Publisher: Multidisciplinary Digital Publishing
-  Institute. }\DIFdelend \DIFaddbegin \DIFadd{Jan. 2021. }\DIFaddend [Online]. Available: \url{https://www.mdpi.com/1099-4300/23/1/84}
+  \DIFdelbegin \DIFdel{p.}\DIFdelend ~84, Jan. \DIFdelbegin \DIFdel{2021, number: 1 Publisher: Multidisciplinary Digital Publishing
+  Institute. }\DIFdelend \DIFaddbegin \DIFadd{2021. }\DIFaddend [Online]. Available:
+  \url{https://www.mdpi.com/1099-4300/23/1/84}
 \BIBentrySTDinterwordspacing
 
 \bibitem{petiziol_accelerated_2020}
@@ -2360,7 +2416,7 @@ F.~Petiziol, ``\BIBforeignlanguage{Inglese}{Accelerated adiabatic quantum
 \BIBentryALTinterwordspacing
 F.~Petiziol, B.~Dive, F.~Mintert, and S.~Wimberger, ``Fast adiabatic evolution
   by oscillating initial {Hamiltonians},'' \emph{Physical Review A}, vol.~98,
-  no.~4, \DIFdelbegin \DIFdel{p. 043436, Oct. 2018, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2018. }\DIFaddend [Online]. Available:
+  no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 043436, Oct. \DIFdelbegin \DIFdel{2018, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2018. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.98.043436}
 \BIBentrySTDinterwordspacing
 
@@ -2368,66 +2424,64 @@ F.~Petiziol, B.~Dive, F.~Mintert, and S.~Wimberger, ``Fast adiabatic evolution
 \BIBentryALTinterwordspacing
 M.~Bukov, A.~G. Day, D.~Sels, P.~Weinberg, A.~Polkovnikov, and P.~Mehta,
   ``Reinforcement {Learning} in {Different} {Phases} of {Quantum} {Control},''
-  \emph{Physical Review X}, vol.~8, no.~3, \DIFdelbegin \DIFdel{p. 031086, Sep. 2018, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Sep. 2018. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevX.8.031086}
+  \emph{Physical Review X}, vol.~8, no.~3,  \DIFdelbegin \DIFdel{p. }\DIFdelend 031086, Sep. \DIFdelbegin \DIFdel{2018, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2018. }\DIFaddend [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevX.8.031086}
 \BIBentrySTDinterwordspacing
 
 \bibitem{yao_reinforcement_2021}
 \BIBentryALTinterwordspacing
 J.~Yao, L.~Lin, and M.~Bukov, ``Reinforcement {Learning} for {Many}-{Body}
   {Ground}-{State} {Preparation} {Inspired} by {Counterdiabatic} {Driving},''
-  \emph{Physical Review X}, vol.~11, no.~3, \DIFdelbegin \DIFdel{p. 031070, Sep. 2021, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Sep. 2021. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevX.11.031070}
+  \emph{Physical Review X}, vol.~11, no.~3,  \DIFdelbegin \DIFdel{p. }\DIFdelend 031070, Sep. \DIFdelbegin \DIFdel{2021, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2021. }\DIFaddend [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevX.11.031070}
 \BIBentrySTDinterwordspacing
 
 \bibitem{khait_optimal_2022}
 \BIBentryALTinterwordspacing
 I.~Khait, J.~Carrasquilla, and D.~Segal, ``Optimal control of quantum thermal
   machines using machine learning,'' \emph{Physical Review Research}, vol.~4,
-  no.~1, \DIFdelbegin \DIFdel{p. L012029, Mar. 2022, publisher:
-  American Physical Society.}\DIFdelend \DIFaddbegin \DIFadd{Mar. 2022. }\DIFaddend [Online]\DIFaddbegin \DIFadd{. Available:
+  no.~1,  \DIFdelbegin \DIFdel{p. }\DIFdelend L012029, Mar. \DIFdelbegin \DIFdel{2022, publisher:
+  American Physical Society.}\DIFdelend \DIFaddbegin \DIFadd{2022}\DIFaddend [Online]\DIFaddbegin \DIFadd{. Available:
   }\url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.L012029}
 \BIBentrySTDinterwordspacing
 
-\bibitem{wiseman_quantum_2009}
-\BIBentryALTinterwordspacing
-\DIFadd{H.~M. Wiseman and G.~J. Milburn, }\emph{\DIFadd{Quantum }{\DIFadd{Measurement}} \DIFadd{and
-  }{\DIFadd{Control}}}\DIFaddend .\DIFaddbegin \hskip \DIFadd{1em plus 0.5em minus 0.4em}\relax \DIFadd{Cambridge: Cambridge
-  University Press, 2009. }[\DIFadd{Online}]\DIFadd{. }\DIFaddend Available:
-  \DIFdelbegin %DIFDELCMD < \url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.L012029}
-%DIFDELCMD < %%%
-\DIFdelend \DIFaddbegin \url{https://www.cambridge.org/core/books/quantum-measurement-and-control/F78F445CD9AF00B10593405E9BAC6B9F}
-\DIFaddend \BIBentrySTDinterwordspacing
+
 
 \bibitem{cepaite_counterdiabatic_2023}
 \BIBentryALTinterwordspacing
 I.~Čepaitė, A.~Polkovnikov, A.~J. Daley, and C.~W. Duncan, ``Counterdiabatic
-  {Optimized} {Local} {Driving},'' \emph{PRX Quantum}, vol.~4, no.~1, \DIFdelbegin \DIFdel{p.
-  010312, Jan.
-  2023, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Jan.
-  2023. }\DIFaddend [Online]. Available:
+  {Optimized} {Local} {Driving},'' \emph{PRX Quantum}, vol.~4, no.~1,  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 010312,
+  Jan. \DIFdelbegin \DIFdel{2023, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2023. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PRXQuantum.4.010312}
 \BIBentrySTDinterwordspacing
 
-\bibitem{lawrence_numerical_2023}
-E.~D. Lawrence, S.~Schmid, I.~Čepaitė, P.~Kriton, and C.~W. Duncan,
-  ``Numerical approaches for non-adiabatic terms in quantum annealing,'' 2023.
+\DIFdelbegin \bibitem{lawrence_numerical_2023}
+\DIFdelend \DIFaddbegin \bibitem{lawrence_numerical_2024}
+\BIBentryALTinterwordspacing
+\DIFaddend E.~D.\DIFaddbegin \DIFadd{~C. }\DIFaddend Lawrence, S.~\DIFaddbegin \DIFadd{F.~J. }\DIFaddend Schmid, I.~Čepaitė, P.~\DIFdelbegin \DIFdel{Kriton}\DIFdelend \DIFaddbegin \DIFadd{Kirton}\DIFaddend , and C.~W. Duncan,
+  ``\DIFdelbegin \DIFdel{Numerical approaches for }\DIFdelend \DIFaddbegin \DIFadd{A numerical approach for calculating exact }\DIFaddend non-adiabatic terms in quantum
+  \DIFdelbegin \DIFdel{annealing,'' 2023.
+}\DIFdelend \DIFaddbegin \DIFadd{dynamics,'' Jan. 2024, arXiv:2401.10985 }[\DIFadd{cond-mat, physics:quant-ph}]\DIFadd{.
+  }[\DIFadd{Online}]\DIFadd{. Available: }\url{http://arxiv.org/abs/2401.10985}
+\BIBentrySTDinterwordspacing
+\DIFaddend 
 
 \DIFaddbegin \bibitem{berry_quantal_1984}
 \BIBentryALTinterwordspacing
 \DIFadd{M.~V. Berry, ``Quantal }{\DIFadd{Phase}} {\DIFadd{Factors}} {\DIFadd{Accompanying}} {\DIFadd{Adiabatic}}
   {\DIFadd{Changes}}\DIFadd{,'' }\emph{\DIFadd{Proceedings of the Royal Society of London. Series A,
-  Mathematical and Physical Sciences}}\DIFadd{, vol. 392, no. 1802, 1984. }[\DIFadd{Online}]\DIFadd{.
-  Available: }\url{https://www.jstor.org/stable/2397741}
+  Mathematical and Physical Sciences}}\DIFadd{, vol. 392, no. 1802,  45--57, 1984.
+  }[\DIFadd{Online}]\DIFadd{. Available: }\url{https://www.jstor.org/stable/2397741}
 \BIBentrySTDinterwordspacing
 
 \bibitem{katanaev_adiabatic_2011}
 \BIBentryALTinterwordspacing
 \DIFadd{M.~O. Katanaev, ``}\BIBforeignlanguage{en}{Adiabatic theorem for finite
   dimensional quantum mechanical systems}\DIFadd{,''
-  }\emph{\BIBforeignlanguage{en}{Russian Physics Journal}}\DIFadd{, vol.~54, no.~3, pp.
+  }\emph{\BIBforeignlanguage{en}{Russian Physics Journal}}\DIFadd{, vol.~54, no.~3,
   342--353, Aug. 2011. }[\DIFadd{Online}]\DIFadd{. Available:
   }\url{https://doi.org/10.1007/s11182-011-9620-5}
 \BIBentrySTDinterwordspacing
@@ -2436,8 +2490,8 @@ E.~D. Lawrence, S.~Schmid, I.~Čepaitė, P.~Kriton, and C.~W. Duncan,
 \BIBentryALTinterwordspacing
 S.~Pancharatnam, ``\BIBforeignlanguage{en}{Generalized theory of interference,
   and its applications},'' \emph{\BIBforeignlanguage{en}{Proceedings of the
-  Indian Academy of Sciences - Section A}}, vol.~44, no.~5, \DIFdelbegin \DIFdel{pp. 247--262, }\DIFdelend Nov. 1956.
-  [Online]. Available: \url{https://doi.org/10.1007/BF03046050}
+  Indian Academy of Sciences - Section A}}, vol.~44, no.~5,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 247--262, Nov.
+  1956. [Online]. Available: \url{https://doi.org/10.1007/BF03046050}
 \BIBentrySTDinterwordspacing
 
 \bibitem{longuet-higgins_studies_1958}
@@ -2445,7 +2499,7 @@ S.~Pancharatnam, ``\BIBforeignlanguage{en}{Generalized theory of interference,
 H.~C. Longuet-Higgins, U.~Öpik, M.~H.~L. Pryce, and R.~A. Sack, ``Studies of
   the {Jahn}-{Teller} {Effect}. {II}. {The} {Dynamical} {Problem},''
   \emph{Proceedings of the Royal Society of London. Series A, Mathematical and
-  Physical Sciences}, vol. 244, no. 1236, \DIFdelbegin \DIFdel{pp. 1--16, 1958, publisher: The Royal
+  Physical Sciences}, vol. 244, no. 1236,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1--16, \DIFdelbegin \DIFdel{1958, publisher: The Royal
   Society. }\DIFdelend \DIFaddbegin \DIFadd{1958. }\DIFaddend [Online]. Available:
   \url{https://www.jstor.org/stable/100248}
 \BIBentrySTDinterwordspacing
@@ -2485,8 +2539,9 @@ M.~Nakahara, \emph{\BIBforeignlanguage{en}{Geometry, {Topology} and {Physics},
 C.~S. Kahane, ``\BIBforeignlanguage{eng}{Generalizations of the
   {Riemann}-{Lebesgue} and {Cantor}-{Lebesgue} lemmas},''
   \emph{\BIBforeignlanguage{eng}{Czechoslovak Mathematical Journal}}, vol.~30,
-  no.~1, \DIFdelbegin \DIFdel{pp. 108--117, 1980, publisher: Institute of Mathematics, Academy of
-  Sciences of the Czech Republic. }\DIFdelend \DIFaddbegin \DIFadd{1980. }\DIFaddend [Online]. Available: \url{https://eudml.org/doc/13181}
+  no.~1,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 108--117, \DIFdelbegin \DIFdel{1980, publisher: Institute of Mathematics, Academy of
+  Sciences of the Czech Republic. }\DIFdelend \DIFaddbegin \DIFadd{1980. }\DIFaddend [Online]. Available:
+  \url{https://eudml.org/doc/13181}
 \BIBentrySTDinterwordspacing
 
 \bibitem{reichardt_quantum_2004}
@@ -2509,10 +2564,10 @@ A.~Childs, ``{LECTURE} 18: {The} quantum adiabatic theorem,'' 2008. [Online].
 \BIBentryALTinterwordspacing
 D.~K. Nandy, T.~Cadez, B.~Dietz, A.~Andreanov, and D.~Rosa, ``Delayed
   {Thermalization} in {Mass}-{Deformed} {SYK},'' \emph{Physical Review B}, vol.
-  106, no.~24, \DIFdelbegin \DIFdel{p. 245147, Dec. 2022, arXiv:2206.08599 }%DIFDELCMD < [%%%
-\DIFdel{cond-mat,
+  106, no.~24,  \DIFdelbegin \DIFdel{p. }\DIFdelend 245147, Dec. \DIFdelbegin \DIFdel{2022, arXiv:2206.08599 }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [\DIFdelbegin \DIFdel{cond-mat,
   physics:hep-th, physics:quant-ph}%DIFDELCMD < ]%%%
-\DIFdelend \DIFaddbegin \DIFadd{Dec}\DIFaddend . \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online]. Available:
+\DIFdel{. }%DIFDELCMD < [%%%
+\DIFdelend Online]. Available:
   \url{http://arxiv.org/abs/2206.08599}
 \BIBentrySTDinterwordspacing
 
@@ -2520,28 +2575,51 @@ D.~K. Nandy, T.~Cadez, B.~Dietz, A.~Andreanov, and D.~Rosa, ``Delayed
 \BIBentryALTinterwordspacing
 L.~D'Alessio, Y.~Kafri, A.~Polkovnikov, and M.~Rigol, ``From quantum chaos and
   eigenstate thermalization to statistical mechanics and thermodynamics,''
-  \emph{Advances in Physics}, vol.~65, no.~3, \DIFdelbegin \DIFdel{pp. 239--362, May 2016,
+  \emph{Advances in Physics}, vol.~65, no.~3,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 239--362, May \DIFdelbegin \DIFdel{2016,
   publisher: Taylor \& Francis \_eprint:
-  https://doi.org/10.1080/00018732.2016.1198134. }\DIFdelend \DIFaddbegin \DIFadd{May 2016. }\DIFaddend [Online]. Available:
-  \url{https://doi.org/10.1080/00018732.2016.1198134}
+  https://doi.org/10.1080/00018732.2016.1198134. }\DIFdelend \DIFaddbegin \DIFadd{2016. }\DIFaddend [Online].
+  Available: \url{https://doi.org/10.1080/00018732.2016.1198134}
 \BIBentrySTDinterwordspacing
 
-\bibitem{jarzynski_generating_2013}
-\BIBentryALTinterwordspacing
-C.~Jarzynski, ``Generating shortcuts to adiabaticity in quantum and classical
-  dynamics,'' \emph{Physical Review A}, vol.~88, no.~4, \DIFdelbegin \DIFdel{p. 040101, Oct. 2013,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2013. }\DIFaddend [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.88.040101}
-\BIBentrySTDinterwordspacing
+\DIFdelbegin \bibitem{jarzynski_generating_2013}
+\DIFdelend \DIFaddbegin \bibitem{bason_high-fidelity_2012}
+\DIFaddend \BIBentryALTinterwordspacing
+\DIFdelbegin \DIFdel{C.~Jarzynski, ``Generating shortcuts to adiabaticity in quantum and classical
+  dynamics,
+  '' }\DIFdelend \DIFaddbegin \DIFadd{M.~G. Bason, M.~Viteau, N.~Malossi, P.~Huillery, E.~Arimondo, D.~Ciampini,
+  R.~Fazio, V.~Giovannetti, R.~Mannella, and O.~Morsch,
+  ``}\BIBforeignlanguage{en}{High-fidelity quantum driving}\DIFadd{,''
+  }\DIFaddend \emph{\DIFdelbegin \DIFdel{Physical Review A}\DIFdelend \DIFaddbegin \BIBforeignlanguage{en}{Nature Physics}\DIFaddend }, vol.~\DIFdelbegin \DIFdel{88}\DIFdelend \DIFaddbegin \DIFadd{8}\DIFaddend , no.~\DIFdelbegin \DIFdel{4,  p. 040101,
+  Oct. 2013, publisher: American Physical Society}\DIFdelend \DIFaddbegin \DIFadd{2,  147--152,
+  Feb. 2012, number: 2 Publisher: Nature Publishing Group}\DIFaddend . [Online]. Available:
+  \DIFdelbegin %DIFDELCMD < \url{https://link.aps.org/doi/10.1103/PhysRevA.88.040101}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \url{https://www.nature.com/articles/nphys2170}
+\DIFaddend \BIBentrySTDinterwordspacing
 
-\bibitem{goldman_periodically_2014}
-\BIBentryALTinterwordspacing
-N.~Goldman and J.~Dalibard, ``Periodically {Driven} {Quantum} {Systems}:
-  {Effective} {Hamiltonians} and {Engineered} {Gauge} {Fields},''
-  \emph{Physical Review X}, vol.~4, no.~3, \DIFdelbegin \DIFdel{p. 031027, Aug. 2014, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Aug. 2014. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevX.4.031027}
-\BIBentrySTDinterwordspacing
+\DIFdelbegin \bibitem{goldman_periodically_2014}
+\DIFdelend \DIFaddbegin \bibitem{jarzynski_generating_2013}
+\DIFaddend \BIBentryALTinterwordspacing
+\DIFdelbegin \DIFdel{N.~Goldman and J.~Dalibard, ``Periodically }%DIFDELCMD < {%%%
+\DIFdel{Driven}%DIFDELCMD < } {%%%
+\DIFdel{Quantum}%DIFDELCMD < } {%%%
+\DIFdel{Systems}%DIFDELCMD < }%%%
+\DIFdel{:
+  }%DIFDELCMD < {%%%
+\DIFdel{Effective}%DIFDELCMD < } {%%%
+\DIFdel{Hamiltonians}%DIFDELCMD < } %%%
+\DIFdel{and }%DIFDELCMD < {%%%
+\DIFdel{Engineered}%DIFDELCMD < } {%%%
+\DIFdel{Gauge}%DIFDELCMD < } {%%%
+\DIFdel{Fields}%DIFDELCMD < }%%%
+\DIFdel{,'' }\DIFdelend \DIFaddbegin \DIFadd{C.~Jarzynski, ``Generating shortcuts to adiabaticity in quantum and classical
+  dynamics,'' }\DIFaddend \emph{Physical Review \DIFdelbegin \DIFdel{X}\DIFdelend \DIFaddbegin \DIFadd{A}\DIFaddend }, vol.~\DIFdelbegin \DIFdel{4}\DIFdelend \DIFaddbegin \DIFadd{88}\DIFaddend , no.~\DIFdelbegin \DIFdel{3,  p. 031027, Aug. 2014, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{4,  040101, Oct. 2013.
+  }\DIFaddend [Online]. Available:
+  \DIFdelbegin %DIFDELCMD < \url{https://link.aps.org/doi/10.1103/PhysRevX.4.031027}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \url{https://link.aps.org/doi/10.1103/PhysRevA.88.040101}
+\DIFaddend \BIBentrySTDinterwordspacing
 
 \bibitem{ball_software_2021}
 \BIBentryALTinterwordspacing
@@ -2550,8 +2628,8 @@ H.~Ball, M.~J. Biercuk, A.~R.~R. Carvalho, J.~Chen, M.~Hush, L.~A.~D. Castro,
   A.~Milne, ``\BIBforeignlanguage{en}{Software tools for quantum control:
   improving quantum computer performance through noise and error
   suppression},'' \emph{\BIBforeignlanguage{en}{Quantum Science and
-  Technology}}, vol.~6, no.~4, \DIFdelbegin \DIFdel{p. 044011, Sep. 2021, publisher: IOP Publishing.
-  }\DIFdelend \DIFaddbegin \DIFadd{Sep. 2021. }\DIFaddend [Online]. Available:
+  Technology}}, vol.~6, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 044011, Sep. \DIFdelbegin \DIFdel{2021, publisher: IOP Publishing.
+  }\DIFdelend \DIFaddbegin \DIFadd{2021. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1088/2058-9565/abdca6}
 \BIBentrySTDinterwordspacing
 
@@ -2561,10 +2639,9 @@ A.~Omran, H.~Levine, A.~Keesling, G.~Semeghini, T.~T. Wang, S.~Ebadi,
   H.~Bernien, A.~S. Zibrov, H.~Pichler, S.~Choi, J.~Cui, M.~Rossignolo,
   P.~Rembold, S.~Montangero, T.~Calarco, M.~Endres, M.~Greiner, V.~Vuletić,
   and M.~D. Lukin, ``Generation and manipulation of {Schrödinger} cat states
-  in {Rydberg} atom arrays,'' \emph{Science}, vol. 365, no. 6453, \DIFdelbegin \DIFdel{pp. 570--574,
-  Aug. 2019, publisher: American Association for the Advancement of Science.
-  }\DIFdelend \DIFaddbegin \DIFadd{Aug. 2019.
-  }\DIFaddend [Online]. Available:
+  in {Rydberg} atom arrays,'' \emph{Science}, vol. 365, no. 6453,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 570--574,
+  Aug. \DIFdelbegin \DIFdel{2019, publisher: American Association for the Advancement of Science.
+  }\DIFdelend \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online]. Available:
   \url{https://www.science.org/doi/10.1126/science.aax9743}
 \BIBentrySTDinterwordspacing
 
@@ -2581,9 +2658,8 @@ X.-M. Zhang, Z.~Wei, R.~Asad, X.-C. Yang, and X.~Wang,
   ``\BIBforeignlanguage{en}{When does reinforcement learning stand out in
   quantum control? {A} comparative study on state preparation},''
   \emph{\BIBforeignlanguage{en}{npj Quantum Information}}, vol.~5, no.~1, \DIFdelbegin \DIFdel{pp.
-  1--7, Oct.
-  2019, number: 1 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{Oct.
-  2019. }\DIFaddend [Online]. Available:
+  1--7}\DIFdelend \DIFaddbegin \DIFadd{~85}\DIFaddend ,
+  Oct. \DIFdelbegin \DIFdel{2019, number: 1 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online]. Available:
   \url{https://www.nature.com/articles/s41534-019-0201-8}
 \BIBentrySTDinterwordspacing
 
@@ -2609,7 +2685,7 @@ A.~Wald, \emph{Statistical decision functions}, ser. Statistical decision
 \BIBentryALTinterwordspacing
 G.~Dirr and U.~Helmke, ``\BIBforeignlanguage{en}{Lie {Theory} for {Quantum}
   {Control}},'' \emph{\BIBforeignlanguage{en}{GAMM-Mitteilungen}}, vol.~31,
-  no.~1, \DIFdelbegin \DIFdel{pp. 59--93, 2008, \_eprint:
+  no.~1,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 59--93, \DIFdelbegin \DIFdel{2008, \_eprint:
   https://onlinelibrary.wiley.com/doi/pdf/10.1002/gamm.200890003. }\DIFdelend \DIFaddbegin \DIFadd{2008. }\DIFaddend [Online]. Available:
   \url{https://onlinelibrary.wiley.com/doi/abs/10.1002/gamm.200890003}
 \BIBentrySTDinterwordspacing
@@ -2620,7 +2696,7 @@ W.~Fleming and R.~Rishel, ``\BIBforeignlanguage{en}{The {Optimal} {Control}
   {Problem}},'' in \emph{\BIBforeignlanguage{en}{Deterministic and {Stochastic}
   {Optimal} {Control}}}, ser. Applications of {Mathematics}, W.~Fleming and
   R.~Rishel, Eds.\hskip 1em plus 0.5em minus 0.4em\relax New York, NY:
-  Springer, 1975, pp. 20--59. [Online]. Available:
+  Springer, 1975,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 20--59. [Online]. Available:
   \url{https://doi.org/10.1007/978-1-4612-6380-7_2}
 \BIBentrySTDinterwordspacing
 
@@ -2634,11 +2710,11 @@ F.~vom Ende, ``Reachability in {Controlled} {Markovian} {Quantum} {Systems},''
 \bibitem{mangasarian_sufficient_1966}
 \BIBentryALTinterwordspacing
 O.~L. Mangasarian, ``Sufficient {Conditions} for the {Optimal} {Control} of
-  {Nonlinear} {Systems},'' \emph{SIAM Journal on Control}, vol.~4, no.~1, \DIFdelbegin \DIFdel{pp.
-  139--152, Feb.
-  1966, publisher: Society for Industrial and Applied
-  Mathematics. }\DIFdelend \DIFaddbegin \DIFadd{Feb.
-  1966. }\DIFaddend [Online]. Available: \url{https://epubs.siam.org/doi/10.1137/0304013}
+  {Nonlinear} {Systems},'' \emph{SIAM Journal on Control}, vol.~4, no.~1,  \DIFdelbegin \DIFdel{pp.
+  139--152}\DIFdelend \DIFaddbegin \DIFadd{139
+  -- 152}\DIFaddend , Feb. \DIFdelbegin \DIFdel{1966, publisher: Society for Industrial and Applied
+  Mathematics. }\DIFdelend \DIFaddbegin \DIFadd{1966. }\DIFaddend [Online]. Available:
+  \url{https://epubs.siam.org/doi/10.1137/0304013}
 \BIBentrySTDinterwordspacing
 
 \bibitem{boltyanski_nonclassical_1999}
@@ -2658,7 +2734,7 @@ J.~Yong and X.~Y. Zhou, ``\BIBforeignlanguage{en}{Dynamic {Programming} and
   {HJB} {Equations}},'' in \emph{\BIBforeignlanguage{en}{Stochastic {Controls}:
   {Hamiltonian} {Systems} and {HJB} {Equations}}}, ser. Applications of
   {Mathematics}, J.~Yong and X.~Y. Zhou, Eds.\hskip 1em plus 0.5em minus
-  0.4em\relax New York, NY: Springer, 1999, pp. 157--215. [Online]. Available:
+  0.4em\relax New York, NY: Springer, 1999,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 157--215. [Online]. Available:
   \url{https://doi.org/10.1007/978-1-4612-1466-3_4}
 \BIBentrySTDinterwordspacing
 
@@ -2695,7 +2771,7 @@ L.~Bottou and O.~Bousquet, ``The {Tradeoffs} of {Large} {Scale} {Learning},''
 \BIBentryALTinterwordspacing
 M.~R. Bonyadi and Z.~Michalewicz, ``Particle {Swarm} {Optimization} for
   {Single} {Objective} {Continuous} {Space} {Problems}: {A} {Review},''
-  \emph{Evolutionary Computation}, vol.~25, no.~1, \DIFdelbegin \DIFdel{pp. 1--54, }\DIFdelend Mar. 2017. [Online].
+  \emph{Evolutionary Computation}, vol.~25, no.~1,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1--54, Mar. 2017. [Online].
   Available: \url{https://doi.org/10.1162/EVCO_r_00180}
 \BIBentrySTDinterwordspacing
 
@@ -2711,23 +2787,23 @@ P.~A. Vikhar, ``Evolutionary algorithms: {A} critical review and its future
 \BIBentryALTinterwordspacing
 C.~Tsallis and D.~A. Stariolo, ``\BIBforeignlanguage{en}{Generalized simulated
   annealing},'' \emph{\BIBforeignlanguage{en}{Physica A: Statistical Mechanics
-  and its Applications}}, vol. 233, no.~1, \DIFdelbegin \DIFdel{pp. 395--406, }\DIFdelend Nov. 1996. [Online]. Available:
+  and its Applications}}, vol. 233, no.~1,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 395--406, Nov. 1996. [Online].
+  Available:
   \url{https://www.sciencedirect.com/science/article/pii/S0378437196002713}
 \BIBentrySTDinterwordspacing
 
 \bibitem{nelder_simplex_1965}
 \BIBentryALTinterwordspacing
 J.~A. Nelder and R.~Mead, ``A {Simplex} {Method} for {Function}
-  {Minimization},'' \emph{The Computer Journal}, vol.~7, no.~4, \DIFdelbegin \DIFdel{pp. 308--313,
-  }\DIFdelend Jan. 1965.
-  [Online]. Available: \url{https://doi.org/10.1093/comjnl/7.4.308}
+  {Minimization},'' \emph{The Computer Journal}, vol.~7, no.~4,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 308--313, Jan.
+  1965. [Online]. Available: \url{https://doi.org/10.1093/comjnl/7.4.308}
 \BIBentrySTDinterwordspacing
 
 \bibitem{powell_efficient_1964}
 \BIBentryALTinterwordspacing
 M.~J.~D. Powell, ``An efficient method for finding the minimum of a function of
   several variables without calculating derivatives,'' \emph{The Computer
-  Journal}, vol.~7, no.~2, \DIFdelbegin \DIFdel{pp. 155--162, }\DIFdelend Jan. 1964. [Online]. Available:
+  Journal}, vol.~7, no.~2,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 155--162, Jan. 1964. [Online]. Available:
   \url{https://doi.org/10.1093/comjnl/7.2.155}
 \BIBentrySTDinterwordspacing
 
@@ -2739,17 +2815,18 @@ R.~P. Brent, \emph{\BIBforeignlanguage{en}{Algorithms for {Minimization}
 \bibitem{kirkpatrick_optimization_1983}
 \BIBentryALTinterwordspacing
 S.~Kirkpatrick, C.~D. Gelatt, and M.~P. Vecchi, ``Optimization by {Simulated}
-  {Annealing},'' \emph{Science}, vol. 220, no. 4598, \DIFdelbegin \DIFdel{pp. 671--680, May 1983,
-  publisher: American Association for the Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{May 1983. }\DIFaddend [Online].
-  Available: \url{https://www.science.org/doi/10.1126/science.220.4598.671}
+  {Annealing},'' \emph{Science}, vol. 220, no. 4598,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 671--680, May \DIFdelbegin \DIFdel{1983,
+  publisher: American Association for the Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{1983.
+  }\DIFaddend [Online]. Available:
+  \url{https://www.science.org/doi/10.1126/science.220.4598.671}
 \BIBentrySTDinterwordspacing
 
 \bibitem{chib_understanding_1995}
 \BIBentryALTinterwordspacing
 S.~Chib and E.~Greenberg, ``Understanding the {Metropolis}-{Hastings}
-  {Algorithm},'' \emph{The American Statistician}, vol.~49, no.~4, \DIFdelbegin \DIFdel{pp.
-  327--335, 1995, publisher: }\DIFdelend \DIFaddbegin \DIFadd{1995.
-  }\DIFaddend [\DIFdelbegin \DIFdel{American Statistical Association, Taylor \&
+  {Algorithm},'' \emph{The American Statistician}, vol.~49, no.~4,  \DIFdelbegin \DIFdel{pp.
+  }\DIFdelend 327--335,
+  \DIFdelbegin \DIFdel{1995, publisher: }\DIFdelend \DIFaddbegin \DIFadd{1995. }\DIFaddend [\DIFdelbegin \DIFdel{American Statistical Association, Taylor \&
   Francis, Ltd.}%DIFDELCMD < ]%%%
 \DIFdel{. }%DIFDELCMD < [%%%
 \DIFdelend Online]. Available: \url{https://www.jstor.org/stable/2684568}
@@ -2759,15 +2836,15 @@ S.~Chib and E.~Greenberg, ``Understanding the {Metropolis}-{Hastings}
 \BIBentryALTinterwordspacing
 S.~G. Schirmer, H.~Fu, and A.~I. Solomon, ``\BIBforeignlanguage{en}{Complete
   controllability of quantum systems},'' \emph{\BIBforeignlanguage{en}{Physical
-  Review A}}, vol.~63, no.~6, \DIFdelbegin \DIFdel{p. 063410, }\DIFdelend May 2001. [Online]. Available:
+  Review A}}, vol.~63, no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 063410, May 2001. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.63.063410}
 \BIBentrySTDinterwordspacing
 
 \bibitem{khaneja_time_2001}
 \BIBentryALTinterwordspacing
 N.~Khaneja, R.~Brockett, and S.~J. Glaser, ``Time optimal control in spin
-  systems,'' \emph{Physical Review A}, vol.~63, no.~3, \DIFdelbegin \DIFdel{p. 032308, }\DIFdelend Feb. 2001, publisher:
-  American Physical Society. [Online]. Available:
+  systems,'' \emph{Physical Review A}, vol.~63, no.~3,  \DIFdelbegin \DIFdel{p. }\DIFdelend 032308, Feb. 2001,
+  publisher: American Physical Society. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.63.032308}
 \BIBentrySTDinterwordspacing
 
@@ -2775,8 +2852,8 @@ N.~Khaneja, R.~Brockett, and S.~J. Glaser, ``Time optimal control in spin
 \BIBentryALTinterwordspacing
 G.~C. Hegerfeldt, ``Driving at the {Quantum} {Speed} {Limit}: {Optimal}
   {Control} of a {Two}-{Level} {System},'' \emph{Physical Review Letters}, vol.
-  111, no.~26, \DIFdelbegin \DIFdel{p. 260501, Dec. 2013, publisher: American Physical Society.
-  }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2013. }\DIFaddend [Online]. Available:
+  111, no.~26,  \DIFdelbegin \DIFdel{p. }\DIFdelend 260501, Dec. \DIFdelbegin \DIFdel{2013, publisher: American Physical Society.
+  }\DIFdelend \DIFaddbegin \DIFadd{2013. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.111.260501}
 \BIBentrySTDinterwordspacing
 
@@ -2785,8 +2862,8 @@ G.~C. Hegerfeldt, ``Driving at the {Quantum} {Speed} {Limit}: {Optimal}
 P.~M. Poggi, F.~C. Lombardo, and D.~A. Wisniacki,
   ``\BIBforeignlanguage{en}{Quantum speed limit and optimal evolution time in a
   two-level system},'' \emph{\BIBforeignlanguage{en}{Europhysics Letters}},
-  vol. 104, no.~4, \DIFdelbegin \DIFdel{p. 40005, Dec. 2013, publisher: EDP Sciences, IOP Publishing
-  and Società Italiana di Fisica. }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2013. }\DIFaddend [Online]. Available:
+  vol. 104, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 40005, Dec. \DIFdelbegin \DIFdel{2013, publisher: EDP Sciences, IOP Publishing
+  and Società Italiana di Fisica. }\DIFdelend \DIFaddbegin \DIFadd{2013. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1209/0295-5075/104/40005}
 \BIBentrySTDinterwordspacing
 
@@ -2794,15 +2871,15 @@ P.~M. Poggi, F.~C. Lombardo, and D.~A. Wisniacki,
 \BIBentryALTinterwordspacing
 P.~Doria, T.~Calarco, and S.~Montangero, ``Optimal {Control} {Technique} for
   {Many}-{Body} {Quantum} {Dynamics},'' \emph{Physical Review Letters}, vol.
-  106, no.~19, \DIFdelbegin \DIFdel{p. 190501, May 2011, publisher: American Physical Society.
-  }\DIFdelend \DIFaddbegin \DIFadd{May 2011. }\DIFaddend [Online]. Available:
+  106, no.~19,  \DIFdelbegin \DIFdel{p. }\DIFdelend 190501, May \DIFdelbegin \DIFdel{2011, publisher: American Physical Society.
+  }\DIFdelend \DIFaddbegin \DIFadd{2011. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.106.190501}
 \BIBentrySTDinterwordspacing
 
 \bibitem{caneva_chopped_2011}
 \BIBentryALTinterwordspacing
 T.~Caneva, T.~Calarco, and S.~Montangero, ``Chopped random-basis quantum
-  optimization,'' \emph{Physical Review A}, vol.~84, no.~2, \DIFdelbegin \DIFdel{p. 022326, Aug. 2011, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Aug. 2011.
+  optimization,'' \emph{Physical Review A}, vol.~84, no.~2,  \DIFdelbegin \DIFdel{p. }\DIFdelend 022326, Aug. \DIFdelbegin \DIFdel{2011, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2011.
   }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.84.022326}
 \BIBentrySTDinterwordspacing
@@ -2810,24 +2887,25 @@ T.~Caneva, T.~Calarco, and S.~Montangero, ``Chopped random-basis quantum
 \bibitem{white_density_1992}
 \BIBentryALTinterwordspacing
 S.~R. White, ``Density matrix formulation for quantum renormalization groups,''
-  \emph{Physical Review Letters}, vol.~69, no.~19, \DIFdelbegin \DIFdel{pp. 2863--2866, Nov. 1992,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 1992. }\DIFaddend [Online].
+  \emph{Physical Review Letters}, vol.~69, no.~19,  \DIFdelbegin \DIFdel{pp. 2863--2866}\DIFdelend \DIFaddbegin \DIFadd{2863}\DIFaddend , Nov. \DIFdelbegin \DIFdel{1992,
+  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{1992. }\DIFaddend [Online].
   Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.69.2863}
 \BIBentrySTDinterwordspacing
 
 \bibitem{schollwock_density-matrix_2005}
 \BIBentryALTinterwordspacing
 U.~Schollwöck, ``The density-matrix renormalization group,'' \emph{Reviews of
-  Modern Physics}, vol.~77, no.~1, \DIFdelbegin \DIFdel{pp. 259--315, Apr. 2005, publisher: American
-  Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Apr. 2005. }\DIFaddend [Online]. Available:
+  Modern Physics}, vol.~77, no.~1,  \DIFdelbegin \DIFdel{pp. 259--315}\DIFdelend \DIFaddbegin \DIFadd{259}\DIFaddend , Apr. \DIFdelbegin \DIFdel{2005, publisher: American
+  Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2005. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/RevModPhys.77.259}
 \BIBentrySTDinterwordspacing
 
 \bibitem{schollwock_density-matrix_2011}
 \BIBentryALTinterwordspacing
-------, ``\BIBforeignlanguage{en}{The density-matrix renormalization group in
-  the age of matrix product states},'' \emph{\BIBforeignlanguage{en}{Annals of
-  Physics}}, vol. 326, no.~1, \DIFdelbegin \DIFdel{pp. 96--192, }\DIFdelend Jan. 2011. [Online]. Available:
+\DIFdelbegin \DIFdel{------}\DIFdelend \DIFaddbegin \DIFadd{U.~Schollwöck}\DIFaddend , ``\BIBforeignlanguage{en}{The density-matrix renormalization
+  group in the age of matrix product states},''
+  \emph{\BIBforeignlanguage{en}{Annals of Physics}}, vol. 326, no.~1,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 96--192,
+  Jan. 2011. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S0003491610001752}
 \BIBentrySTDinterwordspacing
 
@@ -2835,10 +2913,9 @@ U.~Schollwöck, ``The density-matrix renormalization group,'' \emph{Reviews of
 \BIBentryALTinterwordspacing
 C.~Brif, R.~Chakrabarti, and H.~Rabitz, ``\BIBforeignlanguage{en}{Control of
   quantum phenomena: past, present and future},''
-  \emph{\BIBforeignlanguage{en}{New Journal of Physics}}, vol.~12, no.~7, \DIFdelbegin \DIFdel{p.
-  075008, Jul.
-  2010, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{Jul.
-  2010. }\DIFaddend [Online]. Available:
+  \emph{\BIBforeignlanguage{en}{New Journal of Physics}}, vol.~12, no.~7,
+  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 075008, Jul. \DIFdelbegin \DIFdel{2010, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{2010. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1088/1367-2630/12/7/075008}
 \BIBentrySTDinterwordspacing
 
@@ -2846,7 +2923,7 @@ C.~Brif, R.~Chakrabarti, and H.~Rabitz, ``\BIBforeignlanguage{en}{Control of
 \BIBentryALTinterwordspacing
 J.~H.~M. Jensen, F.~S. Møller, J.~J. Sørensen, and J.~F. Sherson,
   ``Approximate dynamics leading to more optimal control: {Efficient} exact
-  derivatives,'' \emph{Physical Review A}, vol. 103, no.~6, \DIFdelbegin \DIFdel{p. 062612, Jun. 2021, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Jun. 2021.
+  derivatives,'' \emph{Physical Review A}, vol. 103, no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 062612, Jun. \DIFdelbegin \DIFdel{2021, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2021.
   }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.103.062612}
 \BIBentrySTDinterwordspacing
@@ -2855,9 +2932,8 @@ J.~H.~M. Jensen, F.~S. Møller, J.~J. Sørensen, and J.~F. Sherson,
 \BIBentryALTinterwordspacing
 N.~Rach, M.~M. Müller, T.~Calarco, and S.~Montangero, ``Dressing the
   chopped-random-basis optimization: {A} bandwidth-limited access to the
-  trap-free landscape,'' \emph{Physical Review A}, vol.~92, no.~6, \DIFdelbegin \DIFdel{p. 062343,
-  Dec. 2015, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Dec. 2015.
-  }\DIFaddend [Online]. Available:
+  trap-free landscape,'' \emph{Physical Review A}, vol.~92, no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 062343,
+  Dec. \DIFdelbegin \DIFdel{2015, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2015. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.92.062343}
 \BIBentrySTDinterwordspacing
 
@@ -2867,7 +2943,7 @@ N.~Khaneja, T.~Reiss, C.~Kehlet, T.~Schulte-Herbrüggen, and S.~J. Glaser,
   ``\BIBforeignlanguage{en}{Optimal control of coupled spin dynamics: design of
   {NMR} pulse sequences by gradient ascent algorithms},''
   \emph{\BIBforeignlanguage{en}{Journal of Magnetic Resonance}}, vol. 172,
-  no.~2, \DIFdelbegin \DIFdel{pp. 296--305, }\DIFdelend Feb. 2005. [Online]. Available:
+  no.~2,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 296--305, Feb. 2005. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S1090780704003696}
 \BIBentrySTDinterwordspacing
 
@@ -2875,10 +2951,10 @@ N.~Khaneja, T.~Reiss, C.~Kehlet, T.~Schulte-Herbrüggen, and S.~J. Glaser,
 \BIBentryALTinterwordspacing
 P.~de~Fouquieres, S.~G. Schirmer, S.~J. Glaser, and I.~Kuprov, ``Second order
   gradient ascent pulse engineering,'' \emph{Journal of Magnetic Resonance},
-  vol. 212, no.~2, \DIFdelbegin \DIFdel{pp. 412--417, Oct. 2011, arXiv:1102.4096 }%DIFDELCMD < [%%%
-\DIFdel{math-ph,
+  vol. 212, no.~2,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 412--417, Oct. \DIFdelbegin \DIFdel{2011, arXiv:1102.4096 }\DIFdelend \DIFaddbegin \DIFadd{2011. }\DIFaddend [\DIFdelbegin \DIFdel{math-ph,
   physics:quant-ph}%DIFDELCMD < ]%%%
-\DIFdelend \DIFaddbegin \DIFadd{Oct}\DIFaddend . \DIFaddbegin \DIFadd{2011. }\DIFaddend [Online]. Available:
+\DIFdel{. }%DIFDELCMD < [%%%
+\DIFdelend Online]. Available:
   \url{http://arxiv.org/abs/1102.4096}
 \BIBentrySTDinterwordspacing
 
@@ -2896,7 +2972,7 @@ S.~Machnes, U.~Sander, S.~J. Glaser, P.~De~Fouquières, A.~Gruslys,
   S.~Schirmer, and T.~Schulte-Herbrüggen, ``\BIBforeignlanguage{en}{Comparing,
   optimizing, and benchmarking quantum-control algorithms in a unifying
   programming framework},'' \emph{\BIBforeignlanguage{en}{Physical Review A}},
-  vol.~84, no.~2, \DIFdelbegin \DIFdel{p. 022305, }\DIFdelend Aug. 2011. [Online]. Available:
+  vol.~84, no.~2,  \DIFdelbegin \DIFdel{p. }\DIFdelend 022305, Aug. 2011. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.84.022305}
 \BIBentrySTDinterwordspacing
 
@@ -2905,7 +2981,7 @@ S.~Machnes, U.~Sander, S.~J. Glaser, P.~De~Fouquières, A.~Gruslys,
 J.~R. Johansson, P.~D. Nation, and F.~Nori, ``\BIBforeignlanguage{en}{{QuTiP}
   2: {A} {Python} framework for the dynamics of open quantum systems},''
   \emph{\BIBforeignlanguage{en}{Computer Physics Communications}}, vol. 184,
-  no.~4, \DIFdelbegin \DIFdel{pp. 1234--1240, }\DIFdelend Apr. 2013. [Online]. Available:
+  no.~4,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1234--1240, Apr. 2013. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S0010465512003955}
 \BIBentrySTDinterwordspacing
 
@@ -2913,8 +2989,8 @@ J.~R. Johansson, P.~D. Nation, and F.~Nori, ``\BIBforeignlanguage{en}{{QuTiP}
 \BIBentryALTinterwordspacing
 F.~Motzoi, J.~M. Gambetta, S.~T. Merkel, and F.~K. Wilhelm, ``Optimal control
   methods for rapidly time-varying {Hamiltonians},'' \emph{Physical Review A},
-  vol.~84, no.~2, \DIFdelbegin \DIFdel{p. 022307, Aug. 2011, publisher: American Physical Society.
-  }\DIFdelend \DIFaddbegin \DIFadd{Aug. 2011. }\DIFaddend [Online]. Available:
+  vol.~84, no.~2,  \DIFdelbegin \DIFdel{p. }\DIFdelend 022307, Aug. \DIFdelbegin \DIFdel{2011, publisher: American Physical Society.
+  }\DIFdelend \DIFaddbegin \DIFadd{2011. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.84.022307}
 \BIBentrySTDinterwordspacing
 
@@ -2922,9 +2998,9 @@ F.~Motzoi, J.~M. Gambetta, S.~T. Merkel, and F.~K. Wilhelm, ``Optimal control
 \BIBentryALTinterwordspacing
 B.~Anderson, H.~Sosa-Martinez, C.~Riofrío, I.~H. Deutsch, and P.~S. Jessen,
   ``Accurate and {Robust} {Unitary} {Transformations} of a {High}-{Dimensional}
-  {Quantum} {System},'' \emph{Physical Review Letters}, vol. 114, no.~24, \DIFdelbegin \DIFdel{p.
-  240401, }\DIFdelend Jun.
-  2015, publisher: American Physical Society. [Online]. Available:
+  {Quantum} {System},'' \emph{Physical Review Letters}, vol. 114, no.~24,
+  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 240401, Jun. 2015, publisher: American Physical Society. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.114.240401}
 \BIBentrySTDinterwordspacing
 
@@ -2932,7 +3008,7 @@ B.~Anderson, H.~Sosa-Martinez, C.~Riofrío, I.~H. Deutsch, and P.~S. Jessen,
 \BIBentryALTinterwordspacing
 D.~M. Reich, M.~Ndong, and C.~P. Koch, ``Monotonically convergent optimization
   in quantum control using {Krotov}'s method,'' \emph{The Journal of Chemical
-  Physics}, vol. 136, no.~10, \DIFdelbegin \DIFdel{p. 104103, }\DIFdelend Mar. 2012. [Online]. Available:
+  Physics}, vol. 136, no.~10,  \DIFdelbegin \DIFdel{p. }\DIFdelend 104103, Mar. 2012. [Online]. Available:
   \url{https://doi.org/10.1063/1.3691827}
 \BIBentrySTDinterwordspacing
 
@@ -2941,27 +3017,29 @@ D.~M. Reich, M.~Ndong, and C.~P. Koch, ``Monotonically convergent optimization
 O.~V. Morzhin and A.~N. Pechen, ``\BIBforeignlanguage{en}{Krotov method for
   optimal control of closed quantum systems},''
   \emph{\BIBforeignlanguage{en}{Russian Mathematical Surveys}}, vol.~74, no.~5,
-  \DIFdelbegin \DIFdel{p. 851, Oct. 2019, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2019. }\DIFaddend [Online]. Available:
+   \DIFdelbegin \DIFdel{p. }\DIFdelend 851, Oct. \DIFdelbegin \DIFdel{2019, publisher: IOP Publishing. }\DIFdelend \DIFaddbegin \DIFadd{2019. }\DIFaddend [Online]. Available:
   \url{https://iopscience.iop.org/article/10.1070/RM9835/meta}
 \BIBentrySTDinterwordspacing
 
 \bibitem{chakrabarti_quantum_2007}
 \BIBentryALTinterwordspacing
 R.~Chakrabarti and H.~Rabitz, ``Quantum control landscapes,''
-  \emph{International Reviews in Physical Chemistry}, vol.~26, no.~4, \DIFdelbegin \DIFdel{pp.
-  671--735, Oct.
-  2007, publisher: Taylor \& Francis. }\DIFdelend \DIFaddbegin \DIFadd{Oct.
-  2007. }\DIFaddend [Online]. Available:
-  \url{https://www.tandfonline.com/doi/citedby/10.1080/01442350701633300}
-\BIBentrySTDinterwordspacing
+  \emph{International Reviews in Physical Chemistry}, vol.~26, no.~4,
+  \DIFdelbegin \DIFdel{pp.
+  }\DIFdelend 671--735, Oct. 2007, publisher: Taylor \& Francis \DIFdelbegin \DIFdel{. }\DIFdelend \DIFaddbegin \DIFadd{\_eprint:
+  https://doi.org/10.1080/01442350701633300. }\DIFaddend [Online]. Available:
+  \DIFdelbegin %DIFDELCMD < \url{https://www.tandfonline.com/doi/citedby/10.1080/01442350701633300}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \url{https://doi.org/10.1080/01442350701633300}
+\DIFaddend \BIBentrySTDinterwordspacing
 
 \bibitem{rabitz_surprising_2023}
 \BIBentryALTinterwordspacing
 H.~Rabitz, B.~Russell, and T.-S. Ho, ``The {Surprising} {Ease} of {Finding}
   {Optimal} {Solutions} for {Controlling} {Nonlinear} {Phenomena} in {Quantum}
   and {Classical} {Complex} {Systems},'' \emph{The Journal of Physical
-  Chemistry A}, vol. 127, no.~19, \DIFdelbegin \DIFdel{pp. 4224--4236, May 2023, publisher: American
-  Chemical Society. }\DIFdelend \DIFaddbegin \DIFadd{May 2023. }\DIFaddend [Online]. Available:
+  Chemistry A}, vol. 127, no.~19,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 4224--4236, May \DIFdelbegin \DIFdel{2023, publisher: American
+  Chemical Society. }\DIFdelend \DIFaddbegin \DIFadd{2023. }\DIFaddend [Online]. Available:
   \url{https://doi.org/10.1021/acs.jpca.3c01896}
 \BIBentrySTDinterwordspacing
 
@@ -2969,9 +3047,9 @@ H.~Rabitz, B.~Russell, and T.-S. Ho, ``The {Surprising} {Ease} of {Finding}
 \BIBentryALTinterwordspacing
 D.~Dong and I.~R. Petersen, ``\BIBforeignlanguage{en}{Quantum estimation,
   control and learning: {Opportunities} and challenges},''
-  \emph{\BIBforeignlanguage{en}{Annual Reviews in Control}}, vol.~54, \DIFdelbegin \DIFdel{pp.
-  243--251, }\DIFdelend Jan.
-  2022. [Online]. Available:
+  \emph{\BIBforeignlanguage{en}{Annual Reviews in Control}}, vol.~54,
+  \DIFdelbegin \DIFdel{pp.
+  }\DIFdelend 243--251, Jan. 2022. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S1367578822000281}
 \BIBentrySTDinterwordspacing
 
@@ -2979,17 +3057,16 @@ D.~Dong and I.~R. Petersen, ``\BIBforeignlanguage{en}{Quantum estimation,
 \BIBentryALTinterwordspacing
 A.~d. Campo, J.~Goold, and M.~Paternostro, ``More bang for your buck:
   {Super}-adiabatic quantum engines,'' \emph{Scientific Reports}, vol.~4,
-  \DIFdelbegin \DIFdel{p.6208}\DIFdelend \DIFaddbegin \DIFadd{no.~6}\DIFaddend , Aug. 2014. [Online]. Available:
+  \DIFdelbegin \DIFdel{p.}\DIFdelend \DIFaddbegin \DIFadd{no.~6,  }\DIFaddend 6208, Aug. 2014. [Online]. Available:
   \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4147366/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{saberi_adiabatic_2014}
 \BIBentryALTinterwordspacing
 H.~Saberi, T.~Opatrný, K.~Mølmer, and A.~del Campo, ``Adiabatic tracking of
-  quantum many-body dynamics,'' \emph{Physical Review A}, vol.~90, no.~6, \DIFdelbegin \DIFdel{p.
-  060301, Dec.
-  2014, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Dec.
-  2014. }\DIFaddend [Online]. Available:
+  quantum many-body dynamics,'' \emph{Physical Review A}, vol.~90, no.~6,
+  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 060301, Dec. \DIFdelbegin \DIFdel{2014, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2014. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.90.060301}
 \BIBentrySTDinterwordspacing
 
@@ -2997,36 +3074,38 @@ H.~Saberi, T.~Opatrný, K.~Mølmer, and A.~del Campo, ``Adiabatic tracking of
 \BIBentryALTinterwordspacing
 S.~Campbell, G.~De~Chiara, M.~Paternostro, G.~M. Palma, and R.~Fazio,
   ``Shortcut to {Adiabaticity} in the {Lipkin}-{Meshkov}-{Glick} {Model},''
-  \emph{Physical Review Letters}, vol. 114, no.~17, \DIFdelbegin \DIFdel{p. 177206, May 2015,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{May 2015. }\DIFaddend [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.114.177206}
+  \emph{Physical Review Letters}, vol. 114, no.~17,  \DIFdelbegin \DIFdel{p. }\DIFdelend 177206, May \DIFdelbegin \DIFdel{2015,
+  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2015.
+  }\DIFaddend [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.114.177206}
 \BIBentrySTDinterwordspacing
 
 \bibitem{whitty_quantum_2020}
 \BIBentryALTinterwordspacing
 C.~Whitty, A.~Kiely, and A.~Ruschhaupt, ``\BIBforeignlanguage{en}{Quantum
   control via enhanced shortcuts to adiabaticity},''
-  \emph{\BIBforeignlanguage{en}{Physical Review Research}}, vol.~2, no.~2, \DIFdelbegin \DIFdel{p.
-  023360, }\DIFdelend Jun.
-  2020. [Online]. Available:
+  \emph{\BIBforeignlanguage{en}{Physical Review Research}}, vol.~2, no.~2,
+  \DIFdelbegin \DIFdel{p.
+  }\DIFdelend 023360, Jun. 2020. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevResearch.2.023360}
 \BIBentrySTDinterwordspacing
 
 \bibitem{del_campo_shortcuts_2013}
 \BIBentryALTinterwordspacing
 A.~del Campo, ``Shortcuts to {Adiabaticity} by {Counterdiabatic} {Driving},''
-  \emph{Physical Review Letters}, vol. 111, no.~10, \DIFdelbegin \DIFdel{p. 100502, Sep. 2013,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Sep. 2013. }\DIFaddend [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.111.100502}
+  \emph{Physical Review Letters}, vol. 111, no.~10,  \DIFdelbegin \DIFdel{p. }\DIFdelend 100502, Sep. \DIFdelbegin \DIFdel{2013,
+  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2013.
+  }\DIFaddend [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.111.100502}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bukov_geometric_2019}
 \BIBentryALTinterwordspacing
 M.~Bukov, D.~Sels, and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Geometric
   {Speed} {Limit} of {Accessible} {Many}-{Body} {State} {Preparation}},''
-  \emph{\BIBforeignlanguage{en}{Physical Review X}}, vol.~9, no.~1, \DIFdelbegin \DIFdel{p. 011034,
-  }\DIFdelend Feb. 2019.
-  [Online]. Available: \url{https://link.aps.org/doi/10.1103/PhysRevX.9.011034}
+  \emph{\BIBforeignlanguage{en}{Physical Review X}}, vol.~9, no.~1,  \DIFdelbegin \DIFdel{p. }\DIFdelend 011034,
+  Feb. 2019. [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevX.9.011034}
 \BIBentrySTDinterwordspacing
 
 \bibitem{geier_floquet_2021}
@@ -3034,8 +3113,8 @@ M.~Bukov, D.~Sels, and A.~Polkovnikov, ``\BIBforeignlanguage{en}{Geometric
 S.~Geier, N.~Thaicharoen, C.~Hainaut, T.~Franz, A.~Salzinger, A.~Tebben,
   D.~Grimshandl, G.~Zürn, and M.~Weidemüller, ``Floquet {Hamiltonian}
   engineering of an isolated many-body spin system,'' \emph{Science}, vol. 374,
-  no. 6571, \DIFdelbegin \DIFdel{pp. 1149--1152, Nov. 2021, publisher: American Association for the
-  Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 2021. }\DIFaddend [Online]. Available:
+  no. 6571,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1149--1152, Nov. \DIFdelbegin \DIFdel{2021, publisher: American Association for the
+  Advancement of Science. }\DIFdelend \DIFaddbegin \DIFadd{2021. }\DIFaddend [Online]. Available:
   \url{https://www.science.org/doi/10.1126/science.abd9547}
 \BIBentrySTDinterwordspacing
 
@@ -3051,15 +3130,15 @@ S.~Geier, N.~Thaicharoen, C.~Hainaut, T.~Franz, A.~Salzinger, A.~Tebben,
 T.~Hatomura and K.~Takahashi, ``\BIBforeignlanguage{en}{Controlling and
   exploring quantum systems by algebraic expression of adiabatic gauge
   potential},'' \emph{\BIBforeignlanguage{en}{Physical Review A}}, vol. 103,
-  no.~1, \DIFdelbegin \DIFdel{p. 012220, }\DIFdelend Jan. 2021. [Online]. Available:
+  no.~1,  \DIFdelbegin \DIFdel{p. }\DIFdelend 012220, Jan. 2021. [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.103.012220}
 \BIBentrySTDinterwordspacing
 
 \bibitem{albash_adiabatic_2018}
 \BIBentryALTinterwordspacing
 T.~Albash and D.~A. Lidar, ``Adiabatic quantum computation,'' \emph{Reviews of
-  Modern Physics}, vol.~90, no.~1, \DIFdelbegin \DIFdel{p. 015002, Jan. 2018, publisher: American
-  Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Jan. 2018. }\DIFaddend [Online]. Available:
+  Modern Physics}, vol.~90, no.~1,  \DIFdelbegin \DIFdel{p. }\DIFdelend 015002, Jan. \DIFdelbegin \DIFdel{2018, publisher: American
+  Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2018. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/RevModPhys.90.015002}
 \BIBentrySTDinterwordspacing
 
@@ -3068,7 +3147,7 @@ T.~Albash and D.~A. Lidar, ``Adiabatic quantum computation,'' \emph{Reviews of
 I.~R. Petersen and B.~Ross~Barmish, ``\BIBforeignlanguage{en}{Control effort
   considerations in the stabilization of uncertain dynamical systems},''
   \emph{\BIBforeignlanguage{en}{Systems \& Control Letters}}, vol.~9, no.~5,
-  \DIFdelbegin \DIFdel{pp. 417--422, }\DIFdelend Nov. 1987. [Online]. Available:
+  \DIFdelbegin \DIFdel{pp. }\DIFdelend 417--422, Nov. 1987. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/0167691187900715}
 \BIBentrySTDinterwordspacing
 
@@ -3085,17 +3164,15 @@ N.~Mohseni, P.~L. McMahon, and T.~Byrnes, ``Ising machines as hardware solvers
 N.~Lang and H.~P. Büchler, ``\BIBforeignlanguage{en}{Topological networks for
   quantum communication between distant qubits},''
   \emph{\BIBforeignlanguage{en}{npj Quantum Information}}, vol.~3, no.~1, \DIFdelbegin \DIFdel{pp.
-  1--10, Nov.
-  2017, number: 1 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{Nov.
-  2017. }\DIFaddend [Online]. Available:
+  1--10}\DIFdelend \DIFaddbegin \DIFadd{~47}\DIFaddend ,
+  Nov. \DIFdelbegin \DIFdel{2017, number: 1 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{2017. }\DIFaddend [Online]. Available:
   \url{https://www.nature.com/articles/s41534-017-0047-x}
 \BIBentrySTDinterwordspacing
 
 \bibitem{hatsugai_chern_1993}
 \BIBentryALTinterwordspacing
 Y.~Hatsugai, ``Chern number and edge states in the integer quantum {Hall}
-  effect,'' \emph{Physical Review Letters}, vol.~71, no.~22, \DIFdelbegin \DIFdel{pp. 3697--3700,
-  Nov. 1993, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 1993.
+  effect,'' \emph{Physical Review Letters}, vol.~71, no.~22,  \DIFdelbegin \DIFdel{pp. 3697--3700}\DIFdelend \DIFaddbegin \DIFadd{3697}\DIFaddend , Nov. \DIFdelbegin \DIFdel{1993, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{1993.
   }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.71.3697}
 \BIBentrySTDinterwordspacing
@@ -3103,9 +3180,10 @@ Y.~Hatsugai, ``Chern number and edge states in the integer quantum {Hall}
 \bibitem{hugel_chiral_2014}
 \BIBentryALTinterwordspacing
 D.~Hügel and B.~Paredes, ``Chiral ladders and the edges of quantum {Hall}
-  insulators,'' \emph{Physical Review A}, vol.~89, no.~2, \DIFdelbegin \DIFdel{p. 023619, Feb. 2014,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Feb. 2014. }\DIFaddend [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.89.023619}
+  insulators,'' \emph{Physical Review A}, vol.~89, no.~2,  \DIFdelbegin \DIFdel{p. }\DIFdelend 023619, Feb. \DIFdelbegin \DIFdel{2014,
+  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2014.
+  }\DIFaddend [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevA.89.023619}
 \BIBentrySTDinterwordspacing
 
 \bibitem{landig_quantum_2016}
@@ -3113,9 +3191,8 @@ D.~Hügel and B.~Paredes, ``Chiral ladders and the edges of quantum {Hall}
 R.~Landig, L.~Hruby, N.~Dogra, M.~Landini, R.~Mottl, T.~Donner, and
   T.~Esslinger, ``\BIBforeignlanguage{en}{Quantum phases from competing short-
   and long-range interactions in an optical lattice},''
-  \emph{\BIBforeignlanguage{en}{Nature}}, vol. 532, no. 7600, \DIFdelbegin \DIFdel{pp. 476--479,
-  Apr. 2016, number: 7600 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{Apr. 2016.
-  }\DIFaddend [Online]. Available: \url{https://www.nature.com/articles/nature17409}
+  \emph{\BIBforeignlanguage{en}{Nature}}, vol. 532, no. 7600,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 476--479, Apr.
+  \DIFdelbegin \DIFdel{2016, number: 7600 Publisher: Nature Publishing Group. }\DIFdelend \DIFaddbegin \DIFadd{2016. }\DIFaddend [Online]. Available: \url{https://www.nature.com/articles/nature17409}
 \BIBentrySTDinterwordspacing
 
 \bibitem{keller_phases_2017}
@@ -3123,8 +3200,8 @@ R.~Landig, L.~Hruby, N.~Dogra, M.~Landini, R.~Mottl, T.~Donner, and
 T.~Keller, S.~B. Jäger, and G.~Morigi, ``\BIBforeignlanguage{en}{Phases of
   cold atoms interacting via photon-mediated long-range forces},''
   \emph{\BIBforeignlanguage{en}{Journal of Statistical Mechanics: Theory and
-  Experiment}}, vol. 2017, no.~6, \DIFdelbegin \DIFdel{p. 064002, Jun. 2017, publisher: IOP
-  Publishing and SISSA. }\DIFdelend \DIFaddbegin \DIFadd{Jun. 2017. }\DIFaddend [Online]. Available:
+  Experiment}}, vol. 2017, no.~6,  \DIFdelbegin \DIFdel{p. }\DIFdelend 064002, Jun. \DIFdelbegin \DIFdel{2017, publisher: IOP
+  Publishing and SISSA. }\DIFdelend \DIFaddbegin \DIFadd{2017. }\DIFaddend [Online]. Available:
   \url{https://dx.doi.org/10.1088/1742-5468/aa71d7}
 \BIBentrySTDinterwordspacing
 
@@ -3133,8 +3210,8 @@ T.~Keller, S.~B. Jäger, and G.~Morigi, ``\BIBforeignlanguage{en}{Phases of
 M.~Baranov, L.~Dobrek, K.~Goral, L.~Santos, and M.~Lewenstein,
   ``\BIBforeignlanguage{en}{Ultracold {Dipolar} {Gases} – a {Challenge} for
   {Experiments} and {Theory}},'' \emph{\BIBforeignlanguage{en}{Physica
-  Scripta}}, vol. 2002, no.\DIFdelbegin \DIFdel{T102, p.}\DIFdelend ~74, Jan. \DIFdelbegin \DIFdel{2002, publisher: IOP Publishing.
-  }\DIFdelend \DIFaddbegin \DIFadd{2002. }\DIFaddend [Online]. Available:
+  Scripta}}, vol. 2002, no.\DIFdelbegin \DIFdel{T102, p.}\DIFdelend ~74,  \DIFdelbegin \DIFdel{Jan. 2002, publisher: IOP Publishing.
+  }\DIFdelend \DIFaddbegin \DIFadd{072501, Jan. 2002. }\DIFaddend [Online]. Available:
   \url{https://iopscience.iop.org/article/10.1238/Physica.Topical.102a00074/meta}
 \BIBentrySTDinterwordspacing
 
@@ -3142,8 +3219,10 @@ M.~Baranov, L.~Dobrek, K.~Goral, L.~Santos, and M.~Lewenstein,
 \BIBentryALTinterwordspacing
 C.~Trefzger, C.~Menotti, B.~Capogrosso-Sansone, and M.~Lewenstein,
   ``\BIBforeignlanguage{en}{Ultracold dipolar gases in optical lattices},''
-  \emph{\BIBforeignlanguage{en}{Journal of Physics B: Atomic, Molecular and
-  Optical Physics}}, vol.~44, no.~19, \DIFdelbegin \DIFdel{p. 193001, }\DIFdelend Sep. 2011. [Online]. Available:
+  \DIFdelbegin \emph{%DIFDELCMD < \BIBforeignlanguage{en}{Journal of Physics B: Atomic, Molecular and
+%DIFDELCMD <   Optical Physics}%%%
+}%DIFAUXCMD
+\DIFdel{, vol.~44, no. ~19, p. 193001, }\DIFdelend \DIFaddbegin \DIFadd{Ph.D. dissertation, }\DIFaddend Sep. 2011. [Online]. Available:
   \url{https://dx.doi.org/10.1088/0953-4075/44/19/193001}
 \BIBentrySTDinterwordspacing
 
@@ -3157,7 +3236,7 @@ M.~A. Nielsen and I.~L. Chuang, \emph{\BIBforeignlanguage{en}{Quantum
 K.~Boström and T.~Felbinger, ``Deterministic {Secure} {Direct} {Communication}
   {Using} {Entanglement},'' \emph{Physical Review Letters}, vol.~89, no.~18,
   \DIFdelbegin \DIFdel{p.
-  187902, Oct. 2002, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Oct. 2002. }\DIFaddend [Online]. Available:
+  }\DIFdelend 187902, Oct. \DIFdelbegin \DIFdel{2002, publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2002. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevLett.89.187902}
 \BIBentrySTDinterwordspacing
 
@@ -3165,17 +3244,18 @@ K.~Boström and T.~Felbinger, ``Deterministic {Secure} {Direct} {Communication}
 \BIBentryALTinterwordspacing
 Y.~Kim, S.-Y. Yoo, and Y.-H. Kim, ``Heisenberg-{Limited} {Metrology} via
   {Weak}-{Value} {Amplification} without {Using} {Entangled} {Resources},''
-  \emph{Physical Review Letters}, vol. 128, no.~4, \DIFdelbegin \DIFdel{p. 040503, Jan. 2022,
-  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Jan. 2022. }\DIFaddend [Online].
-  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.128.040503}
+  \emph{Physical Review Letters}, vol. 128, no.~4,  \DIFdelbegin \DIFdel{p. }\DIFdelend 040503, Jan. \DIFdelbegin \DIFdel{2022,
+  publisher: American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2022.
+  }\DIFaddend [Online]. Available:
+  \url{https://link.aps.org/doi/10.1103/PhysRevLett.128.040503}
 \BIBentrySTDinterwordspacing
 
 \bibitem{einstein_can_1935}
 \BIBentryALTinterwordspacing
 A.~Einstein, B.~Podolsky, and N.~Rosen, ``Can {Quantum}-{Mechanical}
   {Description} of {Physical} {Reality} {Be} {Considered} {Complete}?''
-  \emph{Physical Review}, vol.~47, no.~10, \DIFdelbegin \DIFdel{pp. 777--780, May 1935, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{May 1935. }\DIFaddend [Online]. Available:
+  \emph{Physical Review}, vol.~47, no.~10,  \DIFdelbegin \DIFdel{pp. 777--780, May 1935, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{777, May 1935. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRev.47.777}
 \BIBentrySTDinterwordspacing
 
@@ -3183,7 +3263,8 @@ A.~Einstein, B.~Podolsky, and N.~Rosen, ``Can {Quantum}-{Mechanical}
 \BIBentryALTinterwordspacing
 D.~M. Greenberger, M.~A. Horne, A.~Shimony, and A.~Zeilinger, ``Bell’s
   theorem without inequalities,'' \emph{American Journal of Physics}, vol.~58,
-  no.~12, \DIFdelbegin \DIFdel{pp. 1131--1143, }\DIFdelend Dec. 1990. [Online]. Available: \url{https://doi.org/10.1119/1.16243}
+  no.~12,  \DIFdelbegin \DIFdel{pp. }\DIFdelend 1131--1143, Dec. 1990. [Online]. Available:
+  \url{https://doi.org/10.1119/1.16243}
 \BIBentrySTDinterwordspacing
 
 \bibitem{sun_optimizing_2022}
@@ -3191,7 +3272,7 @@ D.~M. Greenberger, M.~A. Horne, A.~Shimony, and A.~Zeilinger, ``Bell’s
 D.~Sun, P.~Chandarana, Z.-H. Xin, and X.~Chen, ``Optimizing counterdiabaticity
   by variational quantum circuits,'' \emph{Philosophical Transactions of the
   Royal Society A: Mathematical, Physical and Engineering Sciences}, vol. 380,
-  no. 2239, \DIFdelbegin \DIFdel{p. 20210282, Nov. 2022, publisher: Royal Society. }\DIFdelend \DIFaddbegin \DIFadd{Nov. 2022. }\DIFaddend [Online]. Available:
+  no. 2239,  \DIFdelbegin \DIFdel{p. }\DIFdelend 20210282, Nov. \DIFdelbegin \DIFdel{2022, publisher: Royal Society. }\DIFdelend \DIFaddbegin \DIFadd{2022. }\DIFaddend [Online]. Available:
   \url{https://royalsocietypublishing.org/doi/full/10.1098/rsta.2021.0282}
 \BIBentrySTDinterwordspacing
 
@@ -3199,25 +3280,24 @@ D.~Sun, P.~Chandarana, Z.-H. Xin, and X.~Chen, ``Optimizing counterdiabaticity
 \BIBentryALTinterwordspacing
 A.~Cabello, ``Bell's theorem with and without inequalities for the three-qubit
   {Greenberger}-{Horne}-{Zeilinger} and {W} states,'' \emph{Physical Review A},
-  vol.~65, no.~3, \DIFdelbegin \DIFdel{p. 032108, Feb. 2002, publisher: American Physical Society.
-  }\DIFdelend \DIFaddbegin \DIFadd{Feb. 2002. }\DIFaddend [Online]. Available:
+  vol.~65, no.~3,  \DIFdelbegin \DIFdel{p. }\DIFdelend 032108, Feb. \DIFdelbegin \DIFdel{2002, publisher: American Physical Society.
+  }\DIFdelend \DIFaddbegin \DIFadd{2002. }\DIFaddend [Online]. Available:
   \url{https://link.aps.org/doi/10.1103/PhysRevA.65.032108}
 \BIBentrySTDinterwordspacing
 
 \bibitem{coffman_distributed_2000}
 \BIBentryALTinterwordspacing
 V.~Coffman, J.~Kundu, and W.~K. Wootters, ``Distributed entanglement,''
-  \emph{Physical Review A}, vol.~61, no.~5, \DIFdelbegin \DIFdel{p. 052306, Apr. 2000, publisher:
-  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{Apr. 2000. }\DIFaddend [Online]. Available:
-  \url{https://link.aps.org/doi/10.1103/PhysRevA.61.052306}
+  \emph{Physical Review A}, vol.~61, no.~5,  \DIFdelbegin \DIFdel{p. }\DIFdelend 052306, Apr. \DIFdelbegin \DIFdel{2000, publisher:
+  American Physical Society. }\DIFdelend \DIFaddbegin \DIFadd{2000. }\DIFaddend [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevA.61.052306}
 \BIBentrySTDinterwordspacing
 
 \bibitem{fishman_itensor_2022}
 \BIBentryALTinterwordspacing
 M.~Fishman, S.~White, and E.~Stoudenmire, ``The {ITensor} {Software} {Library}
-  for {Tensor} {Network} {Calculations},'' \emph{SciPost Physics Codebases}\DIFdelbegin \DIFdel{,
-  p.~4}\DIFdelend ,
-  Aug. 2022. [Online]. Available:
+  for {Tensor} {Network} {Calculations},'' \emph{SciPost Physics Codebases},
+  \DIFdelbegin \DIFdel{p.~4}\DIFdelend \DIFaddbegin \DIFadd{4--r0.3}\DIFaddend , Aug. 2022. [Online]. Available:
   \url{https://scipost.org/10.21468/SciPostPhysCodeb.4}
 \BIBentrySTDinterwordspacing
 
