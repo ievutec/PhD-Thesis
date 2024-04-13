@@ -657,6 +657,15 @@ M.~J.~D. Powell, ``An efficient method for finding the minimum of a function of
   \url{https://doi.org/10.1093/comjnl/7.2.155}
 \BIBentrySTDinterwordspacing
 
+\bibitem{hestenes_methods_1952}
+\BIBentryALTinterwordspacing
+M.~Hestenes and E.~Stiefel, ``\BIBforeignlanguage{en}{Methods of conjugate
+  gradients for solving linear systems},''
+  \emph{\BIBforeignlanguage{en}{Journal of Research of the National Bureau of
+  Standards}}, vol.~49, no.~6,  409, Dec. 1952. [Online]. Available:
+  \url{https://nvlpubs.nist.gov/nistpubs/jres/049/jresv49n6p409_A1b.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{brent_algorithms_2002}
 R.~P. Brent, \emph{\BIBforeignlanguage{en}{Algorithms for {Minimization}
   {Without} {Derivatives}}}.\hskip 1em plus 0.5em minus 0.4em\relax Courier
@@ -890,6 +899,15 @@ A.~d. Campo, J.~Goold, and M.~Paternostro, ``More bang for your buck:
   \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4147366/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{ban_counter-diabatic_2014}
+\BIBentryALTinterwordspacing
+Y.~Ban and X.~Chen, ``\BIBforeignlanguage{en}{Counter-diabatic driving for fast
+  spin control in a two-electron double quantum dot},''
+  \emph{\BIBforeignlanguage{en}{Scientific Reports}}, vol.~4, no.~1,  6258,
+  Sep. 2014, publisher: Nature Publishing Group. [Online]. Available:
+  \url{https://www.nature.com/articles/srep06258}
+\BIBentrySTDinterwordspacing
+
 \bibitem{saberi_adiabatic_2014}
 \BIBentryALTinterwordspacing
 H.~Saberi, T.~Opatrný, K.~Mølmer, and A.~del Campo, ``Adiabatic tracking of
@@ -967,12 +985,64 @@ I.~R. Petersen and B.~Ross~Barmish, ``\BIBforeignlanguage{en}{Control effort
   \url{https://www.sciencedirect.com/science/article/pii/0167691187900715}
 \BIBentrySTDinterwordspacing
 
+\bibitem{abah_energetic_2019}
+\BIBentryALTinterwordspacing
+O.~Abah, R.~Puebla, A.~Kiely, G.~De~Chiara, M.~Paternostro, and S.~Campbell,
+  ``\BIBforeignlanguage{en}{Energetic cost of quantum control protocols},''
+  \emph{\BIBforeignlanguage{en}{New Journal of Physics}}, vol.~21, no.~10,
+  1367--2630, Oct. 2019. [Online]. Available:
+  \url{https://iopscience.iop.org/article/10.1088/1367-2630/ab4c8c}
+\BIBentrySTDinterwordspacing
+
 \bibitem{mohseni_ising_2022}
 \BIBentryALTinterwordspacing
 N.~Mohseni, P.~L. McMahon, and T.~Byrnes, ``Ising machines as hardware solvers
   of combinatorial optimization problems,'' Apr. 2022, arXiv:2204.00276
   [physics, physics:quant-ph]. [Online]. Available:
   \url{http://arxiv.org/abs/2204.00276}
+\BIBentrySTDinterwordspacing
+
+\bibitem{couvert_optimal_2008}
+\BIBentryALTinterwordspacing
+A.~Couvert, T.~Kawalec, G.~Reinaudi, and D.~Guéry-Odelin,
+  ``\BIBforeignlanguage{en}{Optimal transport of ultracold atoms in the
+  non-adiabatic regime},'' \emph{\BIBforeignlanguage{en}{Europhysics Letters}},
+  vol.~83, no.~1,  13001, Jun. 2008. [Online]. Available:
+  \url{https://dx.doi.org/10.1209/0295-5075/83/13001}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kiely_fast_2021}
+\BIBentryALTinterwordspacing
+A.~Kiely and S.~Campbell, ``\BIBforeignlanguage{en}{Fast and robust magnon
+  transport in a spin chain},'' \emph{\BIBforeignlanguage{en}{New Journal of
+  Physics}}, vol.~23, no.~3,  033033, Mar. 2021, publisher: IOP Publishing.
+  [Online]. Available: \url{https://dx.doi.org/10.1088/1367-2630/abea43}
+\BIBentrySTDinterwordspacing
+
+\bibitem{campbell_trade-off_2017}
+\BIBentryALTinterwordspacing
+S.~Campbell and S.~Deffner, ``Trade-{Off} {Between} {Speed} and {Cost} in
+  {Shortcuts} to {Adiabaticity},'' \emph{Physical Review Letters}, vol. 118,
+  no.~10,  100601, Mar. 2017, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.118.100601}
+\BIBentrySTDinterwordspacing
+
+\bibitem{funo_universal_2017}
+\BIBentryALTinterwordspacing
+K.~Funo, J.-N. Zhang, C.~Chatou, K.~Kim, M.~Ueda, and A.~del Campo, ``Universal
+  {Work} {Fluctuations} {During} {Shortcuts} to {Adiabaticity} by
+  {Counterdiabatic} {Driving},'' \emph{Physical Review Letters}, vol. 118,
+  no.~10,  100602, Mar. 2017, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevLett.118.100602}
+\BIBentrySTDinterwordspacing
+
+\bibitem{santos_superadiabatic_2015}
+\BIBentryALTinterwordspacing
+A.~C. Santos and M.~S. Sarandy, ``\BIBforeignlanguage{en}{Superadiabatic
+  {Controlled} {Evolutions} and {Universal} {Quantum} {Computation}},''
+  \emph{\BIBforeignlanguage{en}{Scientific Reports}}, vol.~5, no.~1,  15775,
+  Oct. 2015, publisher: Nature Publishing Group. [Online]. Available:
+  \url{https://www.nature.com/articles/srep15775}
 \BIBentrySTDinterwordspacing
 
 \bibitem{lang_topological_2017}
@@ -1033,6 +1103,14 @@ C.~Trefzger, C.~Menotti, B.~Capogrosso-Sansone, and M.~Lewenstein,
   ``\BIBforeignlanguage{en}{Ultracold dipolar gases in optical lattices},''
   Ph.D. dissertation, Sep. 2011. [Online]. Available:
   \url{https://dx.doi.org/10.1088/0953-4075/44/19/193001}
+\BIBentrySTDinterwordspacing
+
+\bibitem{coopmans_optimal_2022}
+\BIBentryALTinterwordspacing
+L.~Coopmans, S.~Campbell, G.~De~Chiara, and A.~Kiely, ``Optimal control in
+  disordered quantum systems,'' \emph{Physical Review Research}, vol.~4, no.~4,
+   043138, Nov. 2022, publisher: American Physical Society. [Online].
+  Available: \url{https://link.aps.org/doi/10.1103/PhysRevResearch.4.043138}
 \BIBentrySTDinterwordspacing
 
 \bibitem{nielsen_quantum_2010}

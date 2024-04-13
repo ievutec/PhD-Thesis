@@ -7,8 +7,10 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated field_info (elt_size=4) to 11072 items from 5000.
+Reallocated field_info (elt_size=4) to 11486 items from 5000.
 Database file #1: references.bib
+Warning--I'm ignoring abah_energetic_2019's extra "pages" field
+--line 2657 of file references.bib
 Warning--I didn't find a database entry for "lawrence_numerical_2023"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
@@ -16,45 +18,45 @@ Warning--I didn't find a database entry for "lawrence_numerical_2023"
 Warning--missing school in trefzger_ultracold_2011
 
 Done.
-You've used 131 entries,
+You've used 140 entries,
             4087 wiz_defined-function locations,
-            1665 strings with 37575 characters,
-and the built_in function-call counts, 100787 in all, are:
-= -- 9144
-> -- 2265
-< -- 614
-+ -- 1144
-- -- 461
-* -- 5495
-:= -- 16407
-add.period$ -- 268
-call.type$ -- 131
-change.case$ -- 151
-chr.to.int$ -- 945
-cite$ -- 132
-duplicate$ -- 7548
-empty$ -- 7203
-format.name$ -- 565
-if$ -- 23148
+            1718 strings with 39527 characters,
+and the built_in function-call counts, 108004 in all, are:
+= -- 9859
+> -- 2403
+< -- 650
++ -- 1212
+- -- 491
+* -- 5913
+:= -- 17616
+add.period$ -- 286
+call.type$ -- 140
+change.case$ -- 166
+chr.to.int$ -- 972
+cite$ -- 141
+duplicate$ -- 8114
+empty$ -- 7677
+format.name$ -- 604
+if$ -- 24808
 int.to.chr$ -- 0
-int.to.str$ -- 131
-missing$ -- 1352
-newline$ -- 664
-num.names$ -- 139
-pop$ -- 2640
+int.to.str$ -- 140
+missing$ -- 1451
+newline$ -- 709
+num.names$ -- 148
+pop$ -- 2801
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 7977
+skip$ -- 8571
 stack$ -- 0
-substring$ -- 3014
-swap$ -- 6576
-text.length$ -- 299
+substring$ -- 3180
+swap$ -- 7082
+text.length$ -- 326
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 131
+type$ -- 140
 warning$ -- 1
-while$ -- 353
-width$ -- 134
-write$ -- 1747
-(There were 2 warnings)
+while$ -- 373
+width$ -- 143
+write$ -- 1879
+(There were 3 warnings)
